@@ -1,0 +1,374 @@
+function task(template) {
+    //Прячем sidenav
+    hideSideNav();
+
+    var router = $.Router();
+    var $breadWrapper = $('#bread_wrapper');
+    $breadWrapper.empty();
+    $breadWrapper.append("<a href='/#' class='header-logo'><img src='../../images/logo-5ka.png'></a><span>Задача №" + router.path[1] + "</span>");
+    if($.Router().path[1] && $.Router().path[2] === undefined){
+        $.ajax({
+            type: "GET",
+            url: "api/task/" + $.Router().path[1]
+        }).done(function (taskData) {
+            $.ajax({
+                type: "GET",
+                url: "api/checkLogin"
+            }).done(function (userRights) {
+                taskData.groups = userRights.groups;
+
+                var $supportConsoleWrapper = $('#main_wrapper');
+
+                taskData.role = roleToName(role);
+
+                var slaMillisec;
+                if (taskData.slaDate) {
+                    slaMillisec = taskData.slaDate;
+                }else {
+                    slaMillisec = Number.MAX_VALUE;
+                }
+
+                // Если мы уж устанавливали дату или slaDate просрочена
+                taskData.isSpecialistDate = taskData.isSpecialistDate || slaMillisec < Date.now();
+
+                //Обрезаем секунды у дат
+                removeSeconds.call(taskData);
+                taskData.text = taskData.text ? taskData.text.trim() : null;
+                dust.renderSource(template, taskData, function (err, out) {
+                    $supportConsoleWrapper.empty().append(out);
+
+                    var $messageModal = $('#messageModal');
+                    //specialist Date
+                    (function specialistDate() {
+                        var $timeBtn = $('#timeBtn');
+                        var $datepicker = $('#ticketAccordion .datepicker');
+                        var $timepicker = $('#ticketAccordion .timepicker');
+                        var spinner = $('#specialist_date_spinner');
+
+                        $datepicker.pickadate({
+                            selectMonths: true, // Creates a dropdown to control month
+                            selectYears: 15, // Creates a dropdown of 15 years to control year,
+                            closeOnSelect: true // Close upon selecting a date,
+                        });
+                        $timepicker.pickatime({
+                            default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+                            fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+                            twelvehour: false, // Use AM/PM or 24-hour format
+                            donetext: 'Ок', // text for done-button
+                            cleartext: 'Очистить', // text for clear-button
+                            canceltext: 'Отменить', // Text for cancel-button
+                            autoclose: false, // automatic close timepicker
+                            ampmclickable: true, // make AM PM clickable
+                            aftershow: function () {
+                            } //Function for after opening timepicker
+                        });
+                        spinner.hide(0);
+
+                        if (taskData.specialistDate && taskData.specialistDate !== 0) {
+                            $datepicker.val(taskData.specialistDate.split(' ')[0].split('-').join('.'));
+                            $timepicker.val(taskData.specialistDate.split(' ')[1].slice(0, 5));
+                        }
+                        function removeInvalid(){
+                            $datepicker.toggleClass('wrong', false);
+                            $timepicker.toggleClass('wrong', false);
+                        }
+
+                        $datepicker.on('change', removeInvalid);
+                        $timepicker.on('change', removeInvalid);
+
+                        $datepicker.on('change', function () {
+                            if ($(this).val()) {
+                                $timepicker.trigger('click');
+                            }
+                        });
+
+                        function specialistDateValidation() {
+                            var time = $timepicker.val();
+                            var date = $datepicker.val();
+                            $datepicker.toggleClass('wrong', false);
+                            $timepicker.toggleClass('wrong', false);
+                            if (date && time) {
+                                time = time.split(':');
+                                time = time[0] * 3600 * 1000 + time[1] * 60 * 1000;
+                                var days = new Date(Date.parse(date.split('.').reverse().join('-')));
+                                days.setHours(0);
+                                var inputMilCount = new Date(days.getTime() + time);
+                                if (inputMilCount <= new Date() || inputMilCount >= new Date(slaMillisec)) {
+                                    $datepicker.toggleClass('wrong', true);
+                                    $timepicker.toggleClass('wrong', true);
+                                    $messageModal.find('p').html('Дата должна быть больше текущей и меньше запланированной даты окончания работ. <br>'
+                                        + 'Запланированная дата окончания работ — ' + taskData.slaDate);
+                                    $messageModal.find('a').removeAttr('href');
+                                    $messageModal.modal('open');
+                                } else {
+                                    return inputMilCount.getTime();
+                                }
+                            }  else {
+                                if (!date && !time){
+                                    $messageModal.find('p').text('Введите дату и время начала работ');
+                                    $messageModal.find('a').removeAttr('href');
+                                    $messageModal.modal('open');
+                                    $datepicker.toggleClass('wrong', true);
+                                    $timepicker.toggleClass('wrong', true);
+                                } else if(!date){
+                                    $messageModal.find('p').text('Введите дату начала работ');
+                                    $messageModal.find('a').removeAttr('href');
+                                    $messageModal.modal('open');
+                                    $datepicker.toggleClass('wrong', true);
+                                } else if(!time){
+                                    $messageModal.find('p').text('Введите время начала работ');
+                                    $messageModal.find('a').removeAttr('href');
+                                    $messageModal.modal('open');
+                                    $timepicker.toggleClass('wrong', true);
+                                }
+                            }
+                        }
+
+                        $timeBtn.on('click', function () {
+                            var time = specialistDateValidation();
+                            if (time) {
+                                spinner.slideDown(300);
+                                $.ajax({
+                                    url: '/api/ticket/' + taskData.parentId + '/task/' + taskData.id,
+                                    method: 'POST',
+                                    contentType: "application/json; charset=utf-8",
+                                    data: JSON.stringify({'specialistDate': time})
+                                }).done(function (response) {
+                                    spinner.slideUp(300);
+                                    $messageModal.find('p').text('Дата приезда специалиста успешно установленна для задачи TSK_' + taskData.id);
+                                    $messageModal.find('a').removeAttr('href');
+                                    $messageModal.modal('open');
+                                    if (response.isSpecialistDate) {
+                                        $('.actions').remove();
+                                    }
+
+                                }).fail(function (error) {
+                                    spinner.slideUp(300);
+                                    //console.log(error);
+                                    $messageModal.find('p').text(error.responseJSON.message);
+                                    $messageModal.find('a.modal-action').removeAttr('href');
+                                    $messageModal.modal('open');
+                                });
+                            }
+                        });
+                    })();
+
+                    var spinner = $('#spinner').hide(0);
+
+                    // Commit task
+                    $('#commit-task').on('click', function () {
+                        spinner.slideDown(300);
+                        $.ajax({
+                            method: 'POST',
+                            url: 'api/ticket/' + taskData.parentId + '/close'
+                        }).done(function (data) {
+                            spinner.slideUp(300);
+
+                            $messageModal.find('p').html('Инцидент <a class="modal-action modal-close" href="/#ticket/' + data.id + '">INC_' + data.id + '</a> закрыт');
+                            $messageModal.find('a.modal-action').attr('href', '/');
+                            $messageModal.modal('open');
+                            $('.modal-overlay').unbind('click');
+                        }).fail(function(error){
+                            spinner.slideUp(300);
+                            $messageModal.find('p').text(error.responseJSON.message);
+                            $messageModal.find('a.modal-action').attr('href', '/');
+                            $messageModal.modal('open');
+                        });
+                    });
+
+                    // Back in work
+                    $('#back-in-work-task').on('click', function(){
+                        spinner.slideDown(300);
+                        $.ajax({
+                            method: 'POST',
+                            url: 'api/task/' + taskData.id + '/decline'
+                        }).done(function (answ) {
+                            spinner.slideUp(300);
+                            $messageModal.find('p').text('Задача возвращена в работу');
+                            $messageModal.find('a.modal-action').attr('href', '/');
+                            $messageModal.modal('open');
+                            $('.modal-overlay').unbind('click');
+                        }).fail(function(error){
+                            spinner.slideUp(300);
+                            $messageModal.find('p').text('Ошибка при попытке отправить задачу на доработку');
+                            $messageModal.find('a.modal-action').removeAttr('href');
+                            $messageModal.modal('open');
+                        });
+                    });
+
+                    //Работа с плагином Fileupload и отправка комментариев
+                    var fileIdArray = [];
+                    var maxFileSize = {max:10485760, current:0};
+                    var $uploadObj = $("#commentuploader").uploadFile({
+                        maxFileCount: 6,
+                        maxFileSize: 10485760,
+                        dragDropStr: "<span><span style='margin-left: 15px;'>Приложите файлы для скорейшего решения вашей проблемы</span></span>",
+                        showDelete: true,
+                        url: "api/ticket/file/",
+                        fileName: "files",
+                        sequential: true,
+                        sequentialCount: 6,
+                        multiple: "true",
+                        enctype: "multipart/form-data",
+                        deleteCallback: function (obj) {
+
+                            var fileName = toTranslit(obj[0].name);
+                            maxFileSize.current -= maxFileSize[fileName];
+                            delete maxFileSize[fileName];
+
+                            $.ajax({
+                                url: 'api/ticket/file/' + obj[0].id,
+                                type: 'DELETE'
+                            }).always(function () {
+                                for (var i = 0; i < fileIdArray.length; i++) {
+                                    if (obj[0].id === fileIdArray[i]) {
+                                        fileIdArray.splice(i, 1);
+                                        break;
+                                    }
+                                }
+                            });
+                        },
+                        onSelect:function (files) {
+                            //debugger;
+                            var totalSize = 0;
+                            $.each(files, function (i, file) {
+                                totalSize += file.size;
+                            });
+                            if(maxFileSize.current + totalSize > maxFileSize.max){
+                                $messageModal.find('p').text('Общий размер файлов не должен превышать 10 Мегабайт');
+                                $messageModal.find('a.modal-action').removeAttr('href');
+                                $messageModal.modal('open');
+                                //console.log(maxFileSize);
+                                return false;
+                            } else {
+                                $.each(files, function (i, file) {
+                                    maxFileSize[toTranslit(file.name)] = file.size
+                                });
+
+                                maxFileSize.current += totalSize;
+                                //console.log(maxFileSize);
+                                return true;
+                            }
+                        },
+                        onSuccess: function (files, data) {
+                            Materialize.toast('Файл успешно добавлен', 3000);
+                            fileIdArray.push(data[0].id);
+                        }
+
+                    });
+
+                    $('#sendComment').on('click', function (e) {
+                        e.preventDefault();
+                        var $commentText = $('#commentText');
+                        if ($commentText.val() !== "") {
+                            sendComment($commentText.val(), taskData.parentId, fileIdArray, $uploadObj);
+                            fileIdArray = [];
+                        }
+                        else {
+                            $messageModal.find('p').text('Введите текст комментария');
+                            $messageModal.find('a.modal-action').removeAttr('href');
+                            $messageModal.modal('open');
+                        }
+                    });
+
+                    //Маска
+                    $('#applicantPhone').mask("8(999) 999-9999");
+
+                    //Инициализируем аккордеон
+                    $('.collapsible').collapsible();
+
+                    loadComments(taskData.parentId, false);
+                })
+            })
+        }).fail(function (XHR) {
+            var $mainWrapper = $('#main_wrapper');
+            $mainWrapper.empty();
+            $mainWrapper.append("<div class='container' style='width: 90%'><div class='row'><div class='col l12 m12 s12'><h1 class='ticket-error-message'>" + XHR.responseJSON.message + "</h1><p class='center-align'><a href='/' class=\"waves-effect waves-light btn card-btn blank-button\">Домой</a></p></div></div></div>");
+        });
+    }
+}
+
+//Грузим комментарии
+function loadComments(ticketID, yourCommentFlag) {
+    var commentsList = "";
+    $.ajax({
+        url: 'tpl/support/ticketComment.dust',
+        contentType: "charset=utf-8"
+    }).done(function (tpl) {
+        $.ajax({
+            type: "GET",
+            url: 'api/ticket/' + ticketID + '/comment/'
+        }).done(function (data) {
+            for(var i=0; i<data.length; i++) {
+                if (i===0 && yourCommentFlag){
+                    data[i]["viewed"] = "true";
+                }
+                dust.renderSource(tpl, data[i], function(err, out) {
+                    commentsList += out;
+                });
+            }
+            var $commentWrapper = $("#comment_wrapper");
+            $commentWrapper.empty();
+            $commentWrapper.append(commentsList);
+
+            initUserInfo();
+        });
+    });
+}
+
+//Загружаем информацию о пользователе
+function initUserInfo() {
+    var $commentatorInfo = $('.commentator-info');
+    $commentatorInfo.unbind('click');
+    $commentatorInfo.on('click', function () {
+        $.ajax({
+            type: "GET",
+            url: "api/user/" + $(this).data('id') + "/info"
+        }).done(function (userData) {
+            $.ajax({
+                url: "tpl/support/userCard.dust"
+            }).done(function (userCard) {
+                dust.renderSource(userCard, userData, function (err, out) {
+                    var $modalCardWrapper = $('#cardWrapper');
+                    $modalCardWrapper.empty();
+                    $modalCardWrapper.append(out);
+                    $('#userInfoModal').modal('open');
+                });
+            })
+        })
+    })
+}
+
+//Отправляем комментарий
+function sendComment(comment, ticketID, fileIdArray, $uploadObj) {
+    var commentData = {
+        text: comment,
+        files: fileIdArray
+    };
+    var $messageModal = $('#messageModal');
+    var $pvtSwitch = $('#pvtSwitch');
+    if ($pvtSwitch.prop('checked')){
+        commentData.pvt = false;
+    }
+    var $commentTypeSelect = $('#commentType');
+    if($commentTypeSelect !== null){
+        commentData.type = $commentTypeSelect.val();
+    }
+    $.ajax({
+        type: "POST",
+        url: 'api/ticket/' + ticketID + '/comment/',
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(commentData)
+    }).done(function () {
+        $('#commentText').val('');
+        $uploadObj.reset();
+        $messageModal.find('p').text('Комментарий успешно добавлен');
+        $messageModal.find('a.modal-action').removeAttr('href');
+        $messageModal.modal('open');
+        loadComments(ticketID, true);
+    }).fail(function (code) {
+        $messageModal.find('p').text(code.responseJSON.message);
+        $messageModal.find('a.modal-action').removeAttr('href');
+        $messageModal.modal('open');
+    });
+}

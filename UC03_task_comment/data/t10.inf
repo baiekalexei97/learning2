@@ -1,0 +1,13 @@
+[t10]
+FileName1=t10.json
+URL1=http://learning2.pflb.ru:56902/api/task/?state=1&page=0&size=10
+Total=2
+ContentType=application/json
+SnapshotXmlFile=snapshot_10.xml
+RequestHeaderFile=t10_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t10_ResponseHeader.txt
+FileName2=t10_l1.html
+URL2=https://c.urs.microsoft.com/l1.dat?cw=637103626390106373&v=3&cv=9.11.17763.0&os=10.0.17763.0.0&pg=4A72F430-B40C-4D36-A068-CE33ADA5ADF9
+[ProtocolInfo]
+ProtocolId=QTWeb

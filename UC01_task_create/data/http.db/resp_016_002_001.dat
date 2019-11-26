@@ -1,0 +1,392 @@
+//Конструктор выгрузки таблицы заявок
+function tickets(template) {
+    $('label[for=appointedCheckbox] span.name').html('Назначен');
+    $('label[for=resolvedCheckbox] .name').html('Решен');
+    $('label[for=closedCheckbox] .name').html('Закрыт');
+    $('label[for=canceledCheckbox] .name').html('Отменен');
+    $('#nav-mobile h6.state-title').html('Статус инцидента');
+    var postsBtn = $('.type button');
+    postsBtn.removeAttr('disabled');
+    postsBtn.filter('[data-type=tickets]').attr('disabled', 'true');
+    dust.renderSource(template, {}, function (err, out) {
+        var $mainWrapper = $("#main_wrapper");
+        $mainWrapper.empty();
+        $mainWrapper.append(template);
+
+        //Показываем боковое меню (убирается в catalog.js)
+        showSideNav();
+        var router = $.Router();
+        //Управление раскраской пунктов меню
+        var menuActiveItems = $('.menu-item-active'),
+            $breadWrapper = $('#bread_wrapper');
+        var page = router.args ? router.args['page'] ? router.args['page'] : 1 : 1;
+        var state = router.args ? router.args['state'] ? router.args['state'] : "default" : "default";
+        var stateArr = "";
+        var currentStateArr="";
+        var $filterPanel = $('#nav-mobile .collapsible');
+        var isCorrectDate = true;
+        var isReset;
+
+        menuActiveItems.removeClass('menu-item-active');
+
+        //Очистка хлебных крошек
+        breadcrumbs = [];
+        $breadWrapper.empty();
+
+        //При смене вкладки сброс фильтров
+        $filterPanel.find('.switch input[type=checkbox]').prop('checked', true);
+        $filterPanel.find('.switch.card-panel').toggleClass('inactive', false);
+        $filterPanel.find('.alert').removeClass('alert');
+        $filterPanel.find('input[type=text]').val('');
+        $filterPanel.find('#themeSelect').val(null).trigger('change');
+        $filterPanel.find('#overdue').prop('checked', false);
+        $filterPanel.find('label > div').toggleClass('hide', false);
+        $filterPanel.find('label[for=controlCheckbox] > div').toggleClass('hide', false);
+        $filterPanel.find('#catlvl1').val(null).trigger('change');
+        $filterPanel.find('#catlvl2').val(null).trigger('change');
+        $filterPanel.find('#catlvl3').val(null).trigger('change');
+        $filterPanel.find('#catlvl4').val(null).trigger('change');
+        $filterPanel.find('#theme').val(null).trigger('change');
+        $filterPanel.find('#smhoSelect').val(null).trigger('change');
+
+        isReset = restoreFilters();
+
+        //Обработка даты
+        $filterPanel.find('.datepicker').unbind('change');
+        $filterPanel.find('.datepicker').on('change', function(){
+            var $startDate = $('#dateStart');
+            var $endDate = $('#dateEnd');
+            if ($startDate.val() && $endDate.val()) {
+                isCorrectDate = Date.parse(
+                    $startDate.val().split('.').reverse().join('-')) <=
+                    Date.parse($endDate.val().split('.').reverse().join('-'));
+                $filterPanel.find('.datepicker').toggleClass('alert', !isCorrectDate);
+
+            }
+        });
+
+        //Обработчик фильтров
+        var $commitTicketsFilter = $('#commit-tickets-filter');
+        $commitTicketsFilter.unbind('click');
+        $commitTicketsFilter.on('click', function(){
+            var query = '';
+            var filters = [];
+            $filterPanel.find('.card-panel:not(.inactive):not(.hide) input[data-filter]').each(function(){
+                filters.push($(this).attr('data-filter'));
+            });
+            query = filters.length > 0 ? '?state=' + filters.join(',') : stateArr;
+            for (var i=1; i<5; i++) {
+                var option = $filterPanel.find('#catlvl' + i).val();
+                query += option ? '&cat' + i + '=' + option : '';
+            }
+            var service = $('#theme').val();
+            query += service ? '&service=' + service : '';
+            var dateStart = $filterPanel.find('#dateStart').val();
+            dateStart = dateStart ? Date.parse(dateStart.split('.').reverse().join('-')) : '';
+            var dateFinish = $filterPanel.find('#dateEnd').val();
+            dateFinish = dateFinish ? Date.parse(dateFinish.split('.').reverse().join('-')) : '';
+            if (isCorrectDate && (dateStart || dateFinish)) {
+                if(dateStart){
+                    query += '&dateStart=' + dateStart;
+                }
+                if(dateFinish) {
+                    query += '&dateFinish=' + dateFinish;
+                }
+            }
+            var isOnlyoVerdue = $filterPanel.find('#overdue').prop('checked');
+            query += isOnlyoVerdue ? '&expired=' + isOnlyoVerdue : '';
+            var engineer = $('#engineerSelect').val(),
+                shop = $('#locationSelect').val(),
+                division = $('#divisionSelect').val(),
+                smho = $('#smhoSelect').val();
+            query += engineer ? '&engineer=' + engineer : '';
+            query += shop ? '&shop=' + shop : '';
+            query += division ? '&division=' + division : '';
+            if (smho === '0') {
+                query += '&withoutSmho=true';
+            } else {
+                query += smho ? '&smhoClassIn=' + smho : '';
+            }            saveFilters();
+            renderTable(query, page);
+        });
+
+        switch (state) {
+            /*case "archive":
+                stateArr = "?state=5&scope=my";
+                var ticketsArchived = $('#tickets_archived');
+                if (!ticketsArchived.hasClass('menu-item-active')) ticketsArchived.addClass('menu-item-active');
+                $breadWrapper.append("<a href='/#tickets?archive' class='breadcrumb'>Закрытые инциденты</a>");
+
+                break;
+            case "new":
+                stateArr = "?state=0&scope=my";
+                var ticketsPaused = $('#tickets_new');
+                if (!ticketsPaused.hasClass('menu-item-active')) ticketsPaused.addClass('menu-item-active');
+                $breadWrapper.append("<a href='/#tickets?archive' class='breadcrumb'>Новые инциденты</a>");
+
+                break;*/
+            case "opened":
+                stateArr = "?state=-1,0,1,5";
+                $('#tickets_assigned').toggleClass('menu-item-active', true);
+                $breadWrapper.append("<a class='breadcrumb'>Открытые инциденты</a>");
+                setCount();
+                $filterPanel.find('label[for=resolvedCheckbox] > div, label[for=closedCheckbox] > div, label[for=canceledCheckbox] > div').toggleClass('hide', true);
+                break;
+            /*case "cancelled":
+                stateArr = "?state=6&scope=my";
+                var ticketsCancelled = $('#tickets_cancelled');
+                if (!ticketsCancelled.hasClass('menu-item-active')) ticketsCancelled.addClass('menu-item-active');
+                $breadWrapper.append("<a href='/#tickets?canceled' class='breadcrumb'>Отмененные инциденты</a>");
+
+                break;
+            case "solved":
+                stateArr = "?state=4&scope=my";
+                var ticketsEnded = $('#tickets_solved');
+                if (!ticketsEnded.hasClass('menu-item-active')) ticketsEnded.addClass('menu-item-active');
+                $breadWrapper.append("<a href='/#tickets?end' class='breadcrumb'>Решенные инциденты</a>");
+
+                break;*/
+            case "archive":
+                stateArr = "?state=2,3,4";
+                $('#tickets_in_work').toggleClass('menu-item-active', true);
+                $breadWrapper.append("<a class='breadcrumb'>Архив инцидентов</a>");
+                setCount();
+                $filterPanel.find('label[for=newCheckbox] > div, label[for=appointedCheckbox] > div, label[for=performedCheckbox] > div, label[for=controlCheckbox] > div').toggleClass('hide', true);
+
+                break;
+            case "all":
+                stateArr = "?state=-1,0,1,2,3,4,5";
+                $('#tickets_all').toggleClass('menu-item-active', true);
+                setCount();
+                $breadWrapper.append("<a class='breadcrumb'>Все инциденты</a>");
+        }
+
+        function setCount() {
+            $filterPanel.find('input[data-filter]').html(0);
+            $.ajax({
+                type: 'GET',
+                url: '/api/ticket/countByState/'
+            }).done(function(statesInfo){
+                var assigned = 0, inWork = 0, all = 0;
+                // Сбрасываем счетчики
+                for (var i = -1; i < 5; i++){
+                    $filterPanel.find('input[data-filter=' + i + ']')
+                        .parent().find('b').html(0);
+                }
+                statesInfo.forEach(function(el){
+                    $filterPanel.find('input[data-filter=' + el.stateId + ']')
+                        .parent().find('b').html(el.count);
+                    all += el.count;
+                    switch (el.stateId) {
+                        case -1:
+                        case 0:
+                        case 5:
+                        case 1:assigned += el.count; break;
+                        case 2:
+                        case 3:
+                        case 4: inWork += el.count; break;
+                    }
+                });
+                $('#tickets_assigned').find('span').text(assigned);
+                $('#tickets_in_work').find('span').text(inWork);
+                $('#tickets_all').find('span').text(all);
+            });
+        }
+
+        if (isReset) {
+            $commitTicketsFilter.trigger('click');
+        } else {
+            renderTable(stateArr, page);
+        }
+
+        window.onhashchange = function() {
+            if (!~location.hash.indexOf('tickets')) {
+                window.onhashchange = loadContent;
+                saveFilters(currentUrl);
+            } else {
+                saveFilters();
+            }
+            loadContent();
+        };
+    });
+}
+
+//Метод отрисовывает таблицу с заданным условием фильтрации
+function renderTable(stateArr, page) {
+    var columns = [
+        {
+            name: "№ инцидента/задачи",
+            data: "id",
+            width: "16%",
+            mobileView: true,
+            render: function (data, row) {
+                var description = '<p class=\'small-margin\'>';
+                if (row.hasAttachments) {
+                    description += "<i class=\"material-icons inherit-font\">attach_file</i>";
+                }
+                description += 'INC_' + row.id;
+                if (row.taskId) {
+                    description += " >> TSK_" + row.taskId;
+                }
+
+                description += "</p><p class='small-margin'><span class='state-color-badge state-color-" + row.ticketStateId + "'>" + row.ticketState + "</span>";
+                if (row.taskStateId != undefined) {
+                    description += "&nbsp;&gt;&gt; <span class='state-color-badge state-color-" + row.taskStateId + "'>" + row.taskState + "</span>";
+                }
+
+                description += "</p>";
+                return description;
+            }
+        },
+        {
+            name: "Описание задачи",
+            data: "header",
+            width: "13%",
+            mobileView: true,
+            render: function (data, row) {
+                var description = "<div class='desc_clamp'><p class='table-header-theme'>" + row.header + "</p>";
+                if (row.text && row.text.trim()) {
+                    description += "<p class='table-header-description'>" + row.text + "</p>";
+                }
+                description += "</div>";
+                return description;
+            }
+        },
+        {
+            name: "Категория",
+            data: "category1",
+            width: "13%",
+            render: function (data, row) {
+                var description = "";
+                if (row.category1) {
+                    description += "<ul class='categorisation'><li>" + row.category1;
+                    if (row.category2) {
+                        description += "</li><li>" + row.category2;
+                        if (row.category3) {
+                            description += "</li><li>" + row.category3;
+                            if (row.category4) {
+                                description += "</li><li>" + row.category4;
+                            }
+                        }
+                    }
+                    description += "</li></ul>";
+                }
+                description += "</li></ul>";
+                if (row.smhoClass) {
+                    description += "<p class='smho  " + (row.openCommunications === 0 ? "green" : "") + "'> " +
+                        "Класс СМХО: " + row.smhoClass + " (" + row.openCommunications + "/" + row.totalCommunications + ")</p>"
+                }
+                return description
+            }
+        },
+        {
+            name: "Инвентарный номер",
+            data: "inventoryNumber",
+            width: "11%"
+        },
+        {
+            name: "Местонахождение",
+            data: "location",
+            width: "14%"
+        }];
+    if (role === "leader") {
+        columns.push({
+            name: "Иженер",
+            data: "engineerName",
+            width: "13%"
+        })
+    }
+    columns = columns.concat([{
+        name: "Решения (план.)",
+        data: "slaDate",
+        width: "4%",
+        group: "Дата",
+        render: function (data, row) {
+            var slaDate = data;
+            slaDate = slaDate.split(' ');
+            slaDate = {time: slaDate[1], date: slaDate[0].split('-')};
+            slaDate = slaDate.date.reverse().join('-') + 'T' + slaDate.time;
+            //Если время меньше 10 минут и инцидент находится в статусе выполняется или назначен, выводим кнопку "Отменить"
+            var minutes = Math.floor((new Date(Date.parse(slaDate)).getTime() - Date.now()) / 60000);
+            var answer = "<p class='table-header-theme'>" + data;
+            if (row.slaDateAmended) {
+                answer += '<i class="material-icons inherit-font sla-blue-icon">access_time</i>';
+            }
+            answer += "</p>";
+            if (minutes > 0 && minutes < 480) {
+                slaDate = minutes > 60 ? Math.floor(minutes / 60) + 'ч ' + minutes%60 + 'м' : minutes + 'м';
+                answer += "<p class='red-badge'>" + slaDate + "</p>";
+            }
+            return answer;
+        }
+    },
+        {
+            name: "Создания",
+            data: "createDate",
+            width: "4%",
+            group: "Дата"
+        },
+        {
+            name: "Решения (факт.)",
+            data: "finishDate",
+            width: "4%",
+            group: "Дата"
+        }
+    ]);
+    var table = new materialTable("table_wrapper",
+        {
+            search: {
+                placeholder: "Поиск по инцидентам"
+            },
+            tableClasses: [
+                "tickets-table"
+            ],
+            columns: columns,
+            ajax: {
+                url: 'api/ticket/' + stateArr,
+                pagePar: "page",
+                sizePar: "size",
+                page: page
+            },
+            afterRender: function () {
+                var $tableRow = $('table.tickets-table tbody tr');
+                $tableRow.each(function(index, value) {
+                    // меняем tr на a, чтобы строка была ссылкой
+                    $(value).children().unwrap().wrapAll('<a class="' + $(value).attr('class') + ' table-row" style="display: table-row" href="#ticket/' + $(value).data('id') + '"></a>');
+                });
+
+                var $module = $(".desc_clamp > p");
+                $module.each(function (index) {
+                    $clamp($module[index], {clamp: 3});
+                });
+            }/*,
+            afterRowRender: function ($targetRow, row) {
+                if (window.outerWidth < 400){
+                    var $firstTD = $targetRow.find('td:first-child');
+                    switch (row.ticketStateId){
+                        case 0:
+                            $firstTD.addClass('mobile-sla-0');
+                            break;
+                        case 1:
+                            $firstTD.addClass('mobile-sla-1');
+                            break;
+                        case 2:
+                            $firstTD.addClass('mobile-sla-2');
+                            break;
+                        case 3:
+                            $firstTD.addClass('mobile-sla-3');
+                            break;
+                        case 4:
+                            $firstTD.addClass('mobile-sla-4');
+                            break;
+                        case 5:
+                            $firstTD.addClass('mobile-sla-5');
+                            break;
+                        case 6:
+                            $firstTD.addClass('mobile-sla-6');
+                            break;
+                    }
+                }
+            }*/
+        });
+}

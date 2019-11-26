@@ -1,0 +1,17 @@
+[t14]
+FileName1=t14_iecompatviewlist.xml
+URL1=https://iecvlist.microsoft.com/IE11/1478281996/iecompatviewlist.xml
+Total=4
+ContentType=text/xml
+SnapshotXmlFile=snapshot_14.xml
+RequestHeaderFile=t14_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t14_ResponseHeader.txt
+FileName2=t14_l1.html
+URL2=https://c.urs.microsoft.com/l1.dat?cw=637103655188189711&v=3&cv=9.11.17763.0&os=10.0.17763.0.0&pg=4A72F430-B40C-4D36-A068-CE33ADA5ADF9
+FileName3=t14_ticket.html
+URL3=http://learning2.pflb.ru:56902/engineer/ticket/ticket.dust
+FileName4=t14_ticket.html
+URL4=http://learning2.pflb.ru:56902/engineer/ticket/ticket.js
+[ProtocolInfo]
+ProtocolId=QTWeb

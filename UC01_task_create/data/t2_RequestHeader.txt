@@ -1,0 +1,13 @@
+POST /api/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: */*
+X-Requested-With: XMLHttpRequest
+Referer: http://learning2.pflb.ru:56902/login
+Accept-Language: ru-RU
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Host: learning2.pflb.ru:56902
+Content-Length: 42
+Connection: Keep-Alive
+Cache-Control: no-cache
+

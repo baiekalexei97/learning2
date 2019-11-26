@@ -1,0 +1,52 @@
+div.ee-file-box {
+    position: relative;
+    width: 100%;
+    border: 2px dotted #A5A5C7;
+}
+
+.ee-file-box > input[type=file] {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0;
+}
+
+ul.ee-file-content {
+    margin: 0;
+}
+
+ul.ee-file-content > li {
+    display: inline-block;
+}
+
+li.ee-upload-button {
+    width: 20%;
+}
+
+li.ee-upload-button > div.ee-button-div {
+    margin: 10px auto;
+    background-color: #ebebeb;
+    color: #444;
+    border: 1px dashed #A5A5C7;
+    width: 160px;
+    text-align: center;
+    height: 36px;
+    line-height: 36px;
+    text-transform: uppercase;
+
+}
+
+li.ee-upload-textfield {
+    width: 80%;
+    padding: 0 15px;
+}
+
+li.ee-upload-textfield > input[type=text] {
+    margin: 10px 0;
+    border-bottom: 1px solid #A5A5C7;
+    height: 30px;
+}

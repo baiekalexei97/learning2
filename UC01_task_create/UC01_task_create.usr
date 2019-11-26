@@ -1,0 +1,75 @@
+[General]
+Type=Multi
+DefaultCfg=default.cfg
+ParameterFile=
+GlobalParameterFile=
+NewFunctionHeader=1
+RunType=cci
+ActionLogicExt=action_logic
+LastActiveAction=Action
+MajorVersion=12
+MinorVersion=55
+ActiveTypes=QTWeb
+GenerateTypes=QTWeb
+AdditionalTypes=QTWeb
+DevelopTool=Vugen
+LastModifyVer=12.55.0.911
+ParamLeftBrace={
+ParamRightBrace=}
+ScriptLanguage=C
+LastCodeGenerationVer=12.55.0.911
+DisableRegenerate=0
+Encoding=ANSI
+Description=
+ScriptLocale=ru-RU
+[Actions]
+vuser_init=vuser_init.c
+CreateOrder=CreateOrder.c
+Action1copy=Action1copy.c
+vuser_end=vuser_end.c
+[RunLogicFiles]
+Default Profile=default.usp
+[VuserProfiles]
+Profiles=Default Profile
+[CfgFiles]
+Default Profile=default.cfg
+[ExtraFiles]
+globals.h=
+[Modified Actions]
+vuser_init=1
+CreateOrder=1
+Action1copy=1
+vuser_end=1
+[Recorded Actions]
+vuser_init=0
+CreateOrder=1
+Action1copy=0
+vuser_end=0
+[Replayed Actions]
+vuser_init=1
+CreateOrder=1
+Action1copy=1
+vuser_end=1
+[Interpreters]
+vuser_init=cci
+CreateOrder=cci
+Action1copy=cci
+vuser_end=cci
+[TransactionsOrder]
+Order="UC01_TR01_login__*delimiter*__UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR07_File__*delimiter*__UC01_TR08_descFinish__*delimiter*__UC01_TR09_descFinishOK__*delimiter*__UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR07_File__*delimiter*__UC01_TR08_descFinish__*delimiter*__UC01_TR09_descFinishOK__*delimiter*__UC01_TR11_logout1"
+[StateManagement]
+LastReplayStatus=1
+[ActiveReplay]
+LastReplayedRunName=result1
+ActiveRunName=result1
+[Transactions]
+UC01_TR01_login=
+UC01_TR02_NewOrder=
+UC01_TR03_Location1=
+UC01_TR04_theme1=
+UC01_TR05_Description=
+UC01_TR06_inventoryNum=
+UC01_TR07_File=
+UC01_TR08_descFinish=
+UC01_TR09_descFinishOK=
+UC01_TR11_logout1=

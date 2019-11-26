@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IC:\Users\student\Documents\UC04_task_close
+-IC:\Program Files (x86)\HPE\LoadRunner\include
+-ec:\users\student\documents\uc04_task_close\\logfile.log
+c:\users\student\documents\uc04_task_close\\combined_UC04_task_close.c
+c:\users\student\documents\uc04_task_close\\pre_cci.c

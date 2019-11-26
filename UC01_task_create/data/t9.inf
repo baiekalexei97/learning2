@@ -1,0 +1,17 @@
+[t9]
+FileName1=t9_iecompatviewlist.xml
+URL1=https://iecvlist.microsoft.com/IE11/1478281996/iecompatviewlist.xml?cvlp=4999843583052239458
+Total=4
+ContentType=text/xml
+SnapshotXmlFile=snapshot_9.xml
+RequestHeaderFile=t9_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t9_ResponseHeader.txt
+FileName2=t9_l1.html
+URL2=https://c.urs.microsoft.com/l1.dat?cw=637098360369348176&v=3&cv=9.11.17763.0&os=10.0.17763.0.0&pg=4A72F430-B40C-4D36-A068-CE33ADA5ADF9
+FileName3=t9_catalog.html
+URL3=http://learning2.pflb.ru:56902/engineer/catalog/catalog.dust
+FileName4=t9_catalog.html
+URL4=http://learning2.pflb.ru:56902/engineer/catalog/catalog.js
+[ProtocolInfo]
+ProtocolId=QTWeb

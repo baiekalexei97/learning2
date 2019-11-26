@@ -1,0 +1,15 @@
+[t10]
+FileName1=t10.json
+URL1=http://learning2.pflb.ru:56902/api/user/catalog/node/0/children/
+Total=3
+ContentType=application/json
+SnapshotXmlFile=snapshot_10.xml
+RequestHeaderFile=t10_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t10_ResponseHeader.txt
+FileName2=t10_logo-5ka.png
+URL2=http://learning2.pflb.ru:56902/images/logo-5ka.png
+FileName3=t10_suggestions.html
+URL3=https://ieonline.microsoft.com/iedomainsuggestions/ie11/suggestions.ru-RU
+[ProtocolInfo]
+ProtocolId=QTWeb

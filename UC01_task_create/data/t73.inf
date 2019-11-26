@@ -1,0 +1,11 @@
+[t73]
+FileName1=t73_shops.json
+URL1=http://learning2.pflb.ru:56902/api/shops?q=&page=0
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_73.xml
+RequestHeaderFile=t73_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t73_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

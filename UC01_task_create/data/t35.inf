@@ -1,0 +1,11 @@
+[t35]
+FileName1=t35_checkLogin.json
+URL1=http://learning2.pflb.ru:56902/api/checkLogin
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_35.xml
+RequestHeaderFile=t35_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t35_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

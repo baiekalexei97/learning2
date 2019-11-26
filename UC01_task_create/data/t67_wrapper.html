@@ -1,0 +1,765 @@
+var menuStateCookiesName = "menuState";
+var $sidenav;
+var $hideNavBar;
+var $showNavBar;
+var $headerFooterMain;
+var isHiddenNav;
+// восстановление фильтров
+function restoreFilters() {
+    if (!~previuosUrl.indexOf('tasks') && !~previuosUrl.indexOf('tickets')){
+        var filterSetting = $.cookie('filterSetting') ? JSON.parse($.cookie('filterSetting')) : null;
+        if (filterSetting) {
+            if (location.href !== filterSetting.page) {
+                location.href = filterSetting.page;
+                currentUrl = '';
+            } else {
+                $('#dateStart').val(filterSetting.dateStart).trigger('change');
+                $('#dateEnd').val(filterSetting.dateEnd).trigger('change');
+                $('#overdue').prop('checked', filterSetting.overdue);
+                for (var filterName in filterSetting.filters) {
+                    if (filterSetting.filters.hasOwnProperty(filterName)) {
+                        if (!filterSetting.filters[filterName]) {
+                            $('label[for="' + filterName + '"]').trigger('click');
+                        }
+                    }
+                }
+                $('#smhoSelect').val(filterSetting.smho).trigger('change');
+                // Востановление темы обращения
+                if (filterSetting.cat1) {
+                    var $cat1 = $('#catlvl1');
+                    $cat1.empty().append('<option value="' + filterSetting.cat1.value + '">'
+                        + filterSetting.cat1.text  + '</option>').val(filterSetting.cat1.value)
+                    if (filterSetting.cat1.services) {
+                        $cat1.trigger({
+                            type: 'select2:select',
+                            params: {
+                                data: filterSetting.cat1
+                            }
+                        });
+                        initTheme(filterSetting.cat1.services);
+                    } else {
+                        $cat1.trigger('change');
+                    }
+                    if (filterSetting.cat2) {
+                        var $cat2 = $('#catlvl2');
+                        $cat2.empty().append('<option value="' + filterSetting.cat2.value + '">'
+                            + filterSetting.cat2.text  + '</option>').val(filterSetting.cat2.value);
+                        if (filterSetting.cat2.services) {
+                            $cat2.trigger({
+                                type: 'select2:select',
+                                params: {
+                                    data: filterSetting.cat2
+                                }
+                            });
+                            initTheme(filterSetting.cat2.services);
+                        } else {
+                            $cat2.trigger('change');
+                        }
+                        if (filterSetting.cat3) {
+                            var $cat3 = $('#catlvl3');
+                            $cat3.empty().append('<option value="' + filterSetting.cat3.value + '">'
+                                + filterSetting.cat3.text  + '</option>').val(filterSetting.cat3.value);
+                            if (filterSetting.cat3.services) {
+                                $cat3.trigger({
+                                    type: 'select2:select',
+                                    params: {
+                                        data: filterSetting.cat3
+                                    }
+                                });
+                                initTheme(filterSetting.cat3.services);
+                            } else {
+                                $cat3.trigger('change');
+                            }
+                            if (filterSetting.cat4) {
+                                var $cat4 = $('#catlvl4');
+                                $cat4.empty().append('<option value="' + filterSetting.cat4.value + '">'
+                                    + filterSetting.cat4.text  + '</option>').val(filterSetting.cat4.value);
+                                if (filterSetting.cat4.services) {
+                                    $cat4.trigger({
+                                        type: 'select2:select',
+                                        params: {
+                                            data: filterSetting.cat4
+                                        }
+                                    });
+                                    initTheme(filterSetting.cat4.services);
+                                } else {
+                                    $cat4.trigger('change');
+                                }
+                            }
+                        }
+                    }
+                    function initTheme (services) {
+                        var theme = $('#theme');
+                        theme.parent().show();
+                        if (theme.hasClass("select2-hidden-accessible")) {
+                            theme.select2('destroy');
+                        }
+                        theme.select2({
+                            containerCssClass: 'select-wrapper margins',
+                            placeholder: "Выберите тему",
+                            data: services,
+                            allowClear: true,
+                            minimumResultsForSearch: 'infinity',
+                            escapeMarkup: function (markup) {
+                                return markup;
+                            }, // let our custom formatter work
+                            templateResult: function (group) {
+                                return group.name;
+                            },
+                            templateSelection: function (group) {
+                                return group.name ? group.name : group.text;
+                            },
+                            width: "100%"
+                        });
+                        theme.val(filterSetting.theme ? filterSetting.theme.value : null).trigger('change');
+                    }
+
+                }
+                if (filterSetting.engineer) {
+                    $('#engineerSelect').empty().append('<option value="' + filterSetting.engineer.value + '">'
+                        + filterSetting.engineer.text  + '</option>').val(filterSetting.engineer.value).trigger('change');
+                }
+                if (filterSetting.location) {
+                    $('#locationSelect').empty().append('<option value="' + filterSetting.location.value + '">'
+                        + filterSetting.location.text  + '</option>').val(filterSetting.location.value).trigger('change');
+                }
+                if (filterSetting.division) {
+                    $('#divisionSelect').empty().append('<option value="' + filterSetting.division.value + '">'
+                        + filterSetting.division.text  + '</option>').val(filterSetting.division.value).trigger('change');
+                }
+                if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 992) {
+                    if (filterSetting.hideSideNav) {
+                        $hideNavBar.trigger('click');
+                    } else {
+                        $showNavBar.trigger('click');
+                    }
+                }
+                return true;
+            }
+        }
+    }
+}
+
+// сохранение фильтров
+function saveFilters( url ){
+    if ($('ul.pagination li.active').length > 0) {
+        var filters = $('#nav-mobile').find('.card-panel.switch:not(.hide)');
+        var $cat1 = $('#catlvl1'), $cat2 = $('#catlvl2'), $cat3 = $('#catlvl3'), $cat4 = $('#catlvl4'), $theme = $('#theme'),
+            $engineer = $('#engineerSelect'), $location = $('#locationSelect'), $division = $('#divisionSelect');
+        $cat1 = $cat1.hasClass("select2-hidden-accessible") ? $cat1.select2('data')[0] : null;
+        $cat2 = $cat2.hasClass("select2-hidden-accessible") ? $cat2.select2('data')[0] : null;
+        $cat3 = $cat3.hasClass("select2-hidden-accessible") ? $cat3.select2('data')[0] : null;
+        $cat4 = $cat4.hasClass("select2-hidden-accessible") ? $cat4.select2('data')[0] : null;
+        $theme = $theme.hasClass("select2-hidden-accessible") ? $theme.select2('data')[0] : null;
+
+        $engineer = $engineer.hasClass("select2-hidden-accessible") ? $engineer.select2('data')[0] : null;
+        $location = $location.hasClass("select2-hidden-accessible") ? $location.select2('data')[0] : null;
+        $division = $division.hasClass("select2-hidden-accessible") ? $division.select2('data')[0] : null;
+        var filterSetting = {
+            page: url ? url : location.href,
+            smho: $('#smhoSelect').val(),
+            dateStart: $('#dateStart').val(),
+            dateEnd: $('#dateEnd').val(),
+            cat1: $cat1 ? {
+                value: $cat1.id,
+                text: $cat1.name ? $cat1.name : $cat1.text,
+                services: $cat1.services
+            } : null,
+            cat2: $cat2 ? {
+                value: $cat2.id,
+                text: $cat2.name,
+                services: $cat2.services
+            } : null,
+            cat3: $cat3 ? {
+                value: $cat3.id,
+                text: $cat3.name,
+                services: $cat3.services
+            } : null,
+            cat4: $cat4 ? {
+                value: $cat4.id,
+                text: $cat4.name,
+                services: $cat4.services
+            } : null,
+            theme: $theme ? {
+                value: $theme.id,
+                text: $theme.name
+            } : null,
+            engineer: $engineer ? {
+                value: $engineer.id,
+                name: $engineer.text
+            } : null,
+            location: $location ? {
+                value: $location.id,
+                name: $location.text
+            } : null,
+            division: $division ? {
+                value: $division.id,
+                name: $division.text
+            } : null,
+            overdue: $('#overdue').prop('checked'),
+            filters: {}
+        };
+        if (!~filterSetting.page.indexOf('page')) {
+            filterSetting.page += "&page=" + $('ul.pagination li.active').data('page');
+        } else {
+            filterSetting.page = filterSetting.page.slice(0, filterSetting.page.indexOf('page') - 1) + "&page=" + $('ul.pagination li.active').data('page');
+        }
+        filters.each(function (index, element) {
+            filterSetting.filters[$(element).parent().attr('for')] = $(element).find('input[type="checkbox"]').prop('checked');
+        });
+        if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 992 && $sidenav.css('display') === 'none') {
+            filterSetting.hideSideNav = true;
+        }
+        $.cookie('filterSetting', JSON.stringify(filterSetting));
+    }
+}
+
+function showSideNav() {
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 992) {
+        $sidenav.toggleClass('crutch', false);
+        $sidenav.sideNav('hide');
+        $sidenav.show();
+    } else {
+        if ($sidenav.css('display') === 'none') {
+            $showNavBar.show();
+        } else {
+            $hideNavBar.show();
+        }
+    }
+    $('a.button-collapse.hamburger').show(0);
+    isHiddenNav = false;
+}
+
+function hideSideNav() {
+    $('#nav-mobile').sideNav('hide');
+    $sidenav.hide();
+    $showNavBar.hide();
+    $hideNavBar.hide();
+    $('a.button-collapse.hamburger').hide(0);
+    $headerFooterMain.css('padding-left', '0');
+    isHiddenNav = true;
+}
+
+function wrapper(template, user, rights){
+    var mainContainerData = {};
+    mainContainerData['fullName'] = user.fullName;
+    mainContainerData['role'] = roleToName(role);
+
+    $.ajax({
+        type: 'GET',
+        url: 'api/ticket/countByState/4'
+    }).done(function (unreadTicketsCount) {
+        var unreadCount = unreadTicketsCount && unreadTicketsCount.count ? unreadTicketsCount.count : 0;
+        renderMain(unreadCount);
+    }).fail(function () {
+        renderMain(0);
+    });
+
+    function renderMain(unreadTicketsCount) {
+        if (unreadTicketsCount > 0) {
+            mainContainerData["unreadCount"] = unreadTicketsCount;
+            /*if (router.path[0] != "main") {
+                mainContainerData.unreadState = true;
+            }*/
+        }
+        //Загружаем информацию о странице из Cookie
+        mainContainerData.actions = rights.actions;
+        mainContainerData.roles = rights.roles;
+        mainContainerData.companyId = $.cookie("currentCompany");
+
+        var menuState = getMenuStateFromJson();
+        for(var menuName in menuState) {
+            if (menuState[menuName] === 'opened') {
+                mainContainerData[menuName] = "display: block";
+                mainContainerData[menuName + "sign"] = "remove";
+            } else {
+                mainContainerData[menuName] = "";
+                mainContainerData[menuName + "sign"] = "add";
+            }
+        }
+
+        switch (role){
+            case 'master': mainContainerData.icon = 'star'; break;
+            case 'leader': mainContainerData.icon = 'supervisor_account'; break;
+            case 'senior': mainContainerData.icon = 'person'; break;
+        }
+        dust.renderSource(template, mainContainerData, function (err, out) {
+            var $bodyWrapper = $('#app');
+            $bodyWrapper.empty();
+            $bodyWrapper.append(out);
+
+            $sidenav = $('#nav-mobile');
+            $hideNavBar = $('#hideNavBar');
+            $showNavBar = $('#showNavBar');
+
+            //Навешиваем события на элементы оболочки
+
+            //Событие нажатия кнопки открывающей модал с версией сборки
+            $('#m_version').on('click', function () {
+                versionControl();
+            });
+
+            $headerFooterMain = $('header, footer, main');
+
+            //Инициализация плагина SideNav (Боковое меню)
+            var prevWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            if (prevWidth > 992) {
+                $sidenav.toggleClass('crutch', true);
+            } else {
+                $hideNavBar.hide();
+                $showNavBar.hide();
+            }
+            $(window).resize(function () {
+                var currentWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                if (prevWidth <= 992 && currentWidth > 992 && !isHiddenNav){
+                    $sidenav.toggleClass('crutch', true);
+                    $showNavBar.trigger('click');
+                } else if (prevWidth > 992 && currentWidth <= 992 && !isHiddenNav) {
+                    $sidenav.toggleClass('crutch', false);
+                    $hideNavBar.hide();
+                    $showNavBar.hide();
+                    $sidenav.show();
+                    $sidenav.sideNav('hide');
+                    $headerFooterMain.css('padding-left', '');
+                }
+                prevWidth = currentWidth;
+            });
+            $(".button-collapse").sideNav({
+                onOpen: function(){
+                    $sidenav.toggleClass('crutch', true);
+                    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= 992) {
+                        $hideNavBar.show();
+                    }
+                },
+                onClose: function(){
+                    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 992) {
+                        $sidenav.toggleClass('crutch', false);
+                    }
+                }
+            });
+
+
+            $hideNavBar.on('click', function () {
+                $sidenav.hide();
+                $('main, footer, header').css('padding-left', '0');
+                $hideNavBar.hide();
+                $showNavBar.show()
+            });
+
+            $showNavBar.on('click', function () {
+                $sidenav.show();
+                $('main, footer, header').css('padding-left', '300px');
+                $hideNavBar.show();
+                $showNavBar.hide();
+            });
+
+            var $eeMenu = $('.ee-menu-card');
+
+            //Показываем или прячем меню
+            $('#ee-menu-button').on('click', function (e) {
+                e.stopPropagation();
+                $eeMenu.toggleClass('ee-hidden');
+            });
+
+            $('body').on('click', function () {
+                if (!$eeMenu.hasClass('ee-hidden')){$eeMenu.addClass('ee-hidden')}
+            });
+
+            //Инициализация кнопки выхода
+            $('#m_logout').on('click', function (e) {
+                e.stopPropagation();
+                $.ajax({
+                    type: 'GET',
+                    url: 'api/logout',
+                    success: function () {
+                        $.cookie('sessionExpired', false);
+                        window.location = '/login';
+                    }
+                });
+            });
+
+            //Контроллер раскрытия меню
+            var collapsibleMenu = $('.collapsible-header');
+            collapsibleMenu.each(function () {
+                if (!$(this).find('i.collapce-icon').text()) {
+                    $(this).find('i.collapce-icon').text('add')
+                }
+            });
+
+            collapsibleMenu.on('click', function (e) {
+                e.preventDefault();
+                var menuOption = $(this);
+                var menuState = getMenuStateFromJson();
+                if (menuOption.nextAll('div').css('display') == 'none') {
+                    menuOption.find('i.collapce-icon').text('remove');
+                    menuOption.nextAll('div').css('display', 'block');
+                    menuState[menuOption.data('linkname')] = 'opened';
+                } else {
+                    menuOption.find('i.collapce-icon').text('add');
+                    menuOption.nextAll('div').css('display', 'none');
+                    menuState[menuOption.data('linkname')] = 'collapsed';
+                }
+                $.cookie(menuStateCookiesName, JSON.stringify(menuState));
+            });
+
+            var $breadWrapper = $('#bread_wrapper');
+            $breadWrapper.empty();
+
+            //Меняем положение стрелки при колапсе фильтров
+            $sidenav.find('.collapsible').collapsible({
+                onOpen: function(el) { $sidenav.find('.collapsible-header .badge i').toggleClass('open', true); }, // Callback for Collapsible open
+                onClose: function(el) { $sidenav.find('.collapsible-header .badge i').toggleClass('open', false); } // Callback for Collapsible close
+            });
+
+            //Меняем цвет цифр при переключении свитча
+            $sidenav.find('.switch input[type="checkbox"]').on('change', function(){
+                if (!$(this).prop('checked') && $sidenav.find('.card-panel.switch:not(.inactive):not(.hide)').length <= 1)
+                        $(this).prop('checked', true);
+                else $(this).closest('.card-panel').toggleClass('inactive');
+            });
+
+            //Инициализация datapicker
+            $sidenav.find('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15, // Creates a dropdown of 15 years to control year,
+                closeOnSelect: false, // Close upon selecting a date,
+                // Правки для достижения кроссбраузерности
+                onOpen: function () {
+                    $sidenav.css('overflow', 'hidden').css('position', 'absolute')
+                        .css('top', window.scrollY).css('z-index', '0');
+                },
+                onClose: function () {
+                    $sidenav.css('overflow', 'auto').css('position', 'fixed')
+                        .css('top', '0').css('z-index', '999');
+                    // Убираем активный элемент, чтобы при фокусе не открывался календарь
+                    document.activeElement.blur();
+                }
+            });
+
+            // Селект 2
+            $('#engineerSelect').select2({
+                containerCssClass: 'select-wrapper',
+                placeholder: "Выберите инженера",
+                ajax: {
+                    url: "/api/engineers",
+                    dataType: 'json',
+                    type: "GET",
+                    data: function (params) {
+                        return {
+                            q : params.term ? params.term : "",
+                            page : (params.page || 1) - 1
+                        };
+                    },
+                    processResults: function (data, params) {
+                        return {
+                            results : data.content,
+                            pagination : {
+                                more: !data.last
+                            }
+                        };
+                    }
+                },
+                allowClear: true,
+                escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+                templateResult: function (group) {
+                    return group.fullName;
+                },
+                templateSelection: function (group) {
+                    return group.fullName ? group.fullName : group.text;
+                },
+                width: "100%"
+            });
+            $('#locationSelect').select2({
+                containerCssClass: 'select-wrapper',
+                placeholder: "Выберите местонахождение",
+                ajax: {
+                    url: "/api/shops",
+                    dataType: 'json',
+                    type: "GET",
+                    data: function (params) {
+                        return {
+                            q : params.term ? params.term : "",
+                            page : (params.page || 1) - 1
+                        };
+                    },
+                    processResults: function (data, params) {
+                        return {
+                            results : data.content,
+                            pagination : {
+                                more: !data.last
+                            }
+                        };
+                    }
+                },
+                allowClear: true,
+                escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+                templateResult: function (group) {
+                    return group.location;
+                },
+                templateSelection: function (group) {
+                    return group.location ? group.location : group.text;
+                },
+                width: "100%"
+            });
+            $('#divisionSelect').select2({
+                containerCssClass: 'select-wrapper',
+                placeholder: "Выберите дивизион",
+                ajax: {
+                    url: "/api/orgStructure/division/",
+                    dataType: 'json',
+                    type: "GET",
+                    data: function (params) {
+                        return {
+                            q : params.term ? params.term : "",
+                            page : (params.page || 1) - 1
+                        };
+                    },
+                    processResults: function (data, params) {
+                        return {
+                            results : data.content,
+                            pagination : {
+                                more: !data.last
+                            }
+                        };
+                    }
+                },
+                allowClear: true,
+                escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+                templateResult: function (group) {
+                    return group.name;
+                },
+                templateSelection: function (group) {
+                    return group.name ? group.name : group.text;
+                },
+                language: {
+                    noResults: function (params) {
+                        return "Поиск не дал результатов";
+                    }
+                },
+                width: "100%"
+            });
+            $('#themeSelect').select2({
+                containerCssClass: 'select-wrapper',
+                placeholder: "Выберите тему обращения",
+                ajax: {
+                    url: "/api/service/",
+                    dataType: 'json',
+                    type: "GET",
+                    data: function (params) {
+                        return {
+                            q : params.term ? params.term : "",
+                            page : (params.page || 1) - 1
+                        };
+                    },
+                    processResults: function (data, params) {
+                        return {
+                            results : data.content,
+                            pagination : {
+                                more: !data.last
+                            }
+                        };
+                    }
+                },
+                allowClear: true,
+                escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+                templateResult: function (group) {
+                    return group.name;
+                },
+                templateSelection: function (group) {
+                    return group.name ? group.name : group.text;
+                },
+                width: "100%"
+            });
+            // выбор класса СМХО
+            var smhoData = [
+                { id:'B', text: 'Класс B', fullText: 'Класс инцидента B'},
+                { id:'C', text: 'Класс C', fullText: 'Класс инцидента C'},
+                { id:'D', text: 'Класс D', fullText: 'Класс инцидента D'},
+                { id:'A,B,C,D', text: 'Только СМХО', fullText: 'Только инциденты СМХО'},
+                { id:'0', text: 'Без СМХО', fullText: 'Без инцидентов СМХО'}
+            ];
+            $('#smhoSelect').select2({
+                containerCssClass: 'select-wrapper',
+                placeholder: "Выберите класс СМХО",
+                data: smhoData,
+                allowClear: true,
+                escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+                templateResult: function (group) {
+                    return group.fullText ? group.fullText : group.text;
+                },
+                templateSelection: function (group) {
+                    return group.text;
+                },
+                multiple: false,
+                width: "100%"
+            }).val(null).trigger('change');
+            (function categoriesSelect2() {
+                var catlvl1 = $('#catlvl1'),
+                    catlvl2 = $('#catlvl2'),
+                    catlvl3 = $('#catlvl3'),
+                    catlvl4 = $('#catlvl4'),
+                    theme = $('#theme'),
+                    ajaxData = [];
+                var getSelect2Object = function(url, classes) {
+                    return {
+                        containerCssClass: 'select-wrapper ' + (classes ? classes : ''),
+                        placeholder: "Выберите категорию",
+                        ajax: {
+                            url: url,
+                            dataType: 'json',
+                            type: "GET",
+                            data: function (params) {
+                                return {
+                                    q: params.term ? params.term : "",
+                                    page: (params.page || 1) - 1
+                                };
+                            },
+                            processResults: function (data, params) {
+                                data.content.forEach(function (el) {
+                                    ajaxData.push(el);
+                                });
+                                return {
+                                    results: data.content,
+                                    pagination: {
+                                        more: !data.last
+                                    }
+                                };
+                            }
+                        },
+                        allowClear: true,
+                        escapeMarkup: function (markup) {
+                            return markup;
+                        }, // let our custom formatter work
+                        templateResult: function (group) {
+                            return group.name;
+                        },
+                        templateSelection: function (group) {
+                            return group.name ? group.name : group.text;
+                        },
+                        language: {
+                            noResults: function (params) {
+                                return "Поиск не дал результатов";
+                            }
+                        },
+                        width: "100%"
+                    };
+                };
+
+                catlvl2.parent().hide(0);
+                catlvl3.parent().hide(0);
+                catlvl4.parent().hide(0);
+                theme.parent().hide(0);
+
+                catlvl1.select2(getSelect2Object("api/user/catalog/node/0/children/pageable"));
+
+                initCat(catlvl1, catlvl2);
+                initCat(catlvl2, catlvl3);
+                initCat(catlvl3, catlvl4);
+                initCat(catlvl4, theme);
+
+                // Функция инициализации n+1 ступени категоризации
+                function initCat(parentCat, childCat){
+                    parentCat.find('option:not([value="' + parentCat.val() + '"])').remove();
+                    parentCat.on("change", function () {
+                        theme.val(null);
+                        childCat.val(null).trigger('change');
+                        if (!parentCat.val()) {
+                            childCat.parent().hide(0);
+                            theme.parent().hide(0);
+                        } else {
+                            childCat.parent().show(0);
+                            var services = checkServices(parentCat.val());
+                            if (services) {
+                                childCat.parent().hide(0);
+                                initTheme(services)
+                            } else {
+                                theme.parent().hide(0);
+                                if (childCat.hasClass("select2-hidden-accessible")) {
+                                    childCat.select2('destroy');
+                                    //Если не очищать, от внутри селекта остаются выбранные в прошлый раз options и при выборе их в повторный раз имя не отображается ¯\(o_o)/¯
+                                    childCat.empty();
+                                }
+                                childCat.select2(getSelect2Object("api/user/catalog/node/" + parentCat.val() + "/children/pageable", 'margins'));
+                            }
+                        }
+                    });
+                }
+
+                function checkServices(id){
+                    if (ajaxData) {
+                        return ajaxData.find(function(el){
+                            if (el.id === +id) {
+                                return el.services;
+                            }
+                        });
+                    }
+                    return false;
+                }
+
+                function initTheme(services){
+                    theme.parent().show();
+                    if (theme.hasClass("select2-hidden-accessible")) {
+                        theme.select2('destroy');
+                    }
+                    theme.select2({
+                        containerCssClass: 'select-wrapper margins',
+                        placeholder: "Выберите тему",
+                        data: services.services,
+                        allowClear: true,
+                        minimumResultsForSearch: 'infinity',
+                        escapeMarkup: function (markup) {
+                            return markup;
+                        }, // let our custom formatter work
+                        templateResult: function (group) {
+                            return group.name;
+                        },
+                        templateSelection: function (group) {
+                            return group.name ? group.name : group.text;
+                        },
+                        width: "100%"
+                    });
+                    theme.val(null).trigger('change');
+                }
+            })();
+
+            // Смена типа записей
+            var postBtn = $('.type button');
+            postBtn.on('click', function(){
+                var stateId = $(this).attr('data-type');
+                location.hash = "#" + stateId + "?state=opened";
+            });
+
+            loadContent();
+        });
+    }
+}
+function getMenuStateFromJson() {
+    var menuStateString = $.cookie(menuStateCookiesName);
+    if (menuStateString && menuStateString == 'null') {
+        $.removeCookie(menuStateCookiesName);
+        return {};
+    }
+    if (menuStateString) {
+        try {
+            return JSON.parse(menuStateString);
+        }catch (e) {
+            $.removeCookie(menuStateCookiesName);
+            return {};
+        }
+    } else {
+        $.removeCookie(menuStateCookiesName);
+        return {};
+    }
+}
+//Функция, вызывающая модал с текущей версией сборки
+function versionControl() {
+    $.ajax({
+        url: 'api/appInfo',
+        type: 'GET'
+    }).done(function (versionData) {
+        var $versionModal = $('#version_modal');
+        $versionModal.children('div').empty();
+        $versionModal.children('div').append("<h5>" + versionData.name + "</h5><hr><p>" + versionData.version + "</p><p>" + versionData.buildTimestamp + "</p>");
+        $versionModal.modal('open');
+    });
+}

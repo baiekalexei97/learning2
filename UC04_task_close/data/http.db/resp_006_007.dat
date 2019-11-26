@@ -1,0 +1,292 @@
+<div class="container ticket-container">
+    <div class="card">
+        <div class="ee-st-content">
+        <div class="row" style="margin-bottom: 0">
+        <div class="col l12 m12 s12">
+            <div class="row">
+                <div class="col l1 m1 s0">
+                    {#logoId}
+                        <img id="image_holder" src="/api/catalog/logo/{logoId}" onerror="this.src ='../images/custom.png'" class="circle responsive-img ticket-pic">
+                    {:else}
+                        <img class="ticket-pic" id="image_holder" src="../images/custom.png">
+                    {/logoId}
+                </div>
+                <div class="col l8 m8 s12">
+                    <h2 id="ticket_id" data-context="{id}" class="card-title-a">{header}</h2>
+                    {?history}<span class="custom-badge">Архивный инцидент</span>{/history}
+                </div>
+                <div class="col l3 m3 s12">
+                    <div class="ee-st-badge">
+                        <p style="color: #000;">Статус: <span class="state-pad state-color-{ticketStateId}">{ticketState}</span></p>
+                    </div>
+                </div>
+            </div>
+            {?text}
+            <div class="row">
+                <div class="col l12 m12 s12">
+                    <strong class="ee-st-label">Описание обращения</strong>
+                    <p id="collapsed_text" class="ee-st-text">{text}</p>
+                </div>
+            </div>
+            {/text}
+            {!{?applicant}
+            <div class="row">
+                <div class="col l12 m12 s12">
+                    <strong class="ee-st-label">Контакты</strong>
+                    <p class="ee-st-text">{?applicant.fullName}ФИО: {applicant.fullName} {/applicant.fullName}{?applicant.phone}Рабочий тел.: {applicant.phone} {/applicant.workPhone}{?applicant.email}Эл. адрес: <a href="mailto:{applicant.email}">{applicant.email}</a>{/applicant.email}{?applicant.address} Адрес: {applicant.address}{/applicant.address}</p>
+                </div>
+            </div>
+            {/applicant}!}
+            {!{?inventoryNumber}
+            <div class="row">
+                <div class="col l12 m12 s12">
+                    <strong class="ee-st-label">Инвентарный номер</strong>
+                    <p class="ee-st-text">{inventoryNumber}</p>
+                </div>
+            </div>
+            {/inventoryNumber}!}
+            {?files}
+             <div class="row" style="margin-bottom: 0;">
+                 <div class="col l12 m12 s12">
+                     <strong class="ee-st-label">Прикрепленные файлы</strong>
+                     <div class="row" style="margin-top: 20px;">
+                         <div class="col l12 m12 s12">
+                            {#files}
+                            <a href="/api/ticket/file/{.id}">
+                                <div class="chip">
+                                    <img src="/api/ticket/file/{.id}/S"
+                                         onerror="this.src ='/images/attachment.png'">
+                                    {.name}
+                                </div>
+                            </a>
+                            {/files}
+                         </div>
+                     </div>
+                 </div>
+             </div>
+            {/files}
+
+            <div class="ee-st-card">
+                <div class="row" style="margin-bottom: 0;">
+                    <div class="col l6 m6 s6">
+                        <p class="ee-st-label">Номер инцидента: <span class="ee-st-text">INC_{id}</span></p>
+                        {?taskId}<p class="ee-st-label">Номер задачи:
+                            <a href="#task/{taskId}" class="ee-st-text"> TSK_{taskId}</a></p>{/taskId}
+                        {?inventoryNumber}<p class="ee-st-label">Инвентарный номер: <span class="ee-st-text">{inventoryNumber}</span></p>{/inventoryNumber}
+                        <p class="ee-st-label">Адрес объекта: <span class="ee-st-text">{address}</span></p>
+                        {!<p class="ee-st-label">Класс инцидента СМХО: <span class="ee-st-text"></span></p>!}
+                        {?smhoClass}
+                            <p class="ee-st-label">Инициатор: <span class="ee-st-text">АСКО</span></p>
+                        {:else}
+                            {?applicant}<p class="ee-st-label">Инициатор: <span class="ee-st-text">{applicant.fullName} {?applicant.phone}(<i>тел.:</i> {applicant.phone}){/applicant.phone}</span></p>{/applicant}
+                        {/smhoClass}
+                        {?director}<p class="ee-st-label">Директор: <span class="ee-st-text">{director.fullName} {?director.phone}(<i>тел.:</i> {director.phone}){/director.phone}</span></p>{/director}
+                        {?engineerName}<p class="ee-st-label">Ответственный инженер: <span class="ee-st-text">{engineerName}</span></p>{/engineerName}
+                    </div>
+                    <div class="col l6 m6 s6">
+                        {?specialistDate}<p class="ee-st-label">Дата ожидаемого приезда специалиста: <span class="ee-st-text">{specialistDate}</span></p>{/specialistDate}
+                        {?slaDate}<p class="ee-st-label sla-date">Дата решения (план): <span class="ee-st-text">{slaDate}
+                            {?slaDateAmended}<i class="material-icons inherit-font">access_time</i>{/slaDateAmended}</span></p>{/slaDate}
+                        {?finishDate}<p class="ee-st-label">Дата решения (факт): <span class="ee-st-text">{finishDate}</span></p>{/finishDate}
+                        <p class="ee-st-label">Дата создания: <span class="ee-st-text">{createDate}</span></p>
+                        <p class="ee-st-label">Дата обновления: <span class="ee-st-text updateDate">{lastEditDate}</span></p>
+                    </div>
+                    <div class="col s12">
+                        {@eq key=ticketStateId value="4" type="number"}
+                            <h5 class="card-title">Инцидент отменен</h5>
+                            <p class="ee-st-label">Имя отменившего: <span class="ee-st-text">{cancelUserName}</span></p>
+                            <p class="ee-st-label">Дата отмены: <span class="ee-st-text">{cancelTime}</span></p>
+                        {/eq}
+                    </div>
+                </div>
+                <div class="row">
+
+                    {!}
+                    <div class="col l6 m6 s6">
+                        <p class="ee-st-label">Крайний срок решения: <span class="ee-st-text">{slaDate}</span></p>
+                    </div>
+                    {!}
+                </div>
+            </div>
+
+            <ul id="ticketAccordion" class="collapsible support-menu" data-collapsible="expandable">
+                <li>
+                    <div class="collapsible-header">Классификация<i class="collapsible-arrow material-icons right">&#xE313;</i></div>
+                    <div class="collapsible-body">
+                        <p><strong class="ee-st-label">Уровень 1: </strong>{category1}</p>
+                        <p><strong class="ee-st-label">Уровень 2: </strong>{category2}</p>
+                        {?category3}<p><strong class="ee-st-label">Уровень 3: </strong>{category3}</p>{/category3}
+                        {?category4}<p><strong class="ee-st-label">Уровень 4: </strong>{category4}</p>{/category4}
+                        {?smhoClass}
+                            <div class="smho {@eq key=openCommunications value="0" type="number"}green{/eq}">
+                                Класс СМХО: {smhoClass} ({openCommunications}/{totalCommunications})
+                            </div>
+                        {/smhoClass}
+                    </div>
+                </li>
+                {@arrayContainsAny array=actions id="assignContractor,slaDateChange,solveTicket,cancelTicket"}
+                    <li class="text-left">
+                        <div class="collapsible-header active">Действия<i class="collapsible-arrow material-icons right">&#xE313;</i></div>
+                        <div class="collapsible-body">
+                            {@arrayContains array=actions id="assignContractor"}
+                                <p class="small-title">Изменить подрядчика</p>
+                                <div class="input-field">
+                                    <select id="select-contractor"></select>
+                                </div>
+                                <a id="changeContractor" class="waves-effect waves-light btn comment-button mt-15" disabled>Изменить</a>
+                                <div id="change_contractor_spinner" class="progress">
+                                    <div class="indeterminate"></div>
+                                </div>
+                            {/arrayContains}
+                            {@arrayContains id="slaDateChange" array=actions}
+                                <div class="slaDateChange">
+                                    <p class="small-title">Запланированная дата окончания работ</p>
+                                    <input id="date" type="text" class="datepicker" placeholder="Введите дату">
+                                    <input id="time" type="text" class="timepicker" placeholder="Введите время"> <br>
+                                    <a id="timeBtn" class="waves-effect waves-light btn comment-button">Сохранить</a>
+                                    <div id="slaDate_spinner" class="progress">
+                                        <div class="indeterminate"></div>
+                                    </div>
+                                </div>
+                            {/arrayContains}
+                            {@arrayContainsAny array=actions id="solveTicket,cancelTicket"}
+                                <p class="small-title">Действия над инцидентом</p>
+                                {@arrayContains id="solveTicket" array=actions}<button id="approve_ticket" class="waves-effect waves-light btn ">Закрыть инцидент</button>{/arrayContains}
+                                {@arrayContains id="cancelTicket" array=actions}<button id="cancel_ticket" class="waves-effect waves-light btn {@arrayContains id="solveTicket" array=actions}ml-10{/arrayContains}">Отменить</button>{/arrayContains}
+                            {/arrayContainsAny}
+                        </div>
+                    </li>
+                {/arrayContainsAny}
+            </ul>
+
+            <div class="row" style="margin-top: 10px; margin-bottom: 0;">
+                <div class="col l12 m12 s12" style="text-align: right;">
+                    <a onclick="history.back();" class="waves-effect waves-light btn card-btn blank-button mr-10">Назад</a>
+                    {@arrayContains array=actions id="printAct"}
+                        <a class="waves-effect waves-light btn card-btn blank-button mr-10 printAct">Печать акта</a>
+                    {/arrayContains}
+                    {?taskId}<a class="waves-effect waves-light btn card-btn comment-button" href="#task/{taskId}">К задаче</a>{/taskId}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col l12 s12 m12">
+            <ul class="comment-ul" id="comment_wrapper"></ul>
+        </div>
+    </div>
+    {@arrayContains array=actions id="comment"}
+    <div class="card">
+        <div class="ee-st-comments">
+            <div class="row" style="margin-bottom: 0">
+                <div class="col l12 m12 s12">
+                    <strong class="ee-st-label">Оставить комментарий для подрядчика и директора магазина</strong>
+                    <div class="input-field">
+                        <textarea id="comment_text" title="Поле для комментариев" placeholder="Введите комментарий" class="materialize-textarea ee-st-comment-area"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 0">
+                <div class="col l12 m12 s12">
+                    <div id="commentuploader">Upload</div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 0">
+                <div class="col l12 m12 s12" style="text-align: right;">
+                    <a id="send_comment" class="waves-effect waves-light btn comment-button">Отправить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {/arrayContains}
+</div>
+
+<div id="like_modal" class="modal">
+    <i class="material-icons modal-close close-modal-cross">close</i>
+    <div class="modal-content">
+        <div class="row">
+            <div class="col l12 m12 s12">
+                <h5 class="center" style="margin-bottom: 50px;">Пожалуйста, оцените качество решения вашего вопроса</h5>
+            </div>
+            <div class="row" style="margin-top: 40px;">
+                <div class="col l6 m6 s6">
+                    <a id="i_dont_like_it" class="like-btn red right"><i class="material-icons">thumb_down</i></a>
+                </div>
+                <div class="col l6 m6 s6">
+                    <a id="i_like_it" class="like-btn green"><i class="material-icons">thumb_up</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="return_modal" class="modal">
+    <i class="material-icons modal-close close-modal-cross">close</i>
+    <div class="modal-content">
+        <div class="row">
+            <div class="col l12 s12 m12">
+                <h4 class="modal-h">Введите причину возврата в работу</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l12 m12 s12">
+                <div class="input-field">
+                    <textarea placeholder="Причина возврата" id="return_comment" class="materialize-textarea ee-st-comment-area"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l12 m12 s12 modal-buttons">
+                <a onclick="$(this).modal('close')" class="waves-effect waves-light btn blank-button" style="margin-right: 15px">Закрыть</a>
+                <a id="return_button" href="#" class="waves-effect waves-light btn corporate-colour-button">Отправить</a>
+            </div>
+        </div>
+    </div>
+</div>
+{@arrayContains array=actions id="solveTicket"}
+<div id="approveModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col l12 m12 s12">
+                <p>Инцидент №{id} решен {!Оцените решение вашей проблемы!}</p>
+            </div>
+            {!<div class="col s12 text-center rate"><i id="star_1" class="material-icons">star_border</i>
+                <i id="star_2" class="material-icons">star_border</i>
+                <i id="star_3" class="material-icons">star_border</i>
+                <i id="star_4" class="material-icons">star_border</i>
+                <i id="star_5" class="material-icons">star_border</i></div>!}
+        </div>
+        <div class="row">
+            <div class="col l12 m12 s12" style="text-align: right;">
+                <a class="modal-action modal-close waves-effect waves-green btn-flat printAct">ОК</a>
+                <div id="rate_spinner" class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>{/arrayContains}
+<div id="date_changed_modal" class="modal">
+    <div class="modal-content">
+        <p>Дата успешно установлена</p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-action modal-close waves-effect waves-green btn-flat">Ок</a>
+    </div>
+</div>
+<div id="messageModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col l12 m12 s12">
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l12 m12 s12" style="text-align: right;">
+                <a href="/" class="modal-action modal-close waves-effect waves-green btn-flat" id="add_ticket_left_decline">Ок</a>
+            </div>
+        </div>
+    </div>
+</div>

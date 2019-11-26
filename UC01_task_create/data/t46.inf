@@ -1,0 +1,11 @@
+[t46]
+FileName1=t46.json
+URL1=http://learning2.pflb.ru:56902/api/user/catalog/node/165/service/
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_46.xml
+RequestHeaderFile=t46_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t46_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,11 @@
+[t12]
+FileName1=t12_149370.json
+URL1=http://learning2.pflb.ru:56902/api/task/149370
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_12.xml
+RequestHeaderFile=t12_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t12_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

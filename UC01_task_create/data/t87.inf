@@ -1,0 +1,15 @@
+[t87]
+FileName1=t87_4.json
+URL1=http://learning2.pflb.ru:56902/api/ticket/countByState/4
+Total=3
+ContentType=application/json
+SnapshotXmlFile=snapshot_87.xml
+RequestHeaderFile=t87_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t87_ResponseHeader.txt
+FileName2=t87_tickets.html
+URL2=http://learning2.pflb.ru:56902/engineer/tickets/tickets.dust
+FileName3=t87_tickets.html
+URL3=http://learning2.pflb.ru:56902/engineer/tickets/tickets.js
+[ProtocolInfo]
+ProtocolId=QTWeb

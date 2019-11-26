@@ -1,0 +1,10 @@
+GET / HTTP/1.1
+Accept: text/html, application/xhtml+xml, image/jxr, */*
+Referer: http://learning2.pflb.ru:56902/login
+Accept-Language: ru-RU
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: learning2.pflb.ru:56902
+Connection: Keep-Alive
+Cookie: currentCompany=0; currentUser=master; SESSION=1321f2ca-e3bd-4f46-ba77-1df77589e4ae
+

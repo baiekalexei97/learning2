@@ -1,0 +1,11 @@
+GET /api/ticket/countByState/ HTTP/1.1
+Referer: http://learning2.pflb.ru:56902/
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Accept-Language: ru-RU
+Accept: */*
+Connection: Keep-Alive
+Host: learning2.pflb.ru:56902
+Cookie: SESSION=c1cf5472-3b41-4b7d-8298-d563c8ea395f
+

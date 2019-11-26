@@ -1,0 +1,17 @@
+[t10]
+FileName1=t10.json
+URL1=http://learning2.pflb.ru:56902/api/task/?state=1&page=0&size=10
+Total=4
+ContentType=application/json
+SnapshotXmlFile=snapshot_10.xml
+RequestHeaderFile=t10_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t10_ResponseHeader.txt
+FileName2=t10_task.html
+URL2=http://learning2.pflb.ru:56902/engineer/task/task.dust
+FileName3=t10_task.html
+URL3=http://learning2.pflb.ru:56902/engineer/task/task.js
+FileName4=t10_logo-5ka.png
+URL4=http://learning2.pflb.ru:56902/images/logo-5ka.png
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,13 @@
+[t19]
+FileName1=t19_checkLogin.json
+URL1=http://learning2.pflb.ru:56902/api/checkLogin
+Total=2
+ContentType=application/json
+SnapshotXmlFile=snapshot_19.xml
+RequestHeaderFile=t19_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t19_ResponseHeader.txt
+FileName2=t19_149370.pdf
+URL2=http://learning2.pflb.ru:56902/api/report/149370?timeZoneOffset=3
+[ProtocolInfo]
+ProtocolId=QTWeb

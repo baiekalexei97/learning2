@@ -1,0 +1,15 @@
+[t39]
+FileName1=t39.json
+URL1=http://learning2.pflb.ru:56902/api/ticket/?state=-1,0,1,5&page=0&size=10
+Total=3
+ContentType=application/json
+SnapshotXmlFile=snapshot_39.xml
+RequestHeaderFile=t39_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t39_ResponseHeader.txt
+FileName2=t39_catalog.html
+URL2=http://learning2.pflb.ru:56902/engineer/catalog/catalog.dust
+FileName3=t39_catalog.html
+URL3=http://learning2.pflb.ru:56902/engineer/catalog/catalog.js
+[ProtocolInfo]
+ProtocolId=QTWeb

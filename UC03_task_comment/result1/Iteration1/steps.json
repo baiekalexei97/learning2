@@ -1,0 +1,50 @@
+[
+    {
+        "stepId": "STEP8",
+        "stepName": "Url: countByState_2",
+        "infFile": "t9.inf",
+        "time": 1574773758763
+    },
+    {
+        "stepId": "STEP9",
+        "stepName": "Custom Request: task",
+        "infFile": "t11.inf",
+        "time": 1574773759379
+    },
+    {
+        "stepId": "STEP10",
+        "stepName": "Url: {TaskID}",
+        "infFile": "t12.inf",
+        "time": 1574773759979
+    },
+    {
+        "stepId": "STEP11",
+        "stepName": "Url: checkLogin_2",
+        "infFile": "t13.inf",
+        "time": 1574773760058
+    },
+    {
+        "stepId": "STEP12",
+        "stepName": "Url: comment",
+        "infFile": "t14.inf",
+        "time": 1574773760177
+    },
+    {
+        "stepId": "STEP13",
+        "stepName": "Submit Data: file",
+        "infFile": "t16.inf",
+        "time": 1574773760400
+    },
+    {
+        "stepId": "STEP14",
+        "stepName": "Custom Request: comment_2",
+        "infFile": "t17.inf",
+        "time": 1574773760719
+    },
+    {
+        "stepId": "STEP15",
+        "stepName": "Url: comment_3",
+        "infFile": "t18.inf",
+        "time": 1574773760828
+    }
+]
