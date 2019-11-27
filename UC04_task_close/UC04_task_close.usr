@@ -1,7 +1,7 @@
 [General]
 Type=Multi
 DefaultCfg=default.cfg
-ParameterFile=
+ParameterFile=UC04_task_close.prm
 GlobalParameterFile=
 NewFunctionHeader=1
 RunType=cci

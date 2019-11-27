@@ -89,7 +89,7 @@ Action()
 		"Snapshot=t15.inf", 
 		"Mode=HTML", 
 		ITEMDATA, 
-		"Name=files", "Value=C:\\Users\\student\\Documents\\XDesk task details\\task_comment_1.txt", "File=Yes", ENDITEM, 
+		"Name=files", "Value=C:\\Users\\student\\Documents\\XDesk task details\\{filename_comment}", "File=Yes", ENDITEM, 
 		LAST);
 
 	lr_end_transaction("UC03_TR04_commentFile",LR_AUTO);

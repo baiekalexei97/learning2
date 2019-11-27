@@ -20,8 +20,8 @@ vuser_init()
 		"Snapshot=t2.inf", 
 		"Mode=HTML", 
 		ITEMDATA, 
-		"Name=login", "Value=master", ENDITEM, 
-		"Name=password", "Value=123", ENDITEM, 
+		"Name=login", "Value={login}", ENDITEM, 
+		"Name=password", "Value={password}", ENDITEM, 
 		"Name=rememberMe", "Value=false", ENDITEM, 
 		LAST);
 

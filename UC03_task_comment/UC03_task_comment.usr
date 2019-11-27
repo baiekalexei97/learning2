@@ -1,7 +1,7 @@
 [General]
 Type=Multi
 DefaultCfg=default.cfg
-ParameterFile=
+ParameterFile=UC03_task_comment.prm
 GlobalParameterFile=
 NewFunctionHeader=1
 RunType=cci

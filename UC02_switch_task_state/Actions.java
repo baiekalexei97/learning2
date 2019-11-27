@@ -36,10 +36,11 @@ public class Actions
 	lr.start_transaction("Database_Query_1");
 	database_query("insert into task(id,change_id,ticket_id,guid,header,text,priority_id,state_id,client_id," +
 	               "solution_group_id,create_date,sync_mask,last_edit_date,last_edit_user_login,engineer_id," +
-	               "contractor_id,external_id,external_system) select id, 'IDC2D620524153zdzPWAoX9OFgW4UB'" +
-	               ", id, 'd830c5ee-9b77-4bd1-879a-0c4d2c282a67', header, text, '3', '1', applicant_id, '9'" +
-	               ", create_date,'0', last_edit_date, last_edit_user_login,'103','102','TSK_1800000'" +
-	               ", external_system from ticket where rownum < 2 and state_id = -1");
+	               "contractor_id,external_id,external_system) " +
+	               "select id, 'IDC2D620524153zdzPWAoX9OFgW4UB', id, 'd830c5ee-9b77-4bd1-879a-0c4d2c282a67'," +
+	               "header, text, '3', '1', applicant_id, '9', create_date,'0', last_edit_date," +
+	               "last_edit_user_login,'103','102','TSK_1800000', external_system " +
+	               "from ticket where rownum < 2 and state_id = -1");
 	lr.end_transaction("Database_Query_1", lr.AUTO);
 
 	lr.start_transaction("Database_Query_2");
@@ -70,7 +71,7 @@ public class Actions
 	    try{
 	    connection.rollback();
 	    }catch(SQLException e2){
-         e2.printStackTrace();
+         lr.log_message("Caught Exception During Rollback: " + e2.getMessage());
 	    }
 	    return 1;
 	}
