@@ -1,7 +1,7 @@
 [Profile Actions]
 MercIniTreeFather=""
 MercIniTreeSectionName="Profile Actions"
-Profile Actions name=vuser_init,CreateOrder,vuser_end
+Profile Actions name=vuser_init,CreateOrder,Login,Logout,vuser_end
 [RunLogicEndRoot]
 MercIniTreeFather=""
 MercIniTreeSectionName="RunLogicEndRoot"
@@ -53,9 +53,9 @@ RunLogicObjectKind="Action"
 [RunLogicRunRoot]
 MercIniTreeFather=""
 MercIniTreeSectionName="RunLogicRunRoot"
-MercIniTreeSons="CreateOrder"
+MercIniTreeSons="Login,CreateOrder,Logout"
 Name="Run"
-RunLogicActionOrder="CreateOrder"
+RunLogicActionOrder="Login,CreateOrder,Logout"
 RunLogicActionType="VuserRun"
 RunLogicNumOfIterations="1"
 RunLogicObjectKind="Group"
@@ -64,5 +64,17 @@ RunLogicRunMode="Sequential"
 MercIniTreeFather="RunLogicRunRoot"
 MercIniTreeSectionName="CreateOrder"
 Name="CreateOrder"
+RunLogicActionType="VuserRun"
+RunLogicObjectKind="Action"
+[RunLogicRunRoot:Login]
+MercIniTreeFather="RunLogicRunRoot"
+MercIniTreeSectionName="Login"
+Name="Login"
+RunLogicActionType="VuserRun"
+RunLogicObjectKind="Action"
+[RunLogicRunRoot:Logout]
+MercIniTreeFather="RunLogicRunRoot"
+MercIniTreeSectionName="Logout"
+Name="Logout"
 RunLogicActionType="VuserRun"
 RunLogicObjectKind="Action"

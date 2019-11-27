@@ -25,6 +25,8 @@ ScriptLocale=ru-RU
 [Actions]
 vuser_init=vuser_init.c
 Action=Action.c
+Login=Login.c
+Logout=Logout.c
 vuser_end=vuser_end.c
 [RunLogicFiles]
 Default Profile=default.usp
@@ -37,30 +39,38 @@ globals.h=
 [Modified Actions]
 vuser_init=1
 Action=1
+Login=1
+Logout=1
 vuser_end=1
 [Recorded Actions]
 vuser_init=0
 Action=1
+Login=0
+Logout=0
 vuser_end=0
 [Replayed Actions]
 vuser_init=1
 Action=1
+Login=1
+Logout=1
 vuser_end=1
 [Interpreters]
 vuser_init=cci
 Action=cci
+Login=cci
+Logout=cci
 vuser_end=cci
 [TransactionsOrder]
-Order="UC04_TR01_login__*delimiter*__UC04_TR02_tasks__*delimiter*__UC04_TR03_selectTask__*delimiter*__UC04_TR04_ToOrder__*delimiter*__UC04_TR05_closeOrder__*delimiter*__UC03_TR06_logout"
+Order="UC04_TR02_tasks__*delimiter*__UC04_TR03_selectTask__*delimiter*__UC04_TR04_ToOrder__*delimiter*__UC04_TR05_closeOrder__*delimiter*__UC04_TR01_login__*delimiter*__UC03_TR06_logout"
 [StateManagement]
-LastReplayStatus=1
+LastReplayStatus=3
 [ActiveReplay]
 LastReplayedRunName=result1
 ActiveRunName=result1
 [Transactions]
-UC04_TR01_login=
 UC04_TR02_tasks=
 UC04_TR03_selectTask=
 UC04_TR04_ToOrder=
 UC04_TR05_closeOrder=
+UC04_TR01_login=
 UC03_TR06_logout=

@@ -2,5 +2,7 @@
 SnapshotIndex=I1_vuser_init
 [Action]
 SnapshotIndex=I1_Action
+[Login]
+SnapshotIndex=I1_Login
 [vuser_end]
 SnapshotIndex=I1_vuser_end

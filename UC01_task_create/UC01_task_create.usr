@@ -25,6 +25,8 @@ ScriptLocale=ru-RU
 [Actions]
 vuser_init=vuser_init.c
 CreateOrder=CreateOrder.c
+Login=Login.c
+Logout=Logout.c
 vuser_end=vuser_end.c
 [RunLogicFiles]
 Default Profile=default.usp
@@ -37,28 +39,35 @@ globals.h=
 [Modified Actions]
 vuser_init=1
 CreateOrder=1
+Login=1
+Logout=1
 vuser_end=1
 [Recorded Actions]
 vuser_init=0
 CreateOrder=1
+Login=0
+Logout=0
 vuser_end=0
 [Replayed Actions]
 vuser_init=1
 CreateOrder=1
+Login=1
+Logout=1
 vuser_end=1
 [Interpreters]
 vuser_init=cci
 CreateOrder=cci
+Login=cci
+Logout=cci
 vuser_end=cci
 [TransactionsOrder]
-Order="UC01_TR01_login__*delimiter*__UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR07_File__*delimiter*__UC01_TR08_descFinish__*delimiter*__UC01_TR09_descFinishOK__*delimiter*__UC01_TR11_logout1"
+Order="UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR07_File__*delimiter*__UC01_TR08_descFinish__*delimiter*__UC01_TR09_descFinishOK__*delimiter*__UC01_TR01_login__*delimiter*__UC01_TR11_logout1"
 [StateManagement]
 LastReplayStatus=1
 [ActiveReplay]
 LastReplayedRunName=result1
 ActiveRunName=result1
 [Transactions]
-UC01_TR01_login=
 UC01_TR02_NewOrder=
 UC01_TR03_Location1=
 UC01_TR04_theme1=
@@ -67,4 +76,5 @@ UC01_TR06_inventoryNum=
 UC01_TR07_File=
 UC01_TR08_descFinish=
 UC01_TR09_descFinishOK=
+UC01_TR01_login=
 UC01_TR11_logout1=

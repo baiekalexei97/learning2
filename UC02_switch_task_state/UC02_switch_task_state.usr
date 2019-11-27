@@ -4,7 +4,7 @@ DefaultCfg=default.cfg
 LastActiveAction=Actions
 MajorVersion=12
 MinorVersion=55
-ParameterFile=
+ParameterFile=UC02_switch_task_state.prm
 GlobalParameterFile=
 RunType=Java-Interpreter
 NewFunctionHeader=1
@@ -49,12 +49,9 @@ vuser_init=Java-Interpreter
 Actions=Java-Interpreter
 vuser_end=Java-Interpreter
 [TransactionsOrder]
-Order="Database_Query_1__*delimiter*__Database_Query_2"
+Order=
 [StateManagement]
-LastReplayStatus=1
+LastReplayStatus=0
 [ActiveReplay]
 LastReplayedRunName=
 ActiveRunName=
-[Transactions]
-Database_Query_1=
-Database_Query_2=

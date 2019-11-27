@@ -1,42 +1,52 @@
 [
     {
+        "transactionName": "UC01_TR01_login",
+        "rawStartTime": 1574854524892,
+        "rawEndTime": 1574854526422
+    },
+    {
         "transactionName": "UC01_TR02_NewOrder",
-        "rawStartTime": 1574847828431,
-        "rawEndTime": 1574847828561
+        "rawStartTime": 1574854526600,
+        "rawEndTime": 1574854526733
     },
     {
         "transactionName": "UC01_TR03_Location1",
-        "rawStartTime": 1574847828626,
-        "rawEndTime": 1574847829199
+        "rawStartTime": 1574854526808,
+        "rawEndTime": 1574854527330
     },
     {
         "transactionName": "UC01_TR04_theme1",
-        "rawStartTime": 1574847829262,
-        "rawEndTime": 1574847829617
+        "rawStartTime": 1574854527388,
+        "rawEndTime": 1574854527801
     },
     {
         "transactionName": "UC01_TR05_Description",
-        "rawStartTime": 1574847829680,
-        "rawEndTime": 1574847829804
+        "rawStartTime": 1574854527866,
+        "rawEndTime": 1574854527987
     },
     {
         "transactionName": "UC01_TR06_inventoryNum",
-        "rawStartTime": 1574847829871,
-        "rawEndTime": 1574847829988
+        "rawStartTime": 1574854528059,
+        "rawEndTime": 1574854528178
     },
     {
         "transactionName": "UC01_TR07_File",
-        "rawStartTime": 1574847830052,
-        "rawEndTime": 1574847830261
+        "rawStartTime": 1574854528242,
+        "rawEndTime": 1574854528419
     },
     {
         "transactionName": "UC01_TR08_descFinish",
-        "rawStartTime": 1574847830322,
-        "rawEndTime": 1574847830658
+        "rawStartTime": 1574854528472,
+        "rawEndTime": 1574854529005
     },
     {
         "transactionName": "UC01_TR09_descFinishOK",
-        "rawStartTime": 1574847830721,
-        "rawEndTime": 1574847833802
+        "rawStartTime": 1574854529073,
+        "rawEndTime": 1574854530983
+    },
+    {
+        "transactionName": "UC01_TR11_logout1",
+        "rawStartTime": 1574854531145,
+        "rawEndTime": 1574854531298
     }
 ]

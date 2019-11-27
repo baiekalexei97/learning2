@@ -1,14 +1,14 @@
 Action()
 {
 
-	lr_start_transaction("UC03_TR02_tasks");
+	lr_start_transaction("/api/task/countByState/");
 
-	web_url("countByState_2", 
-		"URL=http://learning2.pflb.ru:56902/api/task/countByState/", 
+	web_url("/api/task/countByState/", 
+		"URL=http://{uri}:{port}/api/task/countByState/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{uri}:{port}/", 
 		"Snapshot=t9.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -18,13 +18,13 @@ Action()
 	    "SelectAll=Yes",	           
 	    LAST);
 
-	web_custom_request("task", 
-		"URL=http://learning2.pflb.ru:56902/api/task/?state=1&page=0&size=10", 
+	web_custom_request("/api/task/?state=1&page=0&size=10", 
+		"URL=http://{uri}:{port}/api/task/?state=1&page=0&size=10", 
 		"Method=GET", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{uri}:{port}/", 
 		"Snapshot=t10.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8",  
@@ -38,32 +38,32 @@ Action()
 
 	lr_start_transaction("UC03_TR03_selectTask");
 
-	web_url("{TaskID}", 
-		"URL=http://learning2.pflb.ru:56902/api/task/{TaskID}", 
+	web_url("/api/task/{TaskID}", 
+		"URL=http://{uri}:{port}/api/task/{TaskID}", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{uri}:{port}/", 
 		"Snapshot=t12.inf", 
 		"Mode=HTML", 
 		LAST);
 
-	web_url("checkLogin_2", 
-		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 
+	web_url("/api/checkLogin", 
+		"URL=http://{uri}:{port}/api/checkLogin", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{uri}:{port}/", 
 		"Snapshot=t13.inf", 
 		"Mode=HTML", 
 		LAST);
 
-	web_url("comment", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/{TaskID}/comment/", 
+	web_url("/api/ticket/{TaskID}/comment/", 
+		"URL=http://{uri}:{port}/api/ticket/{TaskID}/comment/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{uri}:{port}/", 
 		"Snapshot=t14.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -79,13 +79,13 @@ Action()
 		"QueryString=$..id",           
 	    LAST);
 
-	web_submit_data("file", 
-		"Action=http://learning2.pflb.ru:56902/api/ticket/file/", 
+	web_submit_data("/api/ticket/file/", 
+		"Action=http://{uri}:{port}/api/ticket/file/", 
 		"Method=POST", 
 		"EncType=multipart/form-data", 
 		"TargetFrame=", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{uri}:{port}/", 
 		"Snapshot=t15.inf", 
 		"Mode=HTML", 
 		ITEMDATA, 
@@ -98,25 +98,25 @@ Action()
 
 	lr_start_transaction("UC03_TR05_commentFinish");
 
-	web_custom_request("comment_2", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/{TaskID}/comment/", 
+	web_custom_request("/api/ticket/{TaskID}/comment/", 
+		"URL=http://{uri}:{port}/api/ticket/{TaskID}/comment/", 
 		"Method=POST", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{uri}:{port}/", 
 		"Snapshot=t16.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 
-		"Body={\"text\":\"Comment(leha)\",\"files\":[{FileID}]}", 
+		"Body={\"text\":\"{comment}\",\"files\":[{FileID}]}", 
 		LAST);
 
-	web_url("comment_3", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/{TaskID}/comment/", 
+	web_url("/api/ticket/{TaskID}/comment/", 
+		"URL=http://{uri}:{port}/api/ticket/{TaskID}/comment/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{uri}:{port}/", 
 		"Snapshot=t17.inf", 
 		"Mode=HTML", 
 		LAST);

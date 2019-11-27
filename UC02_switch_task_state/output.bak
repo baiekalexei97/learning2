@@ -1,14 +1,13 @@
-Virtual User Script started at: 27.11.2019 12:23:21
+Virtual User Script started at: 27.11.2019 15:02:39
 Starting action vuser_init.
 JDBC Connection Successful
 Ending action vuser_init.
 Running Vuser...
 Starting iteration 1.
 Starting action Actions.
-Actions.java(36): Notify: Transaction "Database_Query_1" started.
-Actions.java(43): Notify: Transaction "Database_Query_1" ended with a "Pass" status (Duration: 0,1145).
-Actions.java(45): Notify: Transaction "Database_Query_2" started.
-Actions.java(47): Notify: Transaction "Database_Query_2" ended with a "Pass" status (Duration: 0,0349).
+System.out: Adding Ticket to Tasks                                                                                                                                                      Notify:
+System.out: Updating Ticket Status                                                                                                                                                      Notify:
+System.out: Commit                                                                                                                                                      Notify:
 Ending action Actions.
 Ending iteration 1.
 Ending Vuser...

@@ -1,2 +1,2 @@
-"{"text":"comment 3 (alex)","header":"Холодильник издаёт посторонни�"
-"� звуки","ticketStateId":0,"serviceId":"2974","files":[4687],"shopId":"-2"}"
+"{"text":"comment 2(alex)","header":"Требуется помывка вывески","ticketS"
+"tateId":0,"serviceId":"2995","files":[4737],"shopId":"2"}"

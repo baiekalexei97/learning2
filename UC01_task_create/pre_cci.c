@@ -1,4 +1,4 @@
-# 1 "c:\\users\\student\\documents\\xdesk lr\\uc01_task_create\\\\combined_UC01_task_create.c"
+# 1 "c:\\users\\student\\documents\\xdesk lr\\learning2\\uc01_task_create\\\\combined_UC01_task_create.c"
 # 1 "C:\\Program Files (x86)\\HPE\\LoadRunner\\include/lrun.h" 1
  
  
@@ -962,7 +962,7 @@ int lr_db_getvalue(char * pFirstArg, ...);
 
 
 
-# 1 "c:\\users\\student\\documents\\xdesk lr\\uc01_task_create\\\\combined_UC01_task_create.c" 2
+# 1 "c:\\users\\student\\documents\\xdesk lr\\learning2\\uc01_task_create\\\\combined_UC01_task_create.c" 2
 
 # 1 "C:\\Program Files (x86)\\HPE\\LoadRunner\\include/SharedParameter.h" 1
 
@@ -1126,7 +1126,7 @@ extern VTCERR2  lrvtc_noop();
 
 
 
-# 2 "c:\\users\\student\\documents\\xdesk lr\\uc01_task_create\\\\combined_UC01_task_create.c" 2
+# 2 "c:\\users\\student\\documents\\xdesk lr\\learning2\\uc01_task_create\\\\combined_UC01_task_create.c" 2
 
 # 1 "globals.h" 1
 
@@ -2587,104 +2587,14 @@ void
 
 
 
-# 3 "c:\\users\\student\\documents\\xdesk lr\\uc01_task_create\\\\combined_UC01_task_create.c" 2
+# 3 "c:\\users\\student\\documents\\xdesk lr\\learning2\\uc01_task_create\\\\combined_UC01_task_create.c" 2
 
 # 1 "vuser_init.c" 1
 vuser_init()
 {	
-	web_url("login", 
-		"URL=http://learning2.pflb.ru:56902/login", 
-		"TargetFrame=", 
-		"Resource=0", 
-		"RecContentType=text/html", 
-		"Referer=", 
-		"Snapshot=t32.inf", 
-		"Mode=HTML", 
-		"LAST");
-
-	lr_start_transaction("UC01_TR01_login");
-
-	lr_think_time(5);
-
-	web_submit_data("login_2", 
-		"Action=http://learning2.pflb.ru:56902/api/login", 
-		"Method=POST", 
-		"TargetFrame=", 
-		"Referer=http://learning2.pflb.ru:56902/login", 
-		"Snapshot=t33.inf", 
-		"Mode=HTML", 
-		"ITEMDATA", 
-		"Name=login", "Value={login}", "ENDITEM", 
-		"Name=password", "Value={password}", "ENDITEM", 
-		"Name=rememberMe", "Value=false", "ENDITEM", 
-		"LAST");
-
-	web_url("learning2.pflb.ru:56902", 
-		"URL=http://learning2.pflb.ru:56902/", 
-		"TargetFrame=", 
-		"Resource=0", 
-		"RecContentType=text/html", 
-		"Referer=http://learning2.pflb.ru:56902/login", 
-		"Snapshot=t34.inf", 
-		"Mode=HTML", 
-		"LAST");
-
-	web_url("checkLogin", 
-		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 
-		"TargetFrame=", 
-		"Resource=0", 
-		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
-		"Snapshot=t35.inf", 
-		"Mode=HTML", 
-		"LAST");
-
-	web_url("info", 
-		"URL=http://learning2.pflb.ru:56902/api/user/info", 
-		"TargetFrame=", 
-		"Resource=0", 
-		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
-		"Snapshot=t36.inf", 
-		"Mode=HTML", 
-		"LAST");
-
-	web_url("4", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/countByState/4", 
-		"TargetFrame=", 
-		"Resource=0", 
-		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
-		"Snapshot=t37.inf", 
-		"Mode=HTML", 
-		"LAST");
-
-	web_url("countByState", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/countByState/", 
-		"TargetFrame=", 
-		"Resource=0", 
-		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
-		"Snapshot=t38.inf", 
-		"Mode=HTML", 
-		"LAST");
-
-	web_custom_request("ticket", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/?state=-1,0,1,5&page=0&size=10", 
-		"Method=GET", 
-		"TargetFrame=", 
-		"Resource=0", 
-		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
-		"Snapshot=t39.inf", 
-		"Mode=HTML", 
-		"EncType=application/json; charset=utf-8", 
-		"LAST");
-
-	lr_end_transaction("UC01_TR01_login",2);
 	return 0;
 }
-# 4 "c:\\users\\student\\documents\\xdesk lr\\uc01_task_create\\\\combined_UC01_task_create.c" 2
+# 4 "c:\\users\\student\\documents\\xdesk lr\\learning2\\uc01_task_create\\\\combined_UC01_task_create.c" 2
 
 # 1 "CreateOrder.c" 1
 CreateOrder()
@@ -2692,12 +2602,12 @@ CreateOrder()
 	int i;
 	lr_start_transaction("UC01_TR02_NewOrder");
 
-	web_url("children", 
-		"URL=http://learning2.pflb.ru:56902/api/user/catalog/node/0/children/", 
+	web_url("/api/user/catalog/node/0/children/", 
+		"URL=http://{host}:{port}/api/user/catalog/node/0/children/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t71.inf", 
 		"Mode=HTML", 
 		"LAST");
@@ -2715,24 +2625,24 @@ CreateOrder()
 	                        "SelectAll=Yes",	           
 	                        "LAST");
 
-	web_url("shops", 
-		"URL=http://learning2.pflb.ru:56902/api/shops?q=&page=0", 
+	web_url("/api/shops?q=&page=0", 
+		"URL=http://{host}:{port}/api/shops?q=&page=0", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t73.inf", 
 		"Mode=HTML", 
 		"LAST");
 	
 	lr_save_string(lr_paramarr_random("ShopIDs"), "ShopID");
 
-	web_url("children_2", 
-		"URL=http://learning2.pflb.ru:56902/api/user/catalog/node/0/children/", 
+	web_url("/api/user/catalog/node/0/children/", 
+		"URL=http://{host}:{port}/api/user/catalog/node/0/children/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t74.inf", 
 		"Mode=HTML", 
 		"LAST");
@@ -2750,12 +2660,12 @@ CreateOrder()
 	                        "SelectAll=Yes",	           
 	                        "LAST");
 
-	web_url("treeview", 
-		"URL=http://learning2.pflb.ru:56902/api/user/catalog/treeview?shopid={ShopID}", 
+	web_url("/api/user/catalog/treeview?shopid={ShopID}", 
+		"URL=http://{host}:{port}/api/user/catalog/treeview?shopid={ShopID}", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t75.inf", 
 		"Mode=HTML", 
 		"LAST");
@@ -2770,22 +2680,22 @@ CreateOrder()
 	
 	lr_start_transaction("UC01_TR04_theme1");
 
-	web_url("children_3", 
-		"URL=http://learning2.pflb.ru:56902/api/user/catalog/node/{Parent}/children/", 
+	web_url("/api/user/catalog/node/{Parent}/children/", 
+		"URL=http://{host}:{port}/api/user/catalog/node/{Parent}/children/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t76.inf", 
 		"Mode=HTML", 
 		"LAST");
 
-	web_url("service", 
-		"URL=http://learning2.pflb.ru:56902/api/user/catalog/node/{Parent}/service/", 
+	web_url("/api/user/catalog/node/{Parent}/service/", 
+		"URL=http://{host}:{port}/api/user/catalog/node/{Parent}/service/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t77.inf", 
 		"Mode=HTML", 
 		"LAST");
@@ -2795,12 +2705,12 @@ CreateOrder()
 	                        "SelectAll=Yes",	           
 	                        "LAST");
 	
-	web_url("{Parent}", 
-		"URL=http://learning2.pflb.ru:56902/api/user/catalog/breadcrumbs/{Parent}", 
+	web_url("/api/user/catalog/breadcrumbs/{Parent}", 
+		"URL=http://{host}:{port}/api/user/catalog/breadcrumbs/{Parent}", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t78.inf", 
 		"Mode=HTML", 
 		"LAST");
@@ -2811,12 +2721,12 @@ CreateOrder()
 	                        "QueryString=$..totalElements",	                	           
 	                        "LAST");
 
-	web_url("inventoryNumbers", 
-		"URL=http://learning2.pflb.ru:56902/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}", 
+	web_url("/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}", 
+		"URL=http://{host}:{port}/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t79.inf", 
 		"Mode=HTML", 
 		"LAST");
@@ -2834,12 +2744,12 @@ CreateOrder()
 		                        "LAST");
 	};
 
-	web_url("inventoryNumbers_2", 
-		"URL=http://learning2.pflb.ru:56902/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}", 
+	web_url("/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}", 
+		"URL=http://{host}:{port}/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t80.inf", 
 		"Mode=HTML", 
 		"LAST");
@@ -2854,12 +2764,12 @@ CreateOrder()
 
 	lr_start_transaction("UC01_TR06_inventoryNum");
 
-	web_url("inventoryNumbers_3", 
-		"URL=http://learning2.pflb.ru:56902/api/inventoryNumbers?shopId={ShopID}&serviceId={ServiceID}&serviceId={ServiceID}&q=&page=0", 
+	web_url("/api/inventoryNumbers?shopId={ShopID}&serviceId={ServiceID}&serviceId={ServiceID}&q=&page=0", 
+		"URL=http://{host}:{port}/api/inventoryNumbers?shopId={ShopID}&serviceId={ServiceID}&serviceId={ServiceID}&q=&page=0", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t81.inf", 
 		"Mode=HTML", 
 		"LAST");
@@ -2874,17 +2784,17 @@ CreateOrder()
 	                        "QueryString=$..id",	           
 	                       "LAST");
 
-	web_submit_data("file", 
-		"Action=http://learning2.pflb.ru:56902/api/ticket/file/", 
+	web_submit_data("/api/ticket/file/", 
+		"Action=http://{host}:{port}/api/ticket/file/", 
 		"Method=POST", 
 		"EncType=multipart/form-data", 
 		"TargetFrame=", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t82.inf", 
 		"Mode=HTML", 
 		"ITEMDATA", 
-		"Name=files", "Value=C:\\Users\\student\\Documents\\XDesk task details\\{filename_detail}", "File=Yes", "ENDITEM", 
+		"Name=files", "Value={file_folder}{file_detail}", "File=Yes", "ENDITEM", 
 		"LAST");
 
 	lr_end_transaction("UC01_TR07_File",2);
@@ -2912,13 +2822,13 @@ CreateOrder()
 		lr_save_string(lr_eval_string("{Body}\"shopId\":\"{ShopID}\""),"Body");
 	    };
 
-	web_custom_request("ticket_2", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/", 
+	web_custom_request("/api/ticket/", 
+		"URL=http://{host}:{port}/api/ticket/", 
 		"Method=POST", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t83.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 
@@ -2934,84 +2844,84 @@ CreateOrder()
 
 	lr_think_time(10);
 
-	web_url("learning2.pflb.ru:56902_2", 
-		"URL=http://learning2.pflb.ru:56902/", 
+	web_url("/home", 
+		"URL=http://{host}:{port}/", 
 		"TargetFrame=", 
 		"Resource=0", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t84.inf", 
 		"Mode=HTML", 
 		"LAST");
 
-	web_url("checkLogin_2", 
-		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 
+	web_url("/api/checkLogin", 
+		"URL=http://{host}:{port}/api/checkLogin", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t85.inf", 
 		"Mode=HTML", 
 		"LAST");
 
-	web_url("info_2", 
-		"URL=http://learning2.pflb.ru:56902/api/user/info", 
+	web_url("/api/user/info", 
+		"URL=http://{host}:{port}/api/user/info", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t86.inf", 
 		"Mode=HTML", 
 		"LAST");
 
-	web_url("4_2", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/countByState/4", 
+	web_url("/api/ticket/countByState/4", 
+		"URL=http://{host}:{port}/api/ticket/countByState/4", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t87.inf", 
 		"Mode=HTML", 
 		"LAST");
 
-	web_url("countByState_2", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/countByState/", 
+	web_url("/api/ticket/countByState/", 
+		"URL=http://{host}:{port}/api/ticket/countByState/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t88.inf", 
 		"Mode=HTML", 
 		"LAST");
 
-	web_url("countByState_3", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/countByState/", 
+	web_url("/api/ticket/countByState/", 
+		"URL=http://{host}:{port}/api/ticket/countByState/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t89.inf", 
 		"Mode=HTML", 
 		"LAST");
 
-	web_custom_request("ticket_3", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/?state=-1,0,1,5&page=0&size=10", 
+	web_custom_request("/api/ticket/?state=-1,0,1,5&page=0&size=10", 
+		"URL=http://{host}:{port}/api/ticket/?state=-1,0,1,5&page=0&size=10", 
 		"Method=GET", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t90.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 
 		"LAST");
 
-	web_custom_request("ticket_4", 
-		"URL=http://learning2.pflb.ru:56902/api/ticket/?state=-1,0,1,5&page=0&size=10", 
+	web_custom_request("/api/ticket/?state=-1,0,1,5&page=0&size=10", 
+		"URL=http://{host}:{port}/api/ticket/?state=-1,0,1,5&page=0&size=10", 
 		"Method=GET", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t91.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 
@@ -3021,30 +2931,123 @@ CreateOrder()
 
 	return 0;
 }
-# 5 "c:\\users\\student\\documents\\xdesk lr\\uc01_task_create\\\\combined_UC01_task_create.c" 2
+# 5 "c:\\users\\student\\documents\\xdesk lr\\learning2\\uc01_task_create\\\\combined_UC01_task_create.c" 2
 
-# 1 "vuser_end.c" 1
-vuser_end()
+# 1 "Login.c" 1
+Login()
+{
+	web_url("/login", 
+		"URL=http://{host}:{port}/login", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=text/html", 
+		"Referer=", 
+		"Snapshot=t32.inf", 
+		"Mode=HTML", 
+		"LAST");
+
+	lr_start_transaction("UC01_TR01_login");
+
+	web_submit_data("/api/login", 
+		"Action=http://{host}:{port}/api/login", 
+		"Method=POST", 
+		"TargetFrame=", 
+		"Referer=http://{host}:{port}/login", 
+		"Snapshot=t33.inf", 
+		"Mode=HTML", 
+		"ITEMDATA", 
+		"Name=login", "Value={login}", "ENDITEM", 
+		"Name=password", "Value={password}", "ENDITEM", 
+		"Name=rememberMe", "Value=false", "ENDITEM", 
+		"LAST");
+
+	web_url("/home", 
+		"URL=http://{host}:{port}/", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=text/html", 
+		"Referer=http://{host}:{port}/login", 
+		"Snapshot=t34.inf", 
+		"Mode=HTML", 
+		"LAST");
+
+	web_url("/api/checkLogin", 
+		"URL=http://{host}:{port}/api/checkLogin", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=http://{host}:{port}/", 
+		"Snapshot=t35.inf", 
+		"Mode=HTML", 
+		"LAST");
+
+	web_url("/api/user/info", 
+		"URL=http://{host}:{port}/api/user/info", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=http://{host}:{port}/", 
+		"Snapshot=t36.inf", 
+		"Mode=HTML", 
+		"LAST");
+
+	web_url("/api/ticket/countByState/4", 
+		"URL=http://{host}:{port}/api/ticket/countByState/4", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=http://{host}:{port}/", 
+		"Snapshot=t37.inf", 
+		"Mode=HTML", 
+		"LAST");
+
+	web_url("/api/ticket/countByState/", 
+		"URL=http://{host}:{port}/api/ticket/countByState/", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=http://{host}:{port}/", 
+		"Snapshot=t38.inf", 
+		"Mode=HTML", 
+		"LAST");
+
+	web_custom_request("/api/ticket/?state=-1,0,1,5&page=0&size=10", 
+		"URL=http://{host}:{port}/api/ticket/?state=-1,0,1,5&page=0&size=10", 
+		"Method=GET", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=http://{host}:{port}/", 
+		"Snapshot=t39.inf", 
+		"Mode=HTML", 
+		"EncType=application/json; charset=utf-8", 
+		"LAST");
+
+	lr_end_transaction("UC01_TR01_login",2);
+	return 0;
+}
+# 6 "c:\\users\\student\\documents\\xdesk lr\\learning2\\uc01_task_create\\\\combined_UC01_task_create.c" 2
+
+# 1 "Logout.c" 1
+Logout()
 {
 	lr_start_transaction("UC01_TR11_logout1");
 
-	web_url("logout", 
-		"URL=http://learning2.pflb.ru:56902/api/logout", 
+	web_url("/api/logout", 
+		"URL=http://{host}:{port}/api/logout", 
 		"TargetFrame=", 
 		"Resource=0", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t61.inf", 
 		"Mode=HTML", 
 		"LAST");
 
-	(web_remove_auto_header("X-Requested-With", "ImplicitGen=Yes", "LAST"));
-
-	web_url("login_3", 
-		"URL=http://learning2.pflb.ru:56902/login", 
+	web_url("/login", 
+		"URL=http://{host}:{port}/login", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=text/html", 
-		"Referer=http://learning2.pflb.ru:56902/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t62.inf", 
 		"Mode=HTML", 
 		"LAST");
@@ -3052,5 +3055,12 @@ vuser_end()
 	lr_end_transaction("UC01_TR11_logout1",2);
 	return 0;
 }
-# 6 "c:\\users\\student\\documents\\xdesk lr\\uc01_task_create\\\\combined_UC01_task_create.c" 2
+# 7 "c:\\users\\student\\documents\\xdesk lr\\learning2\\uc01_task_create\\\\combined_UC01_task_create.c" 2
+
+# 1 "vuser_end.c" 1
+vuser_end()
+{
+	return 0;
+}
+# 8 "c:\\users\\student\\documents\\xdesk lr\\learning2\\uc01_task_create\\\\combined_UC01_task_create.c" 2
 

@@ -5,6 +5,8 @@
   <ActionFiles>
     <FileEntry Name="vuser_init.c" Filter="2" />
     <FileEntry Name="Action.c" Filter="2" />
+    <FileEntry Name="Login.c" Filter="2" />
+    <FileEntry Name="Logout.c" Filter="2" />
     <FileEntry Name="vuser_end.c" Filter="2" />
   </ActionFiles>
   <GeneralFiles>
@@ -15,6 +17,10 @@
     <FileEntry Name="globals.h" Filter="2" />
     <FileEntry Name="combined_UC04_task_close.c" Filter="2" />
     <FileEntry Name="pre_cci.c" Filter="2" />
+    <FileEntry Name="199753344440.idx" Filter="1" />
+    <FileEntry Name="91663291440.idx" Filter="1" />
+    <FileEntry Name="94285882440.idx" Filter="1" />
+    <FileEntry Name="94729094440.idx" Filter="1" />
     <FileEntry Name="Bookmarks.xml" Filter="1" />
     <FileEntry Name="Breakpoints.xml" Filter="1" />
     <FileEntry Name="CompilerLogMetadata.xml" Filter="1" />
@@ -33,6 +39,7 @@
     <FileEntry Name="TransactionsData.db" Filter="1" />
     <FileEntry Name="UC04_task_close.c.pickle" Filter="1" />
     <FileEntry Name="UC04_task_close.ci" Filter="1" />
+    <FileEntry Name="UC04_task_close.prm.bak" Filter="1" />
     <FileEntry Name="UC04_task_close.sdf" Filter="1" />
     <FileEntry Name="UserTasks.xml" Filter="1" />
     <FileEntry Name="data\" Filter="1" />
