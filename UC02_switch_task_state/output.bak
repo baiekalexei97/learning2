@@ -1,4 +1,4 @@
-Virtual User Script started at: 27.11.2019 15:02:39
+Virtual User Script started at: 27.11.2019 15:12:50
 Starting action vuser_init.
 JDBC Connection Successful
 Ending action vuser_init.
@@ -7,9 +7,7 @@ Starting iteration 1.
 Starting action Actions.
 System.out: Adding Ticket to Tasks                                                                                                                                                      Notify:
 System.out: Updating Ticket Status                                                                                                                                                      Notify:
-System.out: Commit                                                                                                                                                      Notify:
-Ending action Actions.
-Ending iteration 1.
+Action was aborted.
 Ending Vuser...
 Starting action vuser_end.
 Ending action vuser_end.

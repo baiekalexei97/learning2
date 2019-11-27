@@ -42,6 +42,7 @@ public class Actions
 		   connection.setAutoCommit(false);
 		   stmt = connection.createStatement();
 		   System.out.println("Adding Ticket to Tasks");
+		   lr.log_message("Adding Ticket to Tasks");
 		   
 		   stmt.executeQuery("insert into task(id,change_id,ticket_id,guid,header,text,priority_id,state_id,client_id," +
 		               "solution_group_id,create_date,sync_mask,last_edit_date,last_edit_user_login,engineer_id," +
@@ -52,12 +53,16 @@ public class Actions
 		               "from ticket where rownum < 2 and state_id = -1");
 		   
 		   System.out.println("Updating Ticket Status");
+		   lr.log_message("Updating Ticket Status");
 		   
 		   stmt.executeQuery("update ticket set state_id = 1 where id in(select ticket_id from task where state_id =1)");
+		   
+		   lr.log_message("Commit");
 		   System.out.println("Commit");
 		   connection.commit();
 	} catch (SQLException e1) {
        	e1.printStackTrace();
+       	lr.log_message("Rollback, Caught Exception -" + e1.getMessage());
 		System.out.println("Rolling back");		    
 		try{
 			connection.rollback();
