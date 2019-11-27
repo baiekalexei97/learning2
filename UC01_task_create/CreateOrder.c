@@ -17,17 +17,9 @@ CreateOrder()
 
 	lr_end_transaction("UC01_TR02_NewOrder",LR_AUTO);
 
-	web_revert_auto_header("X-Requested-With");
-
-	web_add_header("UA-CPU", 
-		"AMD64");
-
 	lr_start_transaction("UC01_TR03_Location1");
 
-	web_add_auto_header("X-Requested-With", 
-		"XMLHttpRequest");
-
-	lr_think_time(16);
+	lr_think_time(10);
 	
 	web_reg_save_param_json("ParamName=ShopIDs",
 	                        "QueryString=$..id",
@@ -114,7 +106,6 @@ CreateOrder()
 	                        "SelectAll=Yes",	           
 	                        LAST);
 	
-	
 	web_url("{Parent}", 
 		"URL=http://learning2.pflb.ru:56902/api/user/catalog/breadcrumbs/{Parent}", 
 		"TargetFrame=", 
@@ -141,15 +132,9 @@ CreateOrder()
 		"Mode=HTML", 
 		LAST);
 	
-	/*lr_param_sprintf("Test1", "%d", atoi(lr_eval_string("{InventoryCount}")));
-	if(atoi(lr_eval_string("InventoryCount")) != 0){
-	    	lr_save_string(lr_paramarr_random("InventoryNumbers"),"InventoryNumber");
-	};*/
-	
-	
 	lr_end_transaction("UC01_TR04_theme1",LR_AUTO);
 
-	lr_think_time(21);
+	lr_think_time(10);
 
 	lr_start_transaction("UC01_TR05_Description");
 	
@@ -176,7 +161,7 @@ CreateOrder()
 
 	lr_end_transaction("UC01_TR05_Description",LR_AUTO);
 
-	lr_think_time(26);
+	lr_think_time(10);
 
 	lr_start_transaction("UC01_TR06_inventoryNum");
 
@@ -192,7 +177,7 @@ CreateOrder()
 
 	lr_end_transaction("UC01_TR06_inventoryNum",LR_AUTO);
 
-	lr_think_time(26);
+	lr_think_time(10);
 
 	lr_start_transaction("UC01_TR07_File");
 	
@@ -210,19 +195,32 @@ CreateOrder()
 		"Snapshot=t82.inf", 
 		"Mode=HTML", 
 		ITEMDATA, 
-		"Name=files", "Value=C:\\Users\\student\\Documents\\XDesk task details\\task_detail_1.txt", "File=Yes", ENDITEM, 
+		"Name=files", "Value=C:\\Users\\student\\Documents\\XDesk task details\\{filename_detail}", "File=Yes", ENDITEM, 
 		LAST);
 
 	lr_end_transaction("UC01_TR07_File",LR_AUTO);
 
-	lr_think_time(38);
+	lr_think_time(10);
 
 	lr_start_transaction("UC01_TR08_descFinish");	
 	
 	if(atoi(lr_eval_string("InventoryCount")) != 0){
-		lr_param_sprintf("Body","\"text\":\"zdes' bil leha\",\"header\":\"%s\",\"ticketStateId\":0,\"serviceId\":\"%s\",\"files\":[%s],\"inventoryNumberId\":\"%s\",\"shopId\":\"%s\"",lr_eval_string("{Name}"),lr_eval_string("{ServiceID}"),lr_eval_string("{FileID}"),lr_eval_string("{InventoryNumber}"),lr_eval_string("{ShopID}"));
+		//lr_param_sprintf("Body","\"text\":\"zdes' bil leha\",\"header\":\"%s\",\"ticketStateId\":0,\"serviceId\":\"%s\",\"files\":[%s],\"inventoryNumberId\":\"%s\",\"shopId\":\"%s\"",lr_eval_string("{Name}"),lr_eval_string("{ServiceID}"),lr_eval_string("{FileID}"),lr_eval_string("{InventoryNumber}"),lr_eval_string("{ShopID}"));
+		lr_save_string(lr_eval_string("\"text\":\"{comments}\","),"Body");
+		lr_save_string(lr_eval_string("{Body}\"header\":\"{Name}\","),"Body");
+		lr_save_string(lr_eval_string("{Body}\"ticketStateId\":0,"),"Body");
+		lr_save_string(lr_eval_string("{Body}\"serviceId\":\"{ServiceID}\","),"Body");
+		lr_save_string(lr_eval_string("{Body}\"files\":\[FileID}],"),"Body");
+		lr_save_string(lr_eval_string("{Body}\"inventoryNumberId\":\"{InventoryNumber}\","),"Body");
+		lr_save_string(lr_eval_string("{Body}\"shopId\":\"{ShopID}\""),"Body");
 	    }else{		
-	    lr_param_sprintf("Body","\"text\":\"zdes' bil leha\",\"header\":\"%s\",\"ticketStateId\":0,\"serviceId\":\"%s\",\"files\":[%s],\"shopId\":\"%s\"",lr_eval_string("{Name}"),lr_eval_string("{ServiceID}"),lr_eval_string("{FileID}"),lr_eval_string("{ShopID}"));
+	    //lr_param_sprintf("Body","\"text\":\"zdes' bil leha\",\"header\":\"%s\",\"ticketStateId\":0,\"serviceId\":\"%s\",\"files\":[%s],\"shopId\":\"%s\"",lr_eval_string("{Name}"),lr_eval_string("{ServiceID}"),lr_eval_string("{FileID}"),lr_eval_string("{ShopID}"));
+	    lr_save_string(lr_eval_string("\"text\":\"{comments}\","),"Body");
+		lr_save_string(lr_eval_string("{Body}\"header\":\"{Name}\","),"Body");
+		lr_save_string(lr_eval_string("{Body}\"ticketStateId\":0,"),"Body");
+		lr_save_string(lr_eval_string("{Body}\"serviceId\":\"{ServiceID}\","),"Body");
+		lr_save_string(lr_eval_string("{Body}\"files\":[{FileID}],"),"Body");
+		lr_save_string(lr_eval_string("{Body}\"shopId\":\"{ShopID}\""),"Body");
 	    };
 
 	web_custom_request("ticket_2", 
@@ -245,7 +243,7 @@ CreateOrder()
 
 	web_revert_auto_header("X-Requested-With");
 
-	lr_think_time(20);
+	lr_think_time(10);
 
 	web_url("learning2.pflb.ru:56902_2", 
 		"URL=http://learning2.pflb.ru:56902/", 
@@ -254,16 +252,7 @@ CreateOrder()
 		"Referer=http://learning2.pflb.ru:56902/", 
 		"Snapshot=t84.inf", 
 		"Mode=HTML", 
-		EXTRARES, 
-		"Url=/js/core/jqueryformplugin.js?_=1574752664222", ENDITEM, 
-		"Url=/engineer/wrapper/wrapper.dust", ENDITEM, 
-		"Url=/engineer/wrapper/wrapper.js", ENDITEM, 
-		"Url=/engineer/tickets/tickets.dust", ENDITEM, 
-		"Url=/engineer/tickets/tickets.js", ENDITEM, 
 		LAST);
-
-	web_add_auto_header("X-Requested-With", 
-		"XMLHttpRequest");
 
 	web_url("checkLogin_2", 
 		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 

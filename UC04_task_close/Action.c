@@ -35,9 +35,6 @@ Action()
 	lr_save_string(lr_paramarr_random("TaskIDs"),"TaskID");
 
 	web_set_sockets_option("SSL_VERSION", "2&3");
-	
-	web_add_header("UA-CPU",
-		"AMD64");
 
 	lr_end_transaction("UC04_TR02_tasks",LR_AUTO);
 	
@@ -75,15 +72,9 @@ Action()
 
 	web_set_sockets_option("SSL_VERSION", "2&3");
 
-	web_add_header("UA-CPU",
-		"AMD64");
-
 	lr_end_transaction("UC04_TR03_selectTask",LR_AUTO);
 
 	lr_start_transaction("UC04_TR04_ToOrder");
-
-	web_add_auto_header("X-Requested-With", 
-		"XMLHttpRequest");
 
 	web_custom_request("149370_2", 
 		"URL=http://learning2.pflb.ru:56902/api/ticket/{TaskID}", 
@@ -108,7 +99,7 @@ Action()
 
 	lr_end_transaction("UC04_TR04_ToOrder",LR_AUTO);
 
-	lr_think_time(18);
+	lr_think_time(10);
 
 	lr_start_transaction("UC04_TR05_closeOrder");
 
@@ -123,9 +114,7 @@ Action()
 		"Mode=HTML", 
 		"EncType=", 
 		LAST);
-
-	web_revert_auto_header("X-Requested-With");
-
+	
 	web_url("learning2.pflb.ru:56902_2", 
 		"URL=http://learning2.pflb.ru:56902/", 
 		"TargetFrame=", 
@@ -133,18 +122,7 @@ Action()
 		"Referer=http://learning2.pflb.ru:56902/", 
 		"Snapshot=t18.inf", 
 		"Mode=HTML", 
-		EXTRARES, 
-		"Url=/js/core/jqueryformplugin.js?_=1574773049495", ENDITEM, 
-		"Url=/engineer/wrapper/wrapper.dust", ENDITEM, 
-		"Url=/engineer/wrapper/wrapper.js", ENDITEM, 
-		"Url=/engineer/tickets/tickets.dust", ENDITEM, 
-		"Url=/engineer/tickets/tickets.js", ENDITEM, 
-		"Url=/engineer/tasks/tasks.dust", ENDITEM, 
-		"Url=/engineer/tasks/tasks.js", ENDITEM, 
 		LAST);
-
-	web_add_auto_header("X-Requested-With", 
-		"XMLHttpRequest");
 
 	web_url("checkLogin_3", 
 		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 
@@ -154,8 +132,6 @@ Action()
 		"Referer=http://learning2.pflb.ru:56902/", 
 		"Snapshot=t19.inf", 
 		"Mode=HTML", 
-		EXTRARES, 
-		"Url=report/149370?timeZoneOffset=3", "Referer=", ENDITEM, 
 		LAST);
 
 	web_url("info_2", 

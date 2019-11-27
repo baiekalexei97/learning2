@@ -33,16 +33,10 @@ Action()
 	lr_save_string(lr_paramarr_random("TaskIDs"),"TaskID");
 
 	web_set_sockets_option("SSL_VERSION", "2&3");
-	
-	web_add_header("UA-CPU",
-		"AMD64");
 
 	lr_end_transaction("UC03_TR02_tasks",LR_AUTO);
 
 	lr_start_transaction("UC03_TR03_selectTask");
-
-	web_add_auto_header("X-Requested-With", 
-		"XMLHttpRequest");
 
 	web_url("{TaskID}", 
 		"URL=http://learning2.pflb.ru:56902/api/task/{TaskID}", 
@@ -76,7 +70,7 @@ Action()
 
 	lr_end_transaction("UC03_TR03_selectTask",LR_AUTO);
 
-	lr_think_time(33);
+	lr_think_time(10);
 
 	lr_start_transaction("UC03_TR04_commentFile");
 	
@@ -100,7 +94,7 @@ Action()
 
 	lr_end_transaction("UC03_TR04_commentFile",LR_AUTO);
 
-	lr_think_time(34);
+	lr_think_time(10);
 
 	lr_start_transaction("UC03_TR05_commentFinish");
 
@@ -129,7 +123,7 @@ Action()
 
 	lr_end_transaction("UC03_TR05_commentFinish",LR_AUTO);
 
-	lr_think_time(17);
+	lr_think_time(10);
 
 
 	return 0;

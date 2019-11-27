@@ -22,9 +22,6 @@ vuser_init()
 
 	lr_start_transaction("UC03_TR01_login");
 
-	web_add_header("X-Requested-With", 
-		"XMLHttpRequest");
-
 	web_submit_data("login_2", 
 		"Action=http://learning2.pflb.ru:56902/api/login", 
 		"Method=POST", 
@@ -61,9 +58,6 @@ vuser_init()
 		"Url=/tpl/support/ticketComment.dust", ENDITEM, 
 		"Url=/images/attachment.png", ENDITEM, 
 		LAST);
-
-	web_add_auto_header("X-Requested-With", 
-		"XMLHttpRequest");
 
 	web_url("checkLogin", 
 		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 

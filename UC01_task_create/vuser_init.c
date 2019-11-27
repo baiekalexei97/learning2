@@ -1,6 +1,5 @@
 vuser_init()
-{
-	
+{	
 	web_url("login", 
 		"URL=http://learning2.pflb.ru:56902/login", 
 		"TargetFrame=", 
@@ -9,21 +8,9 @@ vuser_init()
 		"Referer=", 
 		"Snapshot=t32.inf", 
 		"Mode=HTML", 
-		EXTRARES, 
-		"Url=/css/fonts/roboto/Roboto-Light.eot?", ENDITEM, 
-		"Url=/css/fonts/roboto/Roboto-Thin.eot?", ENDITEM, 
-		"Url=/css/fonts/roboto/Roboto-Medium.eot?", ENDITEM, 
-		"Url=/css/fonts/roboto/Roboto-Regular.eot?", ENDITEM, 
-		"Url=/css/fonts/roboto/Roboto-Bold.eot?", ENDITEM, 
-		"Url=/favicon.ico", "Referer=", ENDITEM, 
-		"Url=/tpl/login/login.dust", ENDITEM, 
-		"Url=/images/logo_2.png", ENDITEM, 
 		LAST);
 
 	lr_start_transaction("UC01_TR01_login");
-
-	web_add_header("X-Requested-With", 
-		"XMLHttpRequest");
 
 	lr_think_time(5);
 
@@ -35,8 +22,8 @@ vuser_init()
 		"Snapshot=t33.inf", 
 		"Mode=HTML", 
 		ITEMDATA, 
-		"Name=login", "Value=master", ENDITEM, 
-		"Name=password", "Value=123", ENDITEM, 
+		"Name=login", "Value={login}", ENDITEM, 
+		"Name=password", "Value={password}", ENDITEM, 
 		"Name=rememberMe", "Value=false", ENDITEM, 
 		LAST);
 
@@ -48,21 +35,7 @@ vuser_init()
 		"Referer=http://learning2.pflb.ru:56902/login", 
 		"Snapshot=t34.inf", 
 		"Mode=HTML", 
-		EXTRARES, 
-		"Url=/js/core/jqueryformplugin.js?_=1574684351386", ENDITEM, 
-		"Url=/engineer/wrapper/wrapper.dust", ENDITEM, 
-		"Url=/engineer/wrapper/wrapper.js", ENDITEM, 
-		"Url=/css/fonts/material_icons/MaterialIcons-Regular.woff", ENDITEM, 
-		"Url=/engineer/tickets/tickets.dust", ENDITEM, 
-		"Url=/engineer/tickets/tickets.js", ENDITEM, 
-		"Url=/engineer/catalog/catalog.dust", ENDITEM, 
-		"Url=/engineer/catalog/catalog.js", ENDITEM, 
-		"Url=/images/logo-5ka.png", ENDITEM, 
-		"Url=/engineer/addticket.dust", ENDITEM, 
 		LAST);
-
-	web_add_auto_header("X-Requested-With", 
-		"XMLHttpRequest");
 
 	web_url("checkLogin", 
 		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 

@@ -8,21 +8,9 @@ vuser_init()
 		"Referer=", 
 		"Snapshot=t1.inf", 
 		"Mode=HTML", 
-		EXTRARES, 
-		"Url=/css/fonts/roboto/Roboto-Medium.eot?", ENDITEM, 
-		"Url=/css/fonts/roboto/Roboto-Regular.eot?", ENDITEM, 
-		"Url=/css/fonts/roboto/Roboto-Thin.eot?", ENDITEM, 
-		"Url=/css/fonts/roboto/Roboto-Light.eot?", ENDITEM, 
-		"Url=/css/fonts/roboto/Roboto-Bold.eot?", ENDITEM, 
-		"Url=/favicon.ico", "Referer=", ENDITEM, 
-		"Url=/tpl/login/login.dust", ENDITEM, 
-		"Url=/images/logo_2.png", ENDITEM, 
 		LAST);
 
 	lr_start_transaction("UC04_TR01_login");
-
-	web_add_header("X-Requested-With", 
-		"XMLHttpRequest");
 
 	web_submit_data("login_2", 
 		"Action=http://learning2.pflb.ru:56902/api/login", 
@@ -45,24 +33,7 @@ vuser_init()
 		"Referer=http://learning2.pflb.ru:56902/login", 
 		"Snapshot=t3.inf", 
 		"Mode=HTML", 
-		EXTRARES, 
-		"Url=/js/core/jqueryformplugin.js?_=1574771175500", ENDITEM, 
-		"Url=/engineer/wrapper/wrapper.dust", ENDITEM, 
-		"Url=/engineer/wrapper/wrapper.js", ENDITEM, 
-		"Url=/css/fonts/material_icons/MaterialIcons-Regular.woff", ENDITEM, 
-		"Url=/engineer/tickets/tickets.dust", ENDITEM, 
-		"Url=/engineer/tickets/tickets.js", ENDITEM, 
-		"Url=/engineer/tasks/tasks.dust", ENDITEM, 
-		"Url=/engineer/tasks/tasks.js", ENDITEM, 
-		"Url=/engineer/task/task.dust", ENDITEM, 
-		"Url=/engineer/task/task.js", ENDITEM, 
-		"Url=/images/logo-5ka.png", ENDITEM, 
-		"Url=/tpl/support/ticketComment.dust", ENDITEM, 
-		"Url=/images/attachment.png", ENDITEM, 
 		LAST);
-
-	web_add_auto_header("X-Requested-With", 
-		"XMLHttpRequest");
 
 	web_url("checkLogin", 
 		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 

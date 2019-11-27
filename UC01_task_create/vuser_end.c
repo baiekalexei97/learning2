@@ -11,8 +11,6 @@ vuser_end()
 		"Mode=HTML", 
 		LAST);
 
-	web_add_cookie("sessionExpired=false; DOMAIN=learning2.pflb.ru");
-
 	web_revert_auto_header("X-Requested-With");
 
 	web_url("login_3", 

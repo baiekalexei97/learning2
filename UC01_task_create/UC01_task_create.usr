@@ -1,7 +1,7 @@
 [General]
 Type=Multi
 DefaultCfg=default.cfg
-ParameterFile=
+ParameterFile=UC01_task_create.prm
 GlobalParameterFile=
 NewFunctionHeader=1
 RunType=cci
@@ -25,7 +25,6 @@ ScriptLocale=ru-RU
 [Actions]
 vuser_init=vuser_init.c
 CreateOrder=CreateOrder.c
-Action1copy=Action1copy.c
 vuser_end=vuser_end.c
 [RunLogicFiles]
 Default Profile=default.usp
@@ -38,25 +37,21 @@ globals.h=
 [Modified Actions]
 vuser_init=1
 CreateOrder=1
-Action1copy=1
 vuser_end=1
 [Recorded Actions]
 vuser_init=0
 CreateOrder=1
-Action1copy=0
 vuser_end=0
 [Replayed Actions]
 vuser_init=1
 CreateOrder=1
-Action1copy=1
 vuser_end=1
 [Interpreters]
 vuser_init=cci
 CreateOrder=cci
-Action1copy=cci
 vuser_end=cci
 [TransactionsOrder]
-Order="UC01_TR01_login__*delimiter*__UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR07_File__*delimiter*__UC01_TR08_descFinish__*delimiter*__UC01_TR09_descFinishOK__*delimiter*__UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR07_File__*delimiter*__UC01_TR08_descFinish__*delimiter*__UC01_TR09_descFinishOK__*delimiter*__UC01_TR11_logout1"
+Order="UC01_TR01_login__*delimiter*__UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR07_File__*delimiter*__UC01_TR08_descFinish__*delimiter*__UC01_TR09_descFinishOK__*delimiter*__UC01_TR11_logout1"
 [StateManagement]
 LastReplayStatus=1
 [ActiveReplay]
