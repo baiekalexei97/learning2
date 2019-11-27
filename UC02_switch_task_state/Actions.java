@@ -21,7 +21,7 @@ public class Actions
 	    	lr.abort();
 	}
 	try {
-    		lr.save_string(lr.eval_string("{host}:{port}:{ssid}"), "url");
+    		lr.save_string(lr.eval_string("{host}:{port}:{sid}"), "url");
         //String url = "jdbc:oracle:thin:@192.168.14.53:1522:orcl";
         connection = DriverManager.getConnection(lr.eval_string("{url}"),
                                                  lr.eval_string("{login}"),
@@ -55,7 +55,7 @@ public class Actions
 		   
 		   stmt.executeQuery("update ticket set state_id = 1 where id in(select ticket_id from task where state_id =1)");
 		   System.out.println("Commit");
-		   //connection.commit();
+		   connection.commit();
 	} catch (SQLException e1) {
        	e1.printStackTrace();
 		System.out.println("Rolling back");		    
@@ -70,7 +70,6 @@ public class Actions
     }
 	public int end() throws Throwable {
     	connection.close();
-    	connection = null;
 	    return 0;
 	}
 }

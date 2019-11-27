@@ -8,3 +8,9 @@ Starting iteration 1.
 Starting action Actions.
 System.out: Adding Ticket to Tasks                                                                                                                                                      Notify:
 System.out: Updating Ticket Status                                                                                                                                                      Notify:
+Action was aborted.
+Ending Vuser...
+Starting action vuser_end.
+Ending action vuser_end.
+Vuser Terminated.
+Vuser 0 (thread 4576), ended OK."

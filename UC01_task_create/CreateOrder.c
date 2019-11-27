@@ -195,7 +195,7 @@ CreateOrder()
 		"Snapshot=t82.inf", 
 		"Mode=HTML", 
 		ITEMDATA, 
-		"Name=files", "Value={file_folder}{file_detail}", "File=Yes", ENDITEM, 
+		"Name=files", "Value={file_folder}{file}", "File=Yes", ENDITEM, 
 		LAST);
 
 	lr_end_transaction("UC01_TR07_File",LR_AUTO);
