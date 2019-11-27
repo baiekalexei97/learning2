@@ -69,7 +69,8 @@ public class Actions
 		return 0;
     }
 	public int end() throws Throwable {
-		connection = null;
-	        return 0;
+    	connection.close();
+    	connection = null;
+	    return 0;
 	}
 }
