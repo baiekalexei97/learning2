@@ -74,7 +74,6 @@ public class Actions
     		                  "contractor_id," +
     		                  "external_id," +
     		                  "external_system) " +
-    		                  
     		                  "select id, " +
     		                  "'IDC2D620524153zdzPWAoX9OFgW4UB', " +
     		                  "id, " +
@@ -93,8 +92,7 @@ public class Actions
     		                  "'102'," +
     		                  "'TSK_1800000', " +
     		                  "external_system" +
-    		                  
-    		                  "from ticket where id = "+id);
+    		                  " from ticket where id = "+id);
 		 	
     		lr.log_message("Commit");
     		connection.commit();

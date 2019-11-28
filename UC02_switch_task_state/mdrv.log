@@ -1,5 +1,5 @@
 Notify: JDK found at C:/Program Files/Java/jdk1.8.0_211
-Virtual User Script started at: 28.11.2019 16:23:41
+Virtual User Script started at: 28.11.2019 17:28:03
 Starting action vuser_init.
 JDBC Connection Successful
 Ending action vuser_init.
@@ -19,4 +19,4 @@ Starting action vuser_end.
 Closing Connection
 Ending action vuser_end.
 Vuser Terminated.
-Vuser 0 (thread 5440), ended OK."
+Vuser 0 (thread 2248), ended OK."
