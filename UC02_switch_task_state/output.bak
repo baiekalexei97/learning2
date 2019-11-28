@@ -1,4 +1,4 @@
-Virtual User Script started at: 28.11.2019 17:27:29
+Virtual User Script started at: 28.11.2019 17:28:03
 Starting action vuser_init.
 JDBC Connection Successful
 Ending action vuser_init.
@@ -8,32 +8,7 @@ Starting action Actions.
 Selecting Ticket
 Updating Ticket Status
 Adding Ticket to Tasks
-Actions.java(100): Error: System.err: java.sql.SQLSyntaxErrorException: ORA-00923: ключевое слово FROM не найдено там, где оно ожидалось
-                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:494)                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:446)                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1054)                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:623)                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:252)                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:612)                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:213)                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:37)                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.T4CStatement.executeForRows(T4CStatement.java:896)                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1119)                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.OracleStatement.executeQuery(OracleStatement.java:1276)                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.OracleStatementWrapper.executeQuery(OracleStatementWrapper.java:366)                                                                                                                                                      Error
-System.err: 	at Actions.action(Actions.java:59)                                                                                                                                                      Error
-System.err: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)                                                                                                                                                      Error
-System.err: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)                                                                                                                                                      Error
-System.err: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)                                                                                                                                                      Error
-System.err: 	at java.lang.reflect.Method.invoke(Method.java:498)                                                                                                                                                      Error
-System.err: 	at com.hpe.lr.java.replay.ScriptContainer.invoke(ScriptContainer.java:68)                                                                                                                                                      Error
-System.err: 	at com.hpe.lr.java.replay.ScriptContainer.action(ScriptContainer.java:59)                                                                                                                                                      Error
-System.err: Caused by: Error : 923, Position : 459, Sql = insert into task(id,change_id,ticket_id,guid,header,text,priority_id,state_id,client_id,solution_group_id,create_date,sync_mask,last_edit_date,last_edit_user_login,engineer_id,contractor_id,external_id,external_system) select id, 'IDC2D620524153zdzPWAoX9OFgW4UB', id, 'd830c5ee-9b77-4bd1-879a-0c4d2c282a67', header, text, '3', '1', applicant_id, '9', create_date,'0', last_edit_date, last_edit_user_login,'103','102','TSK_1800000', external_systemfrom ticket where id = null, OriginalSql = insert into task(id,change_id,ticket_id,guid,header,text,priority_id,state_id,client_id,solution_group_id,create_date,sync_mask,last_edit_date,last_edit_user_login,engineer_id,contractor_id,external_id,external_system) select id, 'IDC2D620524153zdzPWAoX9OFgW4UB', id, 'd830c5ee-9b77-4bd1-879a-0c4d2c282a67', header, text, '3', '1', applicant_id, '9', create_date,'0', last_edit_date, last_edit_user_login,'103','102','TSK_1800000', external_systemfrom ticket where id = null, Error Msg = ORA-00923: ключевое слово FROM не найдено там, где оно ожидалось
-                                                                                                                                                      Error
-System.err: 	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:498)                                                                                                                                                      Error
-System.err: 	... 18 more                                                                                                                                                      Error
-Rolling back, Caught Exception - ORA-00923: ключевое слово FROM не найдено там, где оно ожидалось
+Commit
 Closing ResultSet
 Closing Statement
 Ending action Actions.

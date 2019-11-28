@@ -118,9 +118,9 @@ public class Actions
     			try {
     				stmt.close();
     			} catch (SQLException e) {e.printStackTrace();}
-    		}
-    		return 0;
+    		}	
     	}
+    	return 0;
     }
     public int end() throws Throwable {
     	if (connection != null) {
