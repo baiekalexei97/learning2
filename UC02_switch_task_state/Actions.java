@@ -46,7 +46,7 @@ public class Actions
 		   
 		   lr.log_message("Selecting Ticket");
 		   
-		   rset = stmt.executeQuery("select id from ticket where rownum < 2 and state_id = -1");
+		   rset = stmt.executeQuery("select id from ticket where rownum < 2 and state_id = -1 and text like '%(alex)'");
 		   while (rset.next()) {
             id = rset.getString("id");
 		   }
@@ -74,7 +74,7 @@ public class Actions
 		try{
 			connection.rollback();
 		}catch(SQLException e2){
-	        	e2.printStackTrace();
+	        	lr.log_message("Cannot Rollback, Caught Exception - " + e2.getMessage());
 	    	}
 	    	return 1;
 		}

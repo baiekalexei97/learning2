@@ -1,4 +1,4 @@
-Virtual User Script started at: 28.11.2019 11:50:47
+Virtual User Script started at: 28.11.2019 12:58:34
 Starting action vuser_init.
 JDBC Connection Successful
 Ending action vuser_init.
