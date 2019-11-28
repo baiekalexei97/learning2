@@ -51,8 +51,8 @@ vuser_end=0
 [Replayed Actions]
 vuser_init=1
 Action=1
-Login=0
-Logout=0
+Login=1
+Logout=1
 vuser_end=1
 [Interpreters]
 vuser_init=cci
@@ -61,14 +61,14 @@ Login=cci
 Logout=cci
 vuser_end=cci
 [TransactionsOrder]
-Order="/api/task/countByState/__*delimiter*__UC03_TR03_selectTask__*delimiter*__UC03_TR04_commentFile__*delimiter*__UC03_TR05_commentFinish__*delimiter*__UC03_TR01_login__*delimiter*__UC03_TR06_logout"
+Order="UC03_TR02_tasks__*delimiter*__UC03_TR03_selectTask__*delimiter*__UC03_TR04_commentFile__*delimiter*__UC03_TR05_commentFinish__*delimiter*__UC03_TR01_login__*delimiter*__UC03_TR06_logout"
 [StateManagement]
 LastReplayStatus=1
 [ActiveReplay]
 LastReplayedRunName=result1
 ActiveRunName=result1
 [Transactions]
-/api/task/countByState/=
+UC03_TR02_tasks=
 UC03_TR03_selectTask=
 UC03_TR04_commentFile=
 UC03_TR05_commentFinish=

@@ -1,2 +1,2 @@
-"{"text":"comment 2(alex)","header":"Требуется помывка вывески","ticketS"
-"tateId":0,"serviceId":"2995","files":[4737],"shopId":"2"}"
+"{"text":"comment 5 (alex)","header":"Витрина не работает","ticketStateId":0,""
+"serviceId":"2896","files":[4852],"shopId":"2"}"

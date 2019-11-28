@@ -1,4 +1,4 @@
-Virtual User Script started at: 27.11.2019 14:31:52
+Virtual User Script started at: 28.11.2019 11:13:06
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 12.55.0 for Windows 10; build 911 (��� 24 2017 19:46:00)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
@@ -10,7 +10,7 @@ Starting iteration 1.
 Maximum number of concurrent connections per server: 6  	[MsgId: MMSG-26989]
 Starting action Login.
 Login.c(3): web_url("/login") started  	[MsgId: MMSG-26355]
-Login.c(3): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(3): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(3): Notify: Parameter Substitution: parameter "port" =  "56902"
 Login.c(3): Found resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
 Login.c(3): Found resource "http://learning2.pflb.ru:56902/css/core/materialize.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
@@ -24,18 +24,18 @@ Login.c(3): Found resource "http://learning2.pflb.ru:56902/js/page/authorisation
 Login.c(3): web_url("/login") was successful, 1012641 body bytes, 2125 header bytes  	[MsgId: MMSG-26386]
 Login.c(13): Notify: Transaction "UC01_TR01_login" started.
 Login.c(15): web_submit_data("/api/login") started  	[MsgId: MMSG-26355]
-Login.c(15): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(15): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(15): Notify: Parameter Substitution: parameter "port" =  "56902"
-Login.c(15): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(15): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(15): Notify: Parameter Substitution: parameter "port" =  "56902"
 Login.c(15): Notify: Parameter Substitution: parameter "login" =  "master"
 Login.c(15): Notify: Next row for parameter password = 1 [table  = password].
 Login.c(15): Notify: Parameter Substitution: parameter "password" =  "123"
 Login.c(15): web_submit_data("/api/login") was successful, 146 body bytes, 339 header bytes  	[MsgId: MMSG-26386]
 Login.c(28): web_url("/home") started  	[MsgId: MMSG-26355]
-Login.c(28): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(28): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(28): Notify: Parameter Substitution: parameter "port" =  "56902"
-Login.c(28): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(28): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(28): Notify: Parameter Substitution: parameter "port" =  "56902"
 Login.c(28): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
 Login.c(28): Found resource "http://learning2.pflb.ru:56902/css/core/materialize.min.css" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
@@ -66,55 +66,55 @@ Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/index.js" in HTML
 Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
 Login.c(28): web_url("/home") was successful, 559905 body bytes, 4251 header bytes  	[MsgId: MMSG-26386]
 Login.c(38): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
-Login.c(38): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(38): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(38): Notify: Parameter Substitution: parameter "port" =  "56902"
-Login.c(38): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(38): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(38): Notify: Parameter Substitution: parameter "port" =  "56902"
 Login.c(38): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Login.c(48): web_url("/api/user/info") started  	[MsgId: MMSG-26355]
-Login.c(48): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(48): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(48): Notify: Parameter Substitution: parameter "port" =  "56902"
-Login.c(48): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(48): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(48): Notify: Parameter Substitution: parameter "port" =  "56902"
 Login.c(48): web_url("/api/user/info") was successful, 277 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Login.c(58): web_url("/api/ticket/countByState/4") started  	[MsgId: MMSG-26355]
-Login.c(58): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(58): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(58): Notify: Parameter Substitution: parameter "port" =  "56902"
-Login.c(58): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(58): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(58): Notify: Parameter Substitution: parameter "port" =  "56902"
 Login.c(58): web_url("/api/ticket/countByState/4") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Login.c(68): web_url("/api/ticket/countByState/") started  	[MsgId: MMSG-26355]
-Login.c(68): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(68): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(68): Notify: Parameter Substitution: parameter "port" =  "56902"
-Login.c(68): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(68): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(68): Notify: Parameter Substitution: parameter "port" =  "56902"
 Login.c(68): web_url("/api/ticket/countByState/") was successful, 218 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Login.c(78): web_custom_request("/api/ticket/?state=-1,0,1,5&page=0&size=10") started  	[MsgId: MMSG-26355]
-Login.c(78): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(78): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(78): Notify: Parameter Substitution: parameter "port" =  "56902"
-Login.c(78): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+Login.c(78): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(78): Notify: Parameter Substitution: parameter "port" =  "56902"
-Login.c(78): web_custom_request("/api/ticket/?state=-1,0,1,5&page=0&size=10") was successful, 12185 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
-Login.c(90): Notify: Transaction "UC01_TR01_login" ended with a "Pass" status (Duration: 1.5874 Wasted Time: 0.1581).
+Login.c(78): web_custom_request("/api/ticket/?state=-1,0,1,5&page=0&size=10") was successful, 11402 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+Login.c(90): Notify: Transaction "UC01_TR01_login" ended with a "Pass" status (Duration: 1.5740 Wasted Time: 0.1581).
 Ending action Login.
 Starting action CreateOrder.
 CreateOrder.c(4): Notify: Transaction "UC01_TR02_NewOrder" started.
 CreateOrder.c(6): web_url("/api/user/catalog/node/0/children/") started  	[MsgId: MMSG-26355]
-CreateOrder.c(6): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(6): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(6): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(6): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(6): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(6): Notify: Parameter Substitution: parameter "port" =  "56902"
 CreateOrder.c(6): web_url("/api/user/catalog/node/0/children/") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 CreateOrder.c(16): web_set_sockets_option started  	[MsgId: MMSG-26355]
 CreateOrder.c(16): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
-CreateOrder.c(18): Notify: Transaction "UC01_TR02_NewOrder" ended with a "Pass" status (Duration: 0.1469 Wasted Time: 0.0196).
+CreateOrder.c(18): Notify: Transaction "UC01_TR02_NewOrder" ended with a "Pass" status (Duration: 0.1222 Wasted Time: 0.0175).
 CreateOrder.c(20): Notify: Transaction "UC01_TR03_Location1" started.
 CreateOrder.c(24): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 CreateOrder.c(24): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 CreateOrder.c(29): web_url("/api/shops?q=&page=0") started  	[MsgId: MMSG-26355]
-CreateOrder.c(29): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(29): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(29): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(29): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(29): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(29): Notify: Parameter Substitution: parameter "port" =  "56902"
 CreateOrder.c(29): Notify: Saving Parameter "ShopIDs_1 = -1".
 CreateOrder.c(29): Notify: Saving Parameter "ShopIDs_2 = -2".
@@ -125,12 +125,12 @@ CreateOrder.c(29): Notify: Saving Parameter "ShopIDs_6 = 2".
 CreateOrder.c(29): Notify: Saving Parameter "ShopIDs_count = 6".
 CreateOrder.c(29): web_url("/api/shops?q=&page=0") was successful, 1015 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 CreateOrder.c(39): Notify: Parameter Substitution: parameter "ShopIDs_count" =  "6"
-CreateOrder.c(39): Notify: Parameter Substitution: parameter "ShopIDs_1" =  "-1"
-CreateOrder.c(39): Notify: Saving Parameter "ShopID = -1".
+CreateOrder.c(39): Notify: Parameter Substitution: parameter "ShopIDs_2" =  "-2"
+CreateOrder.c(39): Notify: Saving Parameter "ShopID = -2".
 CreateOrder.c(41): web_url("/api/user/catalog/node/0/children/") started  	[MsgId: MMSG-26355]
-CreateOrder.c(41): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(41): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(41): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(41): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(41): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(41): Notify: Parameter Substitution: parameter "port" =  "56902"
 CreateOrder.c(41): web_url("/api/user/catalog/node/0/children/") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 CreateOrder.c(51): web_reg_save_param_json started  	[MsgId: MMSG-26355]
@@ -140,10 +140,10 @@ CreateOrder.c(55): Registering web_reg_save_param_json was successful  	[MsgId: 
 CreateOrder.c(59): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 CreateOrder.c(59): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 CreateOrder.c(64): web_url("/api/user/catalog/treeview?shopid={ShopID}") started  	[MsgId: MMSG-26355]
-CreateOrder.c(64): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(64): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(64): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(64): Notify: Parameter Substitution: parameter "ShopID" =  "-1"
-CreateOrder.c(64): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(64): Notify: Parameter Substitution: parameter "ShopID" =  "-2"
+CreateOrder.c(64): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(64): Notify: Parameter Substitution: parameter "port" =  "56902"
 CreateOrder.c(64): Notify: Saving Parameter "TreeIDs_1 = 2782".
 CreateOrder.c(64): Notify: Saving Parameter "TreeIDs_2 = 2785".
@@ -840,93 +840,94 @@ CreateOrder.c(64): Notify: Saving Parameter "Names_count = 230".
 CreateOrder.c(64): Notify: Saving Parameter "Parents_count = 230".
 CreateOrder.c(64): web_url("/api/user/catalog/treeview?shopid={ShopID}") was successful, 75659 body bytes, 316 header bytes, 84 chunking overhead bytes  	[MsgId: MMSG-26385]
 CreateOrder.c(74): Notify: Parameter Substitution: parameter "TreeIDs_count" =  "230"
-CreateOrder.c(75): Notify: Parameter Substitution: parameter "TreeIDs_163" =  "2825"
-CreateOrder.c(75): Notify: Saving Parameter "ServiceID = 2825".
-CreateOrder.c(76): Notify: Parameter Substitution: parameter "Names_163" =  "Течь из корпуса расходомеров, датчиков температуры и давления"
-CreateOrder.c(76): Notify: Saving Parameter "Name = Течь из корпуса расходомеров, датчиков температуры и давления".
-CreateOrder.c(77): Notify: Parameter Substitution: parameter "Parents_163" =  "156"
-CreateOrder.c(77): Notify: Saving Parameter "Parent = 156".
-CreateOrder.c(79): Notify: Transaction "UC01_TR03_Location1" ended with a "Pass" status (Duration: 0.5479 Wasted Time: 0.1256).
+CreateOrder.c(75): Notify: Parameter Substitution: parameter "TreeIDs_77" =  "2914"
+CreateOrder.c(75): Notify: Saving Parameter "ServiceID = 2914".
+CreateOrder.c(76): Notify: Parameter Substitution: parameter "Names_77" =  "Лифт не поднимает вес"
+CreateOrder.c(76): Notify: Saving Parameter "Name = Лифт не поднимает вес".
+CreateOrder.c(77): Notify: Parameter Substitution: parameter "Parents_77" =  "191"
+CreateOrder.c(77): Notify: Saving Parameter "Parent = 191".
+CreateOrder.c(79): Notify: Transaction "UC01_TR03_Location1" ended with a "Pass" status (Duration: 0,5285 Wasted Time: 0,1104).
 CreateOrder.c(82): Notify: Transaction "UC01_TR04_theme1" started.
 CreateOrder.c(84): web_url("/api/user/catalog/node/{Parent}/children/") started  	[MsgId: MMSG-26355]
-CreateOrder.c(84): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(84): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(84): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(84): Notify: Parameter Substitution: parameter "Parent" =  "156"
-CreateOrder.c(84): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(84): Notify: Parameter Substitution: parameter "Parent" =  "191"
+CreateOrder.c(84): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(84): Notify: Parameter Substitution: parameter "port" =  "56902"
 CreateOrder.c(84): web_url("/api/user/catalog/node/{Parent}/children/") was successful, 2 body bytes, 316 header bytes, 10 chunking overhead bytes  	[MsgId: MMSG-26385]
 CreateOrder.c(94): web_url("/api/user/catalog/node/{Parent}/service/") started  	[MsgId: MMSG-26355]
-CreateOrder.c(94): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(94): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(94): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(94): Notify: Parameter Substitution: parameter "Parent" =  "156"
-CreateOrder.c(94): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(94): Notify: Parameter Substitution: parameter "Parent" =  "191"
+CreateOrder.c(94): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(94): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(94): web_url("/api/user/catalog/node/{Parent}/service/") was successful, 837 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(94): web_url("/api/user/catalog/node/{Parent}/service/") was successful, 970 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 CreateOrder.c(104): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 CreateOrder.c(104): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 CreateOrder.c(109): web_url("/api/user/catalog/breadcrumbs/{Parent}") started  	[MsgId: MMSG-26355]
-CreateOrder.c(109): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(109): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(109): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(109): Notify: Parameter Substitution: parameter "Parent" =  "156"
-CreateOrder.c(109): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(109): Notify: Parameter Substitution: parameter "Parent" =  "191"
+CreateOrder.c(109): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(109): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(109): Notify: Saving Parameter "Names2_1 = �\x98нженерия".
-CreateOrder.c(109): Notify: Saving Parameter "Names2_2 = �\x98змерительные приборы".
-CreateOrder.c(109): Notify: Saving Parameter "Names2_3 = Счетчик тепла".
+CreateOrder.c(109): Notify: Saving Parameter "Names2_1 = Технологическое оборудование".
+CreateOrder.c(109): Notify: Saving Parameter "Names2_2 = Подъемные и передвижные механизмы".
+CreateOrder.c(109): Notify: Saving Parameter "Names2_3 = Эскалатор, лифт, подъемник".
 CreateOrder.c(109): Notify: Saving Parameter "Names2_count = 3".
-CreateOrder.c(109): web_url("/api/user/catalog/breadcrumbs/{Parent}") was successful, 148 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(109): web_url("/api/user/catalog/breadcrumbs/{Parent}") was successful, 230 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 CreateOrder.c(119): Notify: Parameter Substitution: parameter "Names2_count" =  "3"
-CreateOrder.c(119): Notify: Parameter Substitution: parameter "Names2_3" =  "Счетчик тепла"
-CreateOrder.c(119): Notify: Saving Parameter "Name2 = Счетчик тепла".
+CreateOrder.c(119): Notify: Parameter Substitution: parameter "Names2_1" =  "Технологическое оборудование"
+CreateOrder.c(119): Notify: Saving Parameter "Name2 = Технологическое оборудование".
 CreateOrder.c(121): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 CreateOrder.c(121): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 CreateOrder.c(125): web_url("/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}") started  	[MsgId: MMSG-26355]
-CreateOrder.c(125): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(125): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(125): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(125): Notify: Parameter Substitution: parameter "ServiceID" =  "2825"
-CreateOrder.c(125): Notify: Parameter Substitution: parameter "ShopID" =  "-1"
-CreateOrder.c(125): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(125): Notify: Parameter Substitution: parameter "ServiceID" =  "2914"
+CreateOrder.c(125): Notify: Parameter Substitution: parameter "ShopID" =  "-2"
+CreateOrder.c(125): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(125): Notify: Parameter Substitution: parameter "port" =  "56902"
 CreateOrder.c(125): Notify: Saving Parameter "InventoryCount = 0".
 CreateOrder.c(125): web_url("/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-CreateOrder.c(135): Notify: Transaction "UC01_TR04_theme1" ended with a "Pass" status (Duration: 0.4500 Wasted Time: 0.0735).
+CreateOrder.c(135): Notify: Transaction "UC01_TR04_theme1" ended with a "Pass" status (Duration: 0.3683 Wasted Time: 0.0691).
 CreateOrder.c(139): Notify: Transaction "UC01_TR05_Description" started.
 CreateOrder.c(141): Notify: Parameter Substitution: parameter "InventoryCount" =  "0"
 CreateOrder.c(148): web_url("/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}") started  	[MsgId: MMSG-26355]
-CreateOrder.c(148): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(148): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(148): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(148): Notify: Parameter Substitution: parameter "ServiceID" =  "2825"
-CreateOrder.c(148): Notify: Parameter Substitution: parameter "ShopID" =  "-1"
-CreateOrder.c(148): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(148): Notify: Parameter Substitution: parameter "ServiceID" =  "2914"
+CreateOrder.c(148): Notify: Parameter Substitution: parameter "ShopID" =  "-2"
+CreateOrder.c(148): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(148): Notify: Parameter Substitution: parameter "port" =  "56902"
 CreateOrder.c(148): web_url("/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-CreateOrder.c(162): Notify: Transaction "UC01_TR05_Description" ended with a "Pass" status (Duration: 0.1260 Wasted Time: 0.0161).
+CreateOrder.c(162): Notify: Transaction "UC01_TR05_Description" ended with a "Pass" status (Duration: 0.1207 Wasted Time: 0.0169).
 CreateOrder.c(166): Notify: Transaction "UC01_TR06_inventoryNum" started.
 CreateOrder.c(168): web_url("/api/inventoryNumbers?shopId={ShopID}&serviceId={ServiceID}&serviceId={ServiceID}&q=&page=0") started  	[MsgId: MMSG-26355]
-CreateOrder.c(168): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(168): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(168): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(168): Notify: Parameter Substitution: parameter "ShopID" =  "-1"
-CreateOrder.c(168): Notify: Parameter Substitution: parameter "ServiceID" =  "2825"
-CreateOrder.c(168): Notify: Parameter Substitution: parameter "ServiceID" =  "2825"
-CreateOrder.c(168): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(168): Notify: Parameter Substitution: parameter "ShopID" =  "-2"
+CreateOrder.c(168): Notify: Parameter Substitution: parameter "ServiceID" =  "2914"
+CreateOrder.c(168): Notify: Parameter Substitution: parameter "ServiceID" =  "2914"
+CreateOrder.c(168): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(168): Notify: Parameter Substitution: parameter "port" =  "56902"
 CreateOrder.c(168): web_url("/api/inventoryNumbers?shopId={ShopID}&serviceId={ServiceID}&serviceId={ServiceID}&q=&page=0") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-CreateOrder.c(178): Notify: Transaction "UC01_TR06_inventoryNum" ended with a "Pass" status (Duration: 0.1169 Wasted Time: 0.0193).
+CreateOrder.c(178): Notify: Transaction "UC01_TR06_inventoryNum" ended with a "Pass" status (Duration: 0,1281 Wasted Time: 0,0184).
 CreateOrder.c(182): Notify: Transaction "UC01_TR07_File" started.
 CreateOrder.c(184): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 CreateOrder.c(184): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 CreateOrder.c(188): web_submit_data("/api/ticket/file/") started  	[MsgId: MMSG-26355]
-CreateOrder.c(188): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(188): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(188): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(188): Notify: Parameter Substitution: parameter "host" =  "learning2.pflb.ru"
+CreateOrder.c(188): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 CreateOrder.c(188): Notify: Parameter Substitution: parameter "port" =  "56902"
-CreateOrder.c(188): Notify: Parameter Substitution: parameter "filename_detail" =  "task_detail_1.txt"
-CreateOrder.c(188): Error -26488: Could not obtain information about submitted file "C:\Users\student\Documents\XDesk task details\task_detail_1.txt": _stat32 rc=-1, errno=2 [No such file or directory]. Using an empty file  	[MsgId: MERR-26488]
+CreateOrder.c(188): Notify: Parameter Substitution: parameter "file_folder" =  "..\learning2\XDesk_task_details\"
+CreateOrder.c(188): Notify: Parameter Substitution: parameter "file" =  "task_detail_2.txt"
+CreateOrder.c(188): Error -26488: Could not obtain information about submitted file "C:\Users\student\Documents\XDesk LR\learning2\UC01_task_create\..\learning2\XDesk_task_details\task_detail_2.txt": _stat32 rc=-1, errno=2 [No such file or directory]. Using an empty file  	[MsgId: MERR-26488]
 CreateOrder.c(188): Aborting pending download of URL="http://learning2.pflb.ru:56902/api/ticket/file/" (RelFrameId=1, Internal ID=49)  	[MsgId: MMSG-27652]
 CreateOrder.c(188): Notify: Saving Parameter "FileID = ".
 CreateOrder.c(188): Error -35060: No matches were found for the specified query: "$..id"  	[MsgId: MERR-35060]
 CreateOrder.c(188): web_submit_data("/api/ticket/file/") highest severity level was "ERROR", 0 body bytes, 0 header bytes  	[MsgId: MMSG-26388]
-CreateOrder.c(188): Notify: Transaction "UC01_TR07_File" ended with a "Fail" status (Duration: 0.0938 Wasted Time: 0.0321).
+CreateOrder.c(188): Notify: Transaction "UC01_TR07_File" ended with a "Fail" status (Duration: 0,0627 Wasted Time: 0,0094).
 CreateOrder.c(188): Notify: Transaction "UC01_TR07_File" has 0 error message(s).
 Ending action CreateOrder.
 Ending iteration 1.

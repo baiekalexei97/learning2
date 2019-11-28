@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HTTPSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="29">
-  <HTTPTask id="59" hostname="learning2.pflb.ru:56902" path="/api/logout" url="http://learning2.pflb.ru:56902/api/logout" ip="94.159.69.182" port="56902" client_ip="192.168.14.228" client_port="61282" connectionId="2152" origin="Primary" encodingType="ANSI" startDateTime="2019-11-27T14:35:31.178+03:00" startTime="8663" endTime="8678" blockedTime="-1" dnsTime="-1" connectTime="-2" sendTime="1" waitTime="5" receiveTime="8" sslNegotiateTime="-1" responseBodySize="493">
+  <HTTPTask id="59" hostname="learning2.pflb.ru:56902" path="/api/logout" url="http://learning2.pflb.ru:56902/api/logout" ip="94.159.69.182" port="56902" client_ip="192.168.14.228" client_port="64585" connectionId="2144" origin="Primary" encodingType="ANSI" startDateTime="2019-11-28T11:14:01.660+03:00" startTime="9061" endTime="9075" blockedTime="-1" dnsTime="-1" connectTime="-2" sendTime="0" waitTime="6" receiveTime="6" sslNegotiateTime="-1" responseBodySize="493">
     <HTTPRequest method="GET">
       <HTTPHeaders>
         <HTTPHeaderEntity name="Referer" index="0">
@@ -62,7 +62,7 @@
         <HTTPHeaderEntity name="Cookie" index="7">
           <HTTPDataSet>
             <HTTPData dataFilePath="" dfeDataType="Raw" sectionDataType="1">
-              <ActualData>U0VTU0lPTj02NjI4ZjQxZC00MzI1LTQ3NjQtYmFhYS1lNTVkOGUzYmM0ZmE=</ActualData>
+              <ActualData>U0VTU0lPTj1kYTJlOWNmOC1jZTk2LTQ0ZmMtYTdlYy05ZWI4YWUyNTJkZjQ=</ActualData>
             </HTTPData>
           </HTTPDataSet>
           <IsExternalData>false</IsExternalData>
@@ -70,7 +70,7 @@
         <HTTPAllHeaders>
           <HTTPDataSet>
             <HTTPData dataFilePath="" dfeDataType="Raw" sectionDataType="1">
-              <ActualData>R0VUIC9hcGkvbG9nb3V0IEhUVFAvMS4xDQpSZWZlcmVyOiBodHRwOi8vbGVhcm5pbmcyLnBmbGIucnU6NTY5MDIvDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXT1c2NDsgVHJpZGVudC83LjA7IHJ2OjExLjApIGxpa2UgR2Vja28NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZQ0KQWNjZXB0LUxhbmd1YWdlOiBydS1SVQ0KQWNjZXB0OiAqLyoNCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCkhvc3Q6IGxlYXJuaW5nMi5wZmxiLnJ1OjU2OTAyDQpDb29raWU6IFNFU1NJT049NjYyOGY0MWQtNDMyNS00NzY0LWJhYWEtZTU1ZDhlM2JjNGZhDQoNCg==</ActualData>
+              <ActualData>R0VUIC9hcGkvbG9nb3V0IEhUVFAvMS4xDQpSZWZlcmVyOiBodHRwOi8vbGVhcm5pbmcyLnBmbGIucnU6NTY5MDIvDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXT1c2NDsgVHJpZGVudC83LjA7IHJ2OjExLjApIGxpa2UgR2Vja28NCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZQ0KQWNjZXB0LUxhbmd1YWdlOiBydS1SVQ0KQWNjZXB0OiAqLyoNCkNvbm5lY3Rpb246IEtlZXAtQWxpdmUNCkhvc3Q6IGxlYXJuaW5nMi5wZmxiLnJ1OjU2OTAyDQpDb29raWU6IFNFU1NJT049ZGEyZTljZjgtY2U5Ni00NGZjLWE3ZWMtOWViOGFlMjUyZGY0DQoNCg==</ActualData>
             </HTTPData>
           </HTTPDataSet>
           <IsExternalData>false</IsExternalData>
@@ -79,7 +79,7 @@
           <HTTPHeaderEntity name="SESSION" index="0">
             <HTTPDataSet>
               <HTTPData dataFilePath="" dfeDataType="Raw" sectionDataType="1">
-                <ActualData>NjYyOGY0MWQtNDMyNS00NzY0LWJhYWEtZTU1ZDhlM2JjNGZh</ActualData>
+                <ActualData>ZGEyZTljZjgtY2U5Ni00NGZjLWE3ZWMtOWViOGFlMjUyZGY0</ActualData>
               </HTTPData>
             </HTTPDataSet>
             <IsExternalData>false</IsExternalData>
@@ -173,7 +173,7 @@
         <HTTPHeaderEntity name="Date" index="10">
           <HTTPDataSet>
             <HTTPData dataFilePath="" dfeDataType="Raw" sectionDataType="1">
-              <ActualData>V2VkLCAyNyBOb3YgMjAxOSAxMTozNTozMCBHTVQ=</ActualData>
+              <ActualData>VGh1LCAyOCBOb3YgMjAxOSAwODoxNDowMSBHTVQ=</ActualData>
             </HTTPData>
           </HTTPDataSet>
           <IsExternalData>false</IsExternalData>
@@ -181,14 +181,14 @@
         <HTTPAllHeaders>
           <HTTPDataSet>
             <HTTPData dataFilePath="" dfeDataType="Raw" sectionDataType="1">
-              <ActualData>SFRUUC8xLjEgMzAyIA0KWC1Db250ZW50LVR5cGUtT3B0aW9uczogbm9zbmlmZg0KWC1YU1MtUHJvdGVjdGlvbjogMTsgbW9kZT1ibG9jaw0KQ2FjaGUtQ29udHJvbDogbm8tY2FjaGUsIG5vLXN0b3JlLCBtYXgtYWdlPTAsIG11c3QtcmV2YWxpZGF0ZQ0KUHJhZ21hOiBuby1jYWNoZQ0KRXhwaXJlczogMA0KWC1GcmFtZS1PcHRpb25zOiBTQU1FT1JJR0lODQpTZXQtQ29va2llOiBQRkxCLnJlbWVtYmVyLm1lPTsgTWF4LUFnZT0wOyBFeHBpcmVzPVRodSwgMDEtSmFuLTE5NzAgMDA6MDA6MTAgR01UOyBQYXRoPS8NClNldC1Db29raWU6IFNFU1NJT049OyBNYXgtQWdlPTA7IEV4cGlyZXM9VGh1LCAwMS1KYW4tMTk3MCAwMDowMDoxMCBHTVQ7IFBhdGg9LzsgSHR0cE9ubHkNCkxvY2F0aW9uOiBodHRwOi8vbGVhcm5pbmcyLnBmbGIucnU6NTY5MDIvbG9naW4uaHRtbA0KQ29udGVudC1MZW5ndGg6IDANCkRhdGU6IFdlZCwgMjcgTm92IDIwMTkgMTE6MzU6MzAgR01UDQoNCg==</ActualData>
+              <ActualData>SFRUUC8xLjEgMzAyIA0KWC1Db250ZW50LVR5cGUtT3B0aW9uczogbm9zbmlmZg0KWC1YU1MtUHJvdGVjdGlvbjogMTsgbW9kZT1ibG9jaw0KQ2FjaGUtQ29udHJvbDogbm8tY2FjaGUsIG5vLXN0b3JlLCBtYXgtYWdlPTAsIG11c3QtcmV2YWxpZGF0ZQ0KUHJhZ21hOiBuby1jYWNoZQ0KRXhwaXJlczogMA0KWC1GcmFtZS1PcHRpb25zOiBTQU1FT1JJR0lODQpTZXQtQ29va2llOiBQRkxCLnJlbWVtYmVyLm1lPTsgTWF4LUFnZT0wOyBFeHBpcmVzPVRodSwgMDEtSmFuLTE5NzAgMDA6MDA6MTAgR01UOyBQYXRoPS8NClNldC1Db29raWU6IFNFU1NJT049OyBNYXgtQWdlPTA7IEV4cGlyZXM9VGh1LCAwMS1KYW4tMTk3MCAwMDowMDoxMCBHTVQ7IFBhdGg9LzsgSHR0cE9ubHkNCkxvY2F0aW9uOiBodHRwOi8vbGVhcm5pbmcyLnBmbGIucnU6NTY5MDIvbG9naW4uaHRtbA0KQ29udGVudC1MZW5ndGg6IDANCkRhdGU6IFRodSwgMjggTm92IDIwMTkgMDg6MTQ6MDEgR01UDQoNCg==</ActualData>
             </HTTPData>
           </HTTPDataSet>
           <IsExternalData>false</IsExternalData>
         </HTTPAllHeaders>
       </HTTPHeaders>
     </HTTPResponse>
-    <HTTPTask id="60" hostname="learning2.pflb.ru:56902" path="/login.html" url="http://learning2.pflb.ru:56902/login.html" ip="94.159.69.182" port="56902" client_ip="192.168.14.228" client_port="61283" connectionId="2160" origin="Redirection" encodingType="ANSI" startDateTime="2019-11-27T14:35:31.193+03:00" startTime="8678" endTime="8688" blockedTime="-1" dnsTime="-1" connectTime="-2" sendTime="0" waitTime="2" receiveTime="7" sslNegotiateTime="-1" responseBodySize="1055">
+    <HTTPTask id="60" hostname="learning2.pflb.ru:56902" path="/login.html" url="http://learning2.pflb.ru:56902/login.html" ip="94.159.69.182" port="56902" client_ip="192.168.14.228" client_port="64586" connectionId="2160" origin="Redirection" encodingType="ANSI" startDateTime="2019-11-28T11:14:01.674+03:00" startTime="9075" endTime="9086" blockedTime="-1" dnsTime="-1" connectTime="-2" sendTime="0" waitTime="3" receiveTime="7" sslNegotiateTime="-1" responseBodySize="1055">
       <HTTPRequest method="GET">
         <HTTPHeaders>
           <HTTPHeaderEntity name="Referer" index="0">
@@ -295,7 +295,7 @@
           <HTTPHeaderEntity name="Date" index="4">
             <HTTPDataSet>
               <HTTPData dataFilePath="" dfeDataType="Raw" sectionDataType="1">
-                <ActualData>V2VkLCAyNyBOb3YgMjAxOSAxMTozNTozMCBHTVQ=</ActualData>
+                <ActualData>VGh1LCAyOCBOb3YgMjAxOSAwODoxNDowMSBHTVQ=</ActualData>
               </HTTPData>
             </HTTPDataSet>
             <IsExternalData>false</IsExternalData>
@@ -303,7 +303,7 @@
           <HTTPAllHeaders>
             <HTTPDataSet>
               <HTTPData dataFilePath="" dfeDataType="Raw" sectionDataType="1">
-                <ActualData>SFRUUC8xLjEgMjAwIA0KTGFzdC1Nb2RpZmllZDogVHVlLCAyNyBOb3YgMjAxOCAxNDowMzo0MyBHTVQNCkFjY2VwdC1SYW5nZXM6IGJ5dGVzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVURi04DQpDb250ZW50LUxlbmd0aDogODczDQpEYXRlOiBXZWQsIDI3IE5vdiAyMDE5IDExOjM1OjMwIEdNVA0KDQo=</ActualData>
+                <ActualData>SFRUUC8xLjEgMjAwIA0KTGFzdC1Nb2RpZmllZDogVHVlLCAyNyBOb3YgMjAxOCAxNDowMzo0MyBHTVQNCkFjY2VwdC1SYW5nZXM6IGJ5dGVzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVURi04DQpDb250ZW50LUxlbmd0aDogODczDQpEYXRlOiBUaHUsIDI4IE5vdiAyMDE5IDA4OjE0OjAxIEdNVA0KDQo=</ActualData>
               </HTTPData>
             </HTTPDataSet>
             <IsExternalData>false</IsExternalData>

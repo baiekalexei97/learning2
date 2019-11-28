@@ -1,7 +1,7 @@
 Action()
 {
 
-	lr_start_transaction("/api/task/countByState/");
+	lr_start_transaction("UC03_TR02_tasks");
 
 	web_url("/api/task/countByState/", 
 		"URL=http://{uri}:{port}/api/task/countByState/", 
@@ -89,7 +89,7 @@ Action()
 		"Snapshot=t15.inf", 
 		"Mode=HTML", 
 		ITEMDATA, 
-		"Name=files", "Value=C:\\Users\\student\\Documents\\XDesk task details\\{file}", "File=Yes", ENDITEM, 
+		"Name=files", "Value={file_folder}{file}", "File=Yes", ENDITEM, 
 		LAST);
 
 	lr_end_transaction("UC03_TR04_commentFile",LR_AUTO);

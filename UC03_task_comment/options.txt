@@ -2,8 +2,8 @@
 -DCCI
 -D_IDA_XL
 -DWINNT
--IC:\Users\student\Documents\UC03_task_comment
+-IC:\Users\student\Documents\XDesk LR\learning2\UC03_task_comment
 -IC:\Program Files (x86)\HPE\LoadRunner\include
--ec:\users\student\documents\uc03_task_comment\\logfile.log
-c:\users\student\documents\uc03_task_comment\\combined_UC03_task_comment.c
-c:\users\student\documents\uc03_task_comment\\pre_cci.c
+-ec:\users\student\documents\xdesk lr\learning2\uc03_task_comment\\logfile.log
+c:\users\student\documents\xdesk lr\learning2\uc03_task_comment\\combined_UC03_task_comment.c
+c:\users\student\documents\xdesk lr\learning2\uc03_task_comment\\pre_cci.c

@@ -1,4 +1,4 @@
-GET /api/user/catalog/breadcrumbs/207 HTTP/1.1
+GET /api/user/catalog/breadcrumbs/183 HTTP/1.1
 Referer: http://learning2.pflb.ru:56902/
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
 Accept-Encoding: gzip, deflate
@@ -6,5 +6,5 @@ Accept-Language: ru-RU
 Accept: */*
 Connection: Keep-Alive
 Host: learning2.pflb.ru:56902
-Cookie: SESSION=6628f41d-4325-4764-baaa-e55d8e3bc4fa
+Cookie: SESSION=da2e9cf8-ce96-44fc-a7ec-9eb8ae252df4
 

@@ -37,12 +37,25 @@ public class Actions
     
     public int action() throws ClassNotFoundException, SQLException {
        Statement stmt = null;
+       ResultSet rset = null;
+       String id = null;
 
        try {
 		   connection.setAutoCommit(false);
 		   stmt = connection.createStatement();
-		   System.out.println("Adding Ticket to Tasks");
-		   lr.log_message("Adding Ticket to Tasks");
+		   
+		   lr.log_message("Selecting Ticket");
+		   
+		   rset = stmt.executeQuery("select id from ticket where rownum < 2 and state_id = -1");
+		   while (rset.next()) {
+            id = rset.getString("id");
+		   }
+		   
+		   lr.log_message("Updating Ticket Status");
+		   
+		   stmt.executeQuery("update ticket set state_id = 1 where id="+id);		   
+		   
+		   lr.log_message("Adding Ticket to Tasks");		   
 		   
 		   stmt.executeQuery("insert into task(id,change_id,ticket_id,guid,header,text,priority_id,state_id,client_id," +
 		               "solution_group_id,create_date,sync_mask,last_edit_date,last_edit_user_login,engineer_id," +
@@ -50,20 +63,14 @@ public class Actions
 		               "select id, 'IDC2D620524153zdzPWAoX9OFgW4UB', id, 'd830c5ee-9b77-4bd1-879a-0c4d2c282a67'," +
 		               "header, text, '3', '1', applicant_id, '9', create_date,'0', last_edit_date," +
 		               "last_edit_user_login,'103','102','TSK_1800000', external_system " +
-		               "from ticket where rownum < 2 and state_id = -1");
-		   
-		   System.out.println("Updating Ticket Status");
-		   lr.log_message("Updating Ticket Status");
-		   
-		   stmt.executeQuery("update ticket set state_id = 1 where id in(select ticket_id from task where state_id =1)");
-		   
+		               //"from ticket where rownum < 2 and state_id = -1");
+		               "from ticket where id = "+id);
+		 		  
 		   lr.log_message("Commit");
-		   System.out.println("Commit");
 		   connection.commit();
 	} catch (SQLException e1) {
        	e1.printStackTrace();
-       	lr.log_message("Rollback, Caught Exception -" + e1.getMessage());
-		System.out.println("Rolling back");		    
+       	lr.log_message("Rolling back, Caught Exception - " + e1.getMessage());	    
 		try{
 			connection.rollback();
 		}catch(SQLException e2){
@@ -74,6 +81,7 @@ public class Actions
 		return 0;
     }
 	public int end() throws Throwable {
+    	lr.log_message("Closing Connection");
     	connection.close();
 	    return 0;
 	}

@@ -1,22 +1,32 @@
 [
     {
+        "transactionName": "UC03_TR01_login",
+        "rawStartTime": 1574929007127,
+        "rawEndTime": 1574929008697
+    },
+    {
         "transactionName": "UC03_TR02_tasks",
-        "rawStartTime": 1574773758675,
-        "rawEndTime": 1574773759390
+        "rawStartTime": 1574929008870,
+        "rawEndTime": 1574929009703
     },
     {
         "transactionName": "UC03_TR03_selectTask",
-        "rawStartTime": 1574773759459,
-        "rawEndTime": 1574773760179
+        "rawStartTime": 1574929009771,
+        "rawEndTime": 1574929010663
     },
     {
         "transactionName": "UC03_TR04_commentFile",
-        "rawStartTime": 1574773760234,
-        "rawEndTime": 1574773760401
+        "rawStartTime": 1574929010739,
+        "rawEndTime": 1574929010970
     },
     {
         "transactionName": "UC03_TR05_commentFinish",
-        "rawStartTime": 1574773760461,
-        "rawEndTime": 1574773760830
+        "rawStartTime": 1574929011040,
+        "rawEndTime": 1574929011686
+    },
+    {
+        "transactionName": "UC03_TR06_logout",
+        "rawStartTime": 1574929011879,
+        "rawEndTime": 1574929012030
     }
 ]
