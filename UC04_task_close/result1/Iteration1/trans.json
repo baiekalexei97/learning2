@@ -1,0 +1,32 @@
+[
+    {
+        "transactionName": "UC04_TR01_login",
+        "rawStartTime": 1574936870343,
+        "rawEndTime": 1574936872364
+    },
+    {
+        "transactionName": "UC04_TR02_tasks",
+        "rawStartTime": 1574936872537,
+        "rawEndTime": 1574936873336
+    },
+    {
+        "transactionName": "UC04_TR03_selectTask",
+        "rawStartTime": 1574936873405,
+        "rawEndTime": 1574936874068
+    },
+    {
+        "transactionName": "UC04_TR04_ToOrder",
+        "rawStartTime": 1574936874123,
+        "rawEndTime": 1574936874890
+    },
+    {
+        "transactionName": "UC04_TR05_closeOrder",
+        "rawStartTime": 1574936874948,
+        "rawEndTime": 1574936877785
+    },
+    {
+        "transactionName": "UC03_TR06_logout",
+        "rawStartTime": 1574936877963,
+        "rawEndTime": 1574936878110
+    }
+]

@@ -21,8 +21,7 @@ public class Actions
 	    	lr.abort();
 	}
 	try {
-    		lr.save_string(lr.eval_string("{host}:{port}:{sid}"), "url");
-        //String url = "jdbc:oracle:thin:@192.168.14.53:1522:orcl";
+    	lr.save_string(lr.eval_string("{host}:{port}:{sid}"), "url");
         connection = DriverManager.getConnection(lr.eval_string("{url}"),
                                                  lr.eval_string("{login}"),
                                                  lr.eval_string("{password}"));
@@ -48,7 +47,7 @@ public class Actions
 		   
 		   rset = stmt.executeQuery("select id from ticket where rownum < 2 and state_id = -1 and text like '%(alex)'");
 		   while (rset.next()) {
-            id = rset.getString("id");
+		   	id = rset.getString("id");
 		   }
 		   
 		   lr.log_message("Updating Ticket Status");
@@ -63,26 +62,43 @@ public class Actions
 		               "select id, 'IDC2D620524153zdzPWAoX9OFgW4UB', id, 'd830c5ee-9b77-4bd1-879a-0c4d2c282a67'," +
 		               "header, text, '3', '1', applicant_id, '9', create_date,'0', last_edit_date," +
 		               "last_edit_user_login,'103','102','TSK_1800000', external_system " +
-		               //"from ticket where rownum < 2 and state_id = -1");
 		               "from ticket where id = "+id);
 		 		  
 		   lr.log_message("Commit");
 		   connection.commit();
-	} catch (SQLException e1) {
-       	e1.printStackTrace();
-       	lr.log_message("Rolling back, Caught Exception - " + e1.getMessage());	    
-		try{
-			connection.rollback();
-		}catch(SQLException e2){
+		} catch (SQLException e1) {
+       		e1.printStackTrace();
+       		lr.log_message("Rolling back, Caught Exception - " + e1.getMessage());	    
+			try{
+				connection.rollback();
+			}catch(SQLException e2){
+       			e2.printStackTrace();
 	        	lr.log_message("Cannot Rollback, Caught Exception - " + e2.getMessage());
-	    	}
+       		}
 	    	return 1;
-		}
-		return 0;
+		}finally{
+       	if (rset != null) {
+       		lr.log_message("Closing ResultSet");
+       		try {
+       			rset.close();
+       		} catch (SQLException e) {e.printStackTrace();}
+       	}
+       	if (stmt != null) {
+       		lr.log_message("Closing Statement");
+       		try {
+       			stmt.close();
+       		} catch (SQLException e) {e.printStackTrace();}
+       	}
+       	return 0;
+       }
     }
-	public int end() throws Throwable {
-    	lr.log_message("Closing Connection");
-    	connection.close();
-	    return 0;
-	}
+public int end() throws Throwable {
+    	if (connection != null) {
+    		lr.log_message("Closing Connection");
+    		try {
+    			connection.close();
+    		} catch (SQLException e) {e.printStackTrace();}
+    	}
+    	return 0;
+    }
 }

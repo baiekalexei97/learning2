@@ -72,7 +72,7 @@ Action()
 
 	lr_think_time(10);
 
-	lr_start_transaction("UC03_TR04_commentFile");
+	/*lr_start_transaction("UC03_TR04_commentFile");
 	
 	web_reg_save_param_json(
 		"ParamName=FileID",
@@ -92,7 +92,7 @@ Action()
 		"Name=files", "Value={file_folder}{file}", "File=Yes", ENDITEM, 
 		LAST);
 
-	lr_end_transaction("UC03_TR04_commentFile",LR_AUTO);
+	lr_end_transaction("UC03_TR04_commentFile",LR_AUTO);*/
 
 	lr_think_time(10);
 
@@ -108,7 +108,8 @@ Action()
 		"Snapshot=t16.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 
-		"Body={\"text\":\"{comment}\",\"files\":[{FileID}]}", 
+		//"Body={\"text\":\"{comment}\",\"files\":[{FileID}]}", 
+		"Body={\"text\":\"{comment}\"}",
 		LAST);
 
 	web_url("/api/ticket/{TaskID}/comment/", 

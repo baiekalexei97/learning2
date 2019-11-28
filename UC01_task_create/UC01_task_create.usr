@@ -61,7 +61,7 @@ Login=cci
 Logout=cci
 vuser_end=cci
 [TransactionsOrder]
-Order="UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR07_File__*delimiter*__UC01_TR08_descFinish__*delimiter*__UC01_TR09_descFinishOK__*delimiter*__UC01_TR01_login__*delimiter*__UC01_TR11_logout1"
+Order="UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR08_descFinish__*delimiter*__UC01_TR09_descFinishOK__*delimiter*__UC01_TR01_login__*delimiter*__UC01_TR11_logout1"
 [StateManagement]
 LastReplayStatus=1
 [ActiveReplay]
@@ -73,7 +73,6 @@ UC01_TR03_Location1=
 UC01_TR04_theme1=
 UC01_TR05_Description=
 UC01_TR06_inventoryNum=
-UC01_TR07_File=
 UC01_TR08_descFinish=
 UC01_TR09_descFinishOK=
 UC01_TR01_login=

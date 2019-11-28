@@ -1,0 +1,152 @@
+[
+    {
+        "stepId": "STEP1",
+        "stepName": "Url: /login",
+        "infFile": "t1.inf",
+        "time": 1574936870340
+    },
+    {
+        "stepId": "STEP2",
+        "stepName": "Url: /home",
+        "infFile": "t3.inf",
+        "time": 1574936870894
+    },
+    {
+        "stepId": "STEP3",
+        "stepName": "Url: /api/checkLogin",
+        "infFile": "t4.inf",
+        "time": 1574936870970
+    },
+    {
+        "stepId": "STEP4",
+        "stepName": "Url: /api/user/info",
+        "infFile": "t5.inf",
+        "time": 1574936871052
+    },
+    {
+        "stepId": "STEP5",
+        "stepName": "Url: /api/ticket/countByState/4",
+        "infFile": "t6.inf",
+        "time": 1574936871135
+    },
+    {
+        "stepId": "STEP6",
+        "stepName": "Url: /api/ticket/countByState/",
+        "infFile": "t7.inf",
+        "time": 1574936871219
+    },
+    {
+        "stepId": "STEP7",
+        "stepName": "Custom Request: /api/ticket/?state=-1,0,1,5&page=0&size=10",
+        "infFile": "t8.inf",
+        "time": 1574936872363
+    },
+    {
+        "stepId": "STEP8",
+        "stepName": "Url: /api/task/countByState/",
+        "infFile": "t9.inf",
+        "time": 1574936872660
+    },
+    {
+        "stepId": "STEP9",
+        "stepName": "Custom Request: /api/task/?state=1&page=0&size=10",
+        "infFile": "t11.inf",
+        "time": 1574936873327
+    },
+    {
+        "stepId": "STEP10",
+        "stepName": "Url: /api/task/{TaskID}",
+        "infFile": "t12.inf",
+        "time": 1574936873833
+    },
+    {
+        "stepId": "STEP11",
+        "stepName": "Url: /api/checkLogin",
+        "infFile": "t13.inf",
+        "time": 1574936873912
+    },
+    {
+        "stepId": "STEP12",
+        "stepName": "Url: /api/ticket/{TaskID}/comment/",
+        "infFile": "t14.inf",
+        "time": 1574936874063
+    },
+    {
+        "stepId": "STEP13",
+        "stepName": "Custom Request: /api/ticket/{TaskID}",
+        "infFile": "t15.inf",
+        "time": 1574936874735
+    },
+    {
+        "stepId": "STEP14",
+        "stepName": "Url: /api/ticket/{TaskID}/comment/",
+        "infFile": "t16.inf",
+        "time": 1574936874889
+    },
+    {
+        "stepId": "STEP15",
+        "stepName": "Custom Request: /api/ticket/{TaskID}/solve/",
+        "infFile": "t17.inf",
+        "time": 1574936875506
+    },
+    {
+        "stepId": "STEP16",
+        "stepName": "Url: /home",
+        "infFile": "t18.inf",
+        "time": 1574936875532
+    },
+    {
+        "stepId": "STEP17",
+        "stepName": "Url: /api/checkLogin",
+        "infFile": "t19.inf",
+        "time": 1574936875612
+    },
+    {
+        "stepId": "STEP18",
+        "stepName": "Url: /api/user/info",
+        "infFile": "t20.inf",
+        "time": 1574936875693
+    },
+    {
+        "stepId": "STEP19",
+        "stepName": "Url: /api/ticket/countByState/4",
+        "infFile": "t21.inf",
+        "time": 1574936875774
+    },
+    {
+        "stepId": "STEP20",
+        "stepName": "Url: /api/ticket/countByState/",
+        "infFile": "t22.inf",
+        "time": 1574936875865
+    },
+    {
+        "stepId": "STEP21",
+        "stepName": "Url: /api/task/countByState/",
+        "infFile": "t23.inf",
+        "time": 1574936875953
+    },
+    {
+        "stepId": "STEP22",
+        "stepName": "Custom Request: /api/task/?state=1&page=0&size=10",
+        "infFile": "t24.inf",
+        "time": 1574936876603
+    },
+    {
+        "stepId": "STEP23",
+        "stepName": "Custom Request: /api/ticket/?state=-1,0,1,5&page=0&size=10",
+        "infFile": "t25.inf",
+        "time": 1574936877783
+    },
+    {
+        "stepId": "STEP24",
+        "stepName": "Url: /api/logout",
+        "infFile": "t26.inf",
+        "time": 1574936878057
+    },
+    {
+        "stepId": "STEP25",
+        "stepName": "Url: /login",
+        "infFile": "t27.inf",
+        "time": 1574936878108
+    }
+]

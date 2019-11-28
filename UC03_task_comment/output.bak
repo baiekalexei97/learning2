@@ -1,4 +1,4 @@
-Virtual User Script started at: 28.11.2019 11:15:16
+Virtual User Script started at: 28.11.2019 11:16:46
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 12.55.0 for Windows 10; build 911 (èþë 24 2017 19:46:00)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
@@ -94,12 +94,11 @@ Login.c(79): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.
 Login.c(79): Notify: Parameter Substitution: parameter "port" =  "56902"
 Login.c(79): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Login.c(79): Notify: Parameter Substitution: parameter "port" =  "56902"
-Login.c(79): web_custom_request("/api/ticket/?state=-1,0,1,5&page=0&size=10") was successful, 11551 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
-Login.c(91): Notify: Transaction "UC03_TR01_login" ended with a "Pass" status (Duration: 1.6498 Wasted Time: 0.1644).
+Login.c(79): web_custom_request("/api/ticket/?state=-1,0,1,5&page=0&size=10") was successful, 11584 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+Login.c(91): Notify: Transaction "UC03_TR01_login" ended with a "Pass" status (Duration: 1.5699 Wasted Time: 0.1591).
 Ending action Login.
 Starting action Action.
-Action.c(4): Notify: Transaction "/api/task/countByState/" started.
-Action.c(4): Warning: Transaction name '/api/task/countByState/' is illegal, will replaced with '-api-task-countByState-'. Characters '`&*()\|:'"<>/?[]=' are not supported by NV.
+Action.c(4): Notify: Transaction "UC03_TR02_tasks" started.
 Action.c(6): web_url("/api/task/countByState/") started  	[MsgId: MMSG-26355]
 Action.c(6): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Action.c(6): Notify: Parameter Substitution: parameter "port" =  "56902"
@@ -124,21 +123,21 @@ Action.c(21): Notify: Saving Parameter "TaskIDs_8 = 149451".
 Action.c(21): Notify: Saving Parameter "TaskIDs_9 = 149450".
 Action.c(21): Notify: Saving Parameter "TaskIDs_10 = 149449".
 Action.c(21): Notify: Saving Parameter "TaskIDs_count = 10".
-Action.c(21): web_custom_request("/api/task/?state=1&page=0&size=10") was successful, 15187 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(21): web_custom_request("/api/task/?state=1&page=0&size=10") was successful, 15201 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(33): Notify: Parameter Substitution: parameter "TaskIDs_count" =  "10"
-Action.c(33): Notify: Parameter Substitution: parameter "TaskIDs_5" =  "149454"
-Action.c(33): Notify: Saving Parameter "TaskID = 149454".
+Action.c(33): Notify: Parameter Substitution: parameter "TaskIDs_9" =  "149450"
+Action.c(33): Notify: Saving Parameter "TaskID = 149450".
 Action.c(35): web_set_sockets_option started  	[MsgId: MMSG-26355]
 Action.c(35): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
-Action.c(37): Error: Failed to end Transaction "UC03_TR02_tasks" (by name). Please check that you made a call to start transaction operation.
+Action.c(37): Notify: Transaction "UC03_TR02_tasks" ended with a "Pass" status (Duration: 0.8328 Wasted Time: 0.0415).
 Action.c(39): Notify: Transaction "UC03_TR03_selectTask" started.
 Action.c(41): web_url("/api/task/{TaskID}") started  	[MsgId: MMSG-26355]
 Action.c(41): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Action.c(41): Notify: Parameter Substitution: parameter "port" =  "56902"
-Action.c(41): Notify: Parameter Substitution: parameter "TaskID" =  "149454"
+Action.c(41): Notify: Parameter Substitution: parameter "TaskID" =  "149450"
 Action.c(41): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Action.c(41): Notify: Parameter Substitution: parameter "port" =  "56902"
-Action.c(41): web_url("/api/task/{TaskID}") was successful, 1874 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(41): web_url("/api/task/{TaskID}") was successful, 1472 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(51): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
 Action.c(51): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Action.c(51): Notify: Parameter Substitution: parameter "port" =  "56902"
@@ -148,11 +147,11 @@ Action.c(51): web_url("/api/checkLogin") was successful, 92 body bytes, 316 head
 Action.c(61): web_url("/api/ticket/{TaskID}/comment/") started  	[MsgId: MMSG-26355]
 Action.c(61): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Action.c(61): Notify: Parameter Substitution: parameter "port" =  "56902"
-Action.c(61): Notify: Parameter Substitution: parameter "TaskID" =  "149454"
+Action.c(61): Notify: Parameter Substitution: parameter "TaskID" =  "149450"
 Action.c(61): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Action.c(61): Notify: Parameter Substitution: parameter "port" =  "56902"
-Action.c(61): web_url("/api/ticket/{TaskID}/comment/") was successful, 2 body bytes, 316 header bytes, 10 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(71): Notify: Transaction "UC03_TR03_selectTask" ended with a "Pass" status (Duration: 1.1505 Wasted Time: 0.0513).
+Action.c(61): web_url("/api/ticket/{TaskID}/comment/") was successful, 226 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(71): Notify: Transaction "UC03_TR03_selectTask" ended with a "Pass" status (Duration: 0.8915 Wasted Time: 0.0528).
 Action.c(75): Notify: Transaction "UC03_TR04_commentFile" started.
 Action.c(77): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(77): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
@@ -162,28 +161,28 @@ Action.c(82): Notify: Parameter Substitution: parameter "port" =  "56902"
 Action.c(82): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Action.c(82): Notify: Parameter Substitution: parameter "port" =  "56902"
 Action.c(82): Notify: Parameter Substitution: parameter "file_folder" =  "..\XDesk_task_details\"
-Action.c(82): Notify: Parameter Substitution: parameter "file" =  "task_comment_2.txt"
-Action.c(82): Notify: Saving Parameter "FileID = 4853".
+Action.c(82): Notify: Parameter Substitution: parameter "file" =  "task_comment_1.txt"
+Action.c(82): Notify: Saving Parameter "FileID = 4854".
 Action.c(82): web_submit_data("/api/ticket/file/") was successful, 206 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(95): Notify: Transaction "UC03_TR04_commentFile" ended with a "Pass" status (Duration: 0.1616 Wasted Time: 0.0225).
+Action.c(95): Notify: Transaction "UC03_TR04_commentFile" ended with a "Pass" status (Duration: 0.2313 Wasted Time: 0.0228).
 Action.c(99): Notify: Transaction "UC03_TR05_commentFinish" started.
 Action.c(101): web_custom_request("/api/ticket/{TaskID}/comment/") started  	[MsgId: MMSG-26355]
 Action.c(101): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Action.c(101): Notify: Parameter Substitution: parameter "port" =  "56902"
-Action.c(101): Notify: Parameter Substitution: parameter "TaskID" =  "149454"
+Action.c(101): Notify: Parameter Substitution: parameter "TaskID" =  "149450"
 Action.c(101): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Action.c(101): Notify: Parameter Substitution: parameter "port" =  "56902"
-Action.c(101): Notify: Parameter Substitution: parameter "comment" =  "comment 5 (alex)"
-Action.c(101): Notify: Parameter Substitution: parameter "FileID" =  "4853"
+Action.c(101): Notify: Parameter Substitution: parameter "comment" =  "comment 4 (alex)"
+Action.c(101): Notify: Parameter Substitution: parameter "FileID" =  "4854"
 Action.c(101): web_custom_request("/api/ticket/{TaskID}/comment/") was successful, 269 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(114): web_url("/api/ticket/{TaskID}/comment/") started  	[MsgId: MMSG-26355]
 Action.c(114): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Action.c(114): Notify: Parameter Substitution: parameter "port" =  "56902"
-Action.c(114): Notify: Parameter Substitution: parameter "TaskID" =  "149454"
+Action.c(114): Notify: Parameter Substitution: parameter "TaskID" =  "149450"
 Action.c(114): Notify: Parameter Substitution: parameter "uri" =  "learning2.pflb.ru"
 Action.c(114): Notify: Parameter Substitution: parameter "port" =  "56902"
-Action.c(114): web_url("/api/ticket/{TaskID}/comment/") was successful, 318 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(124): Notify: Transaction "UC03_TR05_commentFinish" ended with a "Pass" status (Duration: 0.5386 Wasted Time: 0.0343).
+Action.c(114): web_url("/api/ticket/{TaskID}/comment/") was successful, 543 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(124): Notify: Transaction "UC03_TR05_commentFinish" ended with a "Pass" status (Duration: 0.6455 Wasted Time: 0.0340).
 Ending action Action.
 Starting action Logout.
 Logout.c(4): Notify: Transaction "UC03_TR06_logout" started.
@@ -219,13 +218,10 @@ Logout.c(15): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js"
 Logout.c(15): Resource "http://learning2.pflb.ru:56902/js/core/materialize.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
 Logout.c(15): Resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
 Logout.c(15): web_url("/login") was successful, 873 body bytes, 395 header bytes  	[MsgId: MMSG-26386]
-Logout.c(25): Notify: Transaction "UC03_TR06_logout" ended with a "Pass" status (Duration: 0.1671 Wasted Time: 0.0596).
+Logout.c(25): Notify: Transaction "UC03_TR06_logout" ended with a "Pass" status (Duration: 0,1510 Wasted Time: 0,0473).
 Ending action Logout.
 Ending iteration 1.
 Ending Vuser...
 Starting action vuser_end.
-Error: Vuser started transaction "/api/task/countByState/", but did not reach a corresponding end transaction statement. The transaction ended automatically with status 'fail'.
-Notify: Transaction "/api/task/countByState/" ended with a "Fail" status (Duration: 3.3232 Wasted Time: 0.2068).
-Notify: Transaction "/api/task/countByState/" has 0 error message(s).
 Ending action vuser_end.
 Vuser Terminated.

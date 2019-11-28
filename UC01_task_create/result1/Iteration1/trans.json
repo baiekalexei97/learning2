@@ -1,52 +1,47 @@
 [
     {
         "transactionName": "UC01_TR01_login",
-        "rawStartTime": 1574928835143,
-        "rawEndTime": 1574928836628
+        "rawStartTime": 1574946470157,
+        "rawEndTime": 1574946472108
     },
     {
         "transactionName": "UC01_TR02_NewOrder",
-        "rawStartTime": 1574928836782,
-        "rawEndTime": 1574928836906
+        "rawStartTime": 1574946472263,
+        "rawEndTime": 1574946472384
     },
     {
         "transactionName": "UC01_TR03_Location1",
-        "rawStartTime": 1574928836968,
-        "rawEndTime": 1574928837553
+        "rawStartTime": 1574946472445,
+        "rawEndTime": 1574946473008
     },
     {
         "transactionName": "UC01_TR04_theme1",
-        "rawStartTime": 1574928837625,
-        "rawEndTime": 1574928837992
+        "rawStartTime": 1574946473075,
+        "rawEndTime": 1574946473481
     },
     {
         "transactionName": "UC01_TR05_Description",
-        "rawStartTime": 1574928838061,
-        "rawEndTime": 1574928838180
+        "rawStartTime": 1574946473544,
+        "rawEndTime": 1574946473668
     },
     {
         "transactionName": "UC01_TR06_inventoryNum",
-        "rawStartTime": 1574928838244,
-        "rawEndTime": 1574928838363
-    },
-    {
-        "transactionName": "UC01_TR07_File",
-        "rawStartTime": 1574928838429,
-        "rawEndTime": 1574928838626
+        "rawStartTime": 1574946473734,
+        "rawEndTime": 1574946473868
     },
     {
         "transactionName": "UC01_TR08_descFinish",
-        "rawStartTime": 1574928838690,
-        "rawEndTime": 1574928839502
+        "rawStartTime": 1574946473938,
+        "rawEndTime": 1574946474179
     },
     {
         "transactionName": "UC01_TR09_descFinishOK",
-        "rawStartTime": 1574928839566,
-        "rawEndTime": 1574928841439
+        "rawStartTime": 1574946474237,
+        "rawEndTime": 1574946477062
     },
     {
         "transactionName": "UC01_TR11_logout1",
-        "rawStartTime": 1574928841615,
-        "rawEndTime": 1574928841769
+        "rawStartTime": 1574946477241,
+        "rawEndTime": 1574946477392
     }
 ]

@@ -61,7 +61,7 @@ Login=cci
 Logout=cci
 vuser_end=cci
 [TransactionsOrder]
-Order="UC03_TR02_tasks__*delimiter*__UC03_TR03_selectTask__*delimiter*__UC03_TR04_commentFile__*delimiter*__UC03_TR05_commentFinish__*delimiter*__UC03_TR01_login__*delimiter*__UC03_TR06_logout"
+Order="UC03_TR02_tasks__*delimiter*__UC03_TR03_selectTask__*delimiter*__UC03_TR05_commentFinish__*delimiter*__UC03_TR01_login__*delimiter*__UC03_TR06_logout"
 [StateManagement]
 LastReplayStatus=1
 [ActiveReplay]
@@ -70,7 +70,6 @@ ActiveRunName=result1
 [Transactions]
 UC03_TR02_tasks=
 UC03_TR03_selectTask=
-UC03_TR04_commentFile=
 UC03_TR05_commentFinish=
 UC03_TR01_login=
 UC03_TR06_logout=

@@ -7,6 +7,6 @@ Accept-Language: ru-RU
 Accept: */*
 Connection: Keep-Alive
 Host: learning2.pflb.ru:56902
-Cookie: SESSION=a80c7fb7-59af-41bb-981b-d8bea02f79f0
+Cookie: SESSION=19180148-99ac-4828-8679-a5875a25e3c1
 Content-Length: 295
 

@@ -1,2 +1,0 @@
-"{"text":"comment 5 (alex)","header":"Витрина не работает","ticketStateId":0,""
-"serviceId":"2896","files":[4852],"shopId":"2"}"

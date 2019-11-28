@@ -15,7 +15,7 @@ Project("76095C2D-232B-41B1-9983-6C24242ACA18") = "UC02_switch_task_state", "UC0
 		Token = PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8UGVyc2lzdGVuY2VUb2tlbj4NCiAgPExvYWREYXRhPkM6XFVzZXJzXHN0dWRlbnRcRG9jdW1lbnRzXFhEZXNrIExSXGxlYXJuaW5nMlxVQzAyX3N3aXRjaF90YXNrX3N0YXRlXFVDMDJfc3dpdGNoX3Rhc2tfc3RhdGUudXNyPC9Mb2FkRGF0YT4NCiAgPEZpbGVzPg0KICAgIDxGaWxlPlVDMDJfc3dpdGNoX3Rhc2tfc3RhdGUudXNyPC9GaWxlPg0KICA8L0ZpbGVzPg0KICA8TW9kaWZpZWQ+MjAxOS0xMS0yOFQxMDoyNzozNC42MzM5NDUyKzAzOjAwPC9Nb2RpZmllZD4NCjwvUGVyc2lzdGVuY2VUb2tlbj4_
 	EndProjectSection
 	ProjectSection(ExpandInVugen) = Data
-		Value = False
+		Value = True
 	EndProjectSection
 EndProject
 Project("4873133F-A9C0-47C9-895C-B0B8F9C51787") = "UC03_task_comment", "UC03_task_comment\UC03_task_comment.usr", "4873133F-A9C0-47C9-895C-B0B8F9C51787"

@@ -2778,26 +2778,8 @@ CreateOrder()
 
 	lr_think_time(10);
 
-	lr_start_transaction("UC01_TR07_File");
-	
-	web_reg_save_param_json("ParamName=FileID",
-	                        "QueryString=$..id",	           
-	                       "LAST");
-
-	web_submit_data("/api/ticket/file/", 
-		"Action=http://{uri}:{port}/api/ticket/file/", 
-		"Method=POST", 
-		"EncType=multipart/form-data", 
-		"TargetFrame=", 
-		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
-		"Snapshot=t82.inf", 
-		"Mode=HTML", 
-		"ITEMDATA", 
-		"Name=files", "Value={file_folder}{file}", "File=Yes", "ENDITEM", 
-		"LAST");
-
-	lr_end_transaction("UC01_TR07_File",2);
+	 
+# 202 "CreateOrder.c"
 
 	lr_think_time(10);
 
@@ -2809,7 +2791,7 @@ CreateOrder()
 		lr_save_string(lr_eval_string("{Body}\"header\":\"{Name}\","),"Body");
 		lr_save_string(lr_eval_string("{Body}\"ticketStateId\":0,"),"Body");
 		lr_save_string(lr_eval_string("{Body}\"serviceId\":\"{ServiceID}\","),"Body");
-		lr_save_string(lr_eval_string("{Body}\"files\":\[FileID}],"),"Body");
+		 
 		lr_save_string(lr_eval_string("{Body}\"inventoryNumberId\":\"{InventoryNumber}\","),"Body");
 		lr_save_string(lr_eval_string("{Body}\"shopId\":\"{ShopID}\""),"Body");
 	    }else{		
@@ -2818,7 +2800,7 @@ CreateOrder()
 		lr_save_string(lr_eval_string("{Body}\"header\":\"{Name}\","),"Body");
 		lr_save_string(lr_eval_string("{Body}\"ticketStateId\":0,"),"Body");
 		lr_save_string(lr_eval_string("{Body}\"serviceId\":\"{ServiceID}\","),"Body");
-		lr_save_string(lr_eval_string("{Body}\"files\":[{FileID}],"),"Body");
+		 
 		lr_save_string(lr_eval_string("{Body}\"shopId\":\"{ShopID}\""),"Body");
 	    };
 

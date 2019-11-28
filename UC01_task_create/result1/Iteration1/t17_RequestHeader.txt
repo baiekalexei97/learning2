@@ -1,4 +1,4 @@
-GET /api/user/catalog/node/183/children/ HTTP/1.1
+GET /api/user/catalog/node/206/children/ HTTP/1.1
 Referer: http://learning2.pflb.ru:56902/
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
 Accept-Encoding: gzip, deflate
@@ -6,5 +6,5 @@ Accept-Language: ru-RU
 Accept: */*
 Connection: Keep-Alive
 Host: learning2.pflb.ru:56902
-Cookie: SESSION=da2e9cf8-ce96-44fc-a7ec-9eb8ae252df4
+Cookie: SESSION=d9e9d7df-0d14-4757-a097-4bda40f0cd30
 

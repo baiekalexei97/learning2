@@ -179,7 +179,7 @@ CreateOrder()
 
 	lr_think_time(10);
 
-	lr_start_transaction("UC01_TR07_File");
+	/*lr_start_transaction("UC01_TR07_File");
 	
 	web_reg_save_param_json("ParamName=FileID",
 	                        "QueryString=$..id",	           
@@ -198,7 +198,7 @@ CreateOrder()
 		"Name=files", "Value={file_folder}{file}", "File=Yes", ENDITEM, 
 		LAST);
 
-	lr_end_transaction("UC01_TR07_File",LR_AUTO);
+	lr_end_transaction("UC01_TR07_File",LR_AUTO);*/
 
 	lr_think_time(10);
 
@@ -210,7 +210,7 @@ CreateOrder()
 		lr_save_string(lr_eval_string("{Body}\"header\":\"{Name}\","),"Body");
 		lr_save_string(lr_eval_string("{Body}\"ticketStateId\":0,"),"Body");
 		lr_save_string(lr_eval_string("{Body}\"serviceId\":\"{ServiceID}\","),"Body");
-		lr_save_string(lr_eval_string("{Body}\"files\":\[FileID}],"),"Body");
+		//lr_save_string(lr_eval_string("{Body}\"files\":\[FileID}],"),"Body");
 		lr_save_string(lr_eval_string("{Body}\"inventoryNumberId\":\"{InventoryNumber}\","),"Body");
 		lr_save_string(lr_eval_string("{Body}\"shopId\":\"{ShopID}\""),"Body");
 	    }else{		
@@ -219,7 +219,7 @@ CreateOrder()
 		lr_save_string(lr_eval_string("{Body}\"header\":\"{Name}\","),"Body");
 		lr_save_string(lr_eval_string("{Body}\"ticketStateId\":0,"),"Body");
 		lr_save_string(lr_eval_string("{Body}\"serviceId\":\"{ServiceID}\","),"Body");
-		lr_save_string(lr_eval_string("{Body}\"files\":[{FileID}],"),"Body");
+		//lr_save_string(lr_eval_string("{Body}\"files\":[{FileID}],"),"Body");
 		lr_save_string(lr_eval_string("{Body}\"shopId\":\"{ShopID}\""),"Body");
 	    };
 
