@@ -2,8 +2,8 @@
 -DCCI
 -D_IDA_XL
 -DWINNT
--IC:\Users\student\Documents\XDesk LR\learning2\UC01_task_create
+-IC:\Users\student\Documents\XDesk LR\learning2\UC01_create_task
 -IC:\Program Files (x86)\HPE\LoadRunner\include
--ec:\users\student\documents\xdesk lr\learning2\uc01_task_create\\logfile.log
-c:\users\student\documents\xdesk lr\learning2\uc01_task_create\\combined_UC01_task_create.c
-c:\users\student\documents\xdesk lr\learning2\uc01_task_create\\pre_cci.c
+-ec:\users\student\documents\xdesk lr\learning2\uc01_create_task\\logfile.log
+c:\users\student\documents\xdesk lr\learning2\uc01_create_task\\combined_UC01_create_task.c
+c:\users\student\documents\xdesk lr\learning2\uc01_create_task\\pre_cci.c

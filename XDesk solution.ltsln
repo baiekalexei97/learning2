@@ -34,6 +34,14 @@ Project("214A8C09-4E3D-4EB5-83BF-2EEEAC5254CC") = "UC04_close_task", "UC04_close
 		Value = False
 	EndProjectSection
 EndProject
+Project("C0DE48B6-FC85-43EE-8757-91E774195287") = "UC02_old", "..\..\UC02_old\UC02_old.usr", "C0DE48B6-FC85-43EE-8757-91E774195287"
+	ProjectSection(CustomLoading) = Data
+		Token = PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8UGVyc2lzdGVuY2VUb2tlbj4NCiAgPExvYWREYXRhPkM6XFVzZXJzXHN0dWRlbnRcRG9jdW1lbnRzXFVDMDJfb2xkXFVDMDJfb2xkLnVzcjwvTG9hZERhdGE+DQogIDxGaWxlcz4NCiAgICA8RmlsZT5DOlxVc2Vyc1xzdHVkZW50XERvY3VtZW50c1xVQzAyX29sZFxVQzAyX29sZC51c3I8L0ZpbGU+DQogIDwvRmlsZXM+DQogIDxNb2RpZmllZD4yMDE5LTExLTI5VDExOjI4OjAwLjAxMjMxNjQrMDM6MDA8L01vZGlmaWVkPg0KPC9QZXJzaXN0ZW5jZVRva2VuPg__
+	EndProjectSection
+	ProjectSection(ExpandInVugen) = Data
+		Value = True
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,5 +64,9 @@ Global
 		214A8C09-4E3D-4EB5-83BF-2EEEAC5254CC.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		214A8C09-4E3D-4EB5-83BF-2EEEAC5254CC.Release|Any CPU.Build.0 = Release|Any CPU
 		214A8C09-4E3D-4EB5-83BF-2EEEAC5254CC.Release|Any CPU.ActiveCfg = Release|Any CPU
+		C0DE48B6-FC85-43EE-8757-91E774195287.Debug|Any CPU.Build.0 = Debug|Any CPU
+		C0DE48B6-FC85-43EE-8757-91E774195287.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		C0DE48B6-FC85-43EE-8757-91E774195287.Release|Any CPU.Build.0 = Release|Any CPU
+		C0DE48B6-FC85-43EE-8757-91E774195287.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal

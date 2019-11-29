@@ -4,11 +4,11 @@ CreateOrder()
 	lr_start_transaction("UC01_TR02_NewOrder");
 
 	web_url("/api/user/catalog/node/0/children/", 
-		"URL=http://{uri}:{port}/api/user/catalog/node/0/children/", 
+		"URL=http://{host}:{port}/api/user/catalog/node/0/children/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t71.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -26,12 +26,12 @@ CreateOrder()
 	                        "SelectAll=Yes",	           
 	                        LAST);
 
-	web_url("/api/shops?q=&page=0", 
-		"URL=http://{uri}:{port}/api/shops?q=&page=0", 
+	web_url("/api/shops", 
+		"URL=http://{host}:{port}/api/shops?q=&page=0", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t73.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -39,11 +39,11 @@ CreateOrder()
 	lr_save_string(lr_paramarr_random("ShopIDs"), "ShopID");
 
 	web_url("/api/user/catalog/node/0/children/", 
-		"URL=http://{uri}:{port}/api/user/catalog/node/0/children/", 
+		"URL=http://{host}:{port}/api/user/catalog/node/0/children/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t74.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -61,12 +61,13 @@ CreateOrder()
 	                        "SelectAll=Yes",	           
 	                        LAST);
 
-	web_url("/api/user/catalog/treeview?shopid={ShopID}", 
-		"URL=http://{uri}:{port}/api/user/catalog/treeview?shopid={ShopID}", 
+	web_url("/api/user/catalog/treeview", 
+		"URL=http://{host}:{port}/api/user/catalog/treeview" 
+		"?shopid={ShopID}",
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t75.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -81,22 +82,22 @@ CreateOrder()
 	
 	lr_start_transaction("UC01_TR04_theme1");
 
-	web_url("/api/user/catalog/node/{Parent}/children/", 
-		"URL=http://{uri}:{port}/api/user/catalog/node/{Parent}/children/", 
+	web_url("/api/user/catalog/node/parentId/children/", 
+		"URL=http://{host}:{port}/api/user/catalog/node/{Parent}/children/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t76.inf", 
 		"Mode=HTML", 
 		LAST);
 
-	web_url("/api/user/catalog/node/{Parent}/service/", 
-		"URL=http://{uri}:{port}/api/user/catalog/node/{Parent}/service/", 
+	web_url("/api/user/catalog/node/parentId/service/", 
+		"URL=http://{host}:{port}/api/user/catalog/node/{Parent}/service/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t77.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -106,12 +107,12 @@ CreateOrder()
 	                        "SelectAll=Yes",	           
 	                        LAST);
 	
-	web_url("/api/user/catalog/breadcrumbs/{Parent}", 
-		"URL=http://{uri}:{port}/api/user/catalog/breadcrumbs/{Parent}", 
+	web_url("/api/user/catalog/breadcrumbs/parentId", 
+		"URL=http://{host}:{port}/api/user/catalog/breadcrumbs/{Parent}", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t78.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -122,12 +123,13 @@ CreateOrder()
 	                        "QueryString=$..totalElements",	                	           
 	                        LAST);
 
-	web_url("/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}", 
-		"URL=http://{uri}:{port}/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}", 
+	web_url("/api/inventoryNumbers", 
+		"URL=http://{host}:{port}/api/inventoryNumbers" 
+		"?serviceId={ServiceID}&shopId={ShopID}",
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t79.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -145,18 +147,20 @@ CreateOrder()
 		                        LAST);
 	};
 
-	web_url("/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}", 
-		"URL=http://{uri}:{port}/api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}", 
+	web_url("/api/inventoryNumbers", 
+		"URL=http://{host}:{port}/api/inventoryNumbers" 
+		"?serviceId={ServiceID}&shopId={ShopID}",
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t80.inf", 
 		"Mode=HTML", 
 		LAST);
 	
 	if(atoi(lr_eval_string("InventoryCount")) != 0){
-	    	lr_save_string(lr_paramarr_random("InventoryNumbers"),"InventoryNumber");
+	    	lr_save_string(lr_paramarr_random("InventoryNumbers"),
+		               "InventoryNumber");
 	};
 
 	lr_end_transaction("UC01_TR05_Description",LR_AUTO);
@@ -165,12 +169,14 @@ CreateOrder()
 
 	lr_start_transaction("UC01_TR06_inventoryNum");
 
-	web_url("/api/inventoryNumbers?shopId={ShopID}&serviceId={ServiceID}&serviceId={ServiceID}&q=&page=0", 
-		"URL=http://{uri}:{port}/api/inventoryNumbers?shopId={ShopID}&serviceId={ServiceID}&serviceId={ServiceID}&q=&page=0", 
+	web_url("/api/inventoryNumbers", 
+		"URL=http://{host}:{port}/api/inventoryNumbers?" 
+		"shopId={ShopID}&serviceId={ServiceID}" 
+		"&serviceId={ServiceID}&q=&page=0",
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t81.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -179,55 +185,30 @@ CreateOrder()
 
 	lr_think_time(10);
 
-	/*lr_start_transaction("UC01_TR07_File");
-	
-	web_reg_save_param_json("ParamName=FileID",
-	                        "QueryString=$..id",	           
-	                       LAST);
-
-	web_submit_data("/api/ticket/file/", 
-		"Action=http://{uri}:{port}/api/ticket/file/", 
-		"Method=POST", 
-		"EncType=multipart/form-data", 
-		"TargetFrame=", 
-		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
-		"Snapshot=t82.inf", 
-		"Mode=HTML", 
-		ITEMDATA, 
-		"Name=files", "Value={file_folder}{file}", "File=Yes", ENDITEM, 
-		LAST);
-
-	lr_end_transaction("UC01_TR07_File",LR_AUTO);*/
-
-	lr_think_time(10);
-
 	lr_start_transaction("UC01_TR08_descFinish");	
 	
 	if(atoi(lr_eval_string("InventoryCount")) != 0){
-		lr_save_string(lr_eval_string("\"text\":\"{comments}\","),"Body");
-		lr_save_string(lr_eval_string("{Body}\"header\":\"{Name}\","),"Body");
-		lr_save_string(lr_eval_string("{Body}\"ticketStateId\":0,"),"Body");
-		lr_save_string(lr_eval_string("{Body}\"serviceId\":\"{ServiceID}\","),"Body");
-		//lr_save_string(lr_eval_string("{Body}\"files\":\[FileID}],"),"Body");
-		lr_save_string(lr_eval_string("{Body}\"inventoryNumberId\":\"{InventoryNumber}\","),"Body");
-		lr_save_string(lr_eval_string("{Body}\"shopId\":\"{ShopID}\""),"Body");
-	    }else{		
-	    lr_save_string(lr_eval_string("\"text\":\"{comments}\","),"Body");
-		lr_save_string(lr_eval_string("{Body}\"header\":\"{Name}\","),"Body");
-		lr_save_string(lr_eval_string("{Body}\"ticketStateId\":0,"),"Body");
-		lr_save_string(lr_eval_string("{Body}\"serviceId\":\"{ServiceID}\","),"Body");
-		//lr_save_string(lr_eval_string("{Body}\"files\":[{FileID}],"),"Body");
-		lr_save_string(lr_eval_string("{Body}\"shopId\":\"{ShopID}\""),"Body");
+		lr_save_string(lr_eval_string("\"text\":\"{comments}\"," 
+		                              "\"header\":\"{Name}\"," 
+		                              "\"ticketStateId\":0," 
+		                              "\"serviceId\":\"{ServiceID}\"," 
+		                              "\"inventoryNumberId\":\"{InventoryNumber}\"," 
+		                              "\"shopId\":\"{ShopID}\""),"Body");
+	    }else{
+		lr_save_string(lr_eval_string("\"text\":\"{comments}\"," 
+		                              "\"header\":\"{Name}\"," 
+		                              "\"ticketStateId\":0," 
+		                              "\"serviceId\":\"{ServiceID}\"," 
+		                              "\"shopId\":\"{ShopID}\""),"Body");
 	    };
 
 	web_custom_request("/api/ticket/", 
-		"URL=http://{uri}:{port}/api/ticket/", 
+		"URL=http://{host}:{port}/api/ticket/", 
 		"Method=POST", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t83.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 
@@ -238,88 +219,88 @@ CreateOrder()
 
 	lr_start_transaction("UC01_TR09_descFinishOK");
 
-	web_revert_auto_header("X-Requested-With");
-
 	lr_think_time(10);
 
-	web_url("/home", 
-		"URL=http://{uri}:{port}/", 
+	web_url("/", 
+		"URL=http://{host}:{port}/", 
 		"TargetFrame=", 
 		"Resource=0", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t84.inf", 
 		"Mode=HTML", 
 		LAST);
 
 	web_url("/api/checkLogin", 
-		"URL=http://{uri}:{port}/api/checkLogin", 
+		"URL=http://{host}:{port}/api/checkLogin", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t85.inf", 
 		"Mode=HTML", 
 		LAST);
 
 	web_url("/api/user/info", 
-		"URL=http://{uri}:{port}/api/user/info", 
+		"URL=http://{host}:{port}/api/user/info", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t86.inf", 
 		"Mode=HTML", 
 		LAST);
 
 	web_url("/api/ticket/countByState/4", 
-		"URL=http://{uri}:{port}/api/ticket/countByState/4", 
+		"URL=http://{host}:{port}/api/ticket/countByState/4", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t87.inf", 
 		"Mode=HTML", 
 		LAST);
 
 	web_url("/api/ticket/countByState/", 
-		"URL=http://{uri}:{port}/api/ticket/countByState/", 
+		"URL=http://{host}:{port}/api/ticket/countByState/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t88.inf", 
 		"Mode=HTML", 
 		LAST);
 
 	web_url("/api/ticket/countByState/", 
-		"URL=http://{uri}:{port}/api/ticket/countByState/", 
+		"URL=http://{host}:{port}/api/ticket/countByState/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t89.inf", 
 		"Mode=HTML", 
 		LAST);
 
-	web_custom_request("/api/ticket/?state=-1,0,1,5&page=0&size=10", 
-		"URL=http://{uri}:{port}/api/ticket/?state=-1,0,1,5&page=0&size=10", 
+	web_custom_request("/api/ticket/", 
+		"URL=http://{host}:{port}/api/ticket/" 
+		"?state=-1,0,1,5&page=0&size=10",
 		"Method=GET", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t90.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 
 		LAST);
 
-	web_custom_request("/api/ticket/?state=-1,0,1,5&page=0&size=10", 
-		"URL=http://{uri}:{port}/api/ticket/?state=-1,0,1,5&page=0&size=10", 
+	web_custom_request("/api/ticket/", 
+		"URL=http://{host}:{port}/api/ticket/" 
+		"?state=-1,0,1,5&page=0&size=10",
 		"Method=GET", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t91.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 

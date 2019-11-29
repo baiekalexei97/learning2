@@ -4,11 +4,11 @@ Action()
 	lr_start_transaction("UC03_TR02_tasks");
 
 	web_url("/api/task/countByState/", 
-		"URL=http://{uri}:{port}/api/task/countByState/", 
+		"URL=http://{host}:{port}/api/task/countByState/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t9.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -18,13 +18,13 @@ Action()
 	    "SelectAll=Yes",	           
 	    LAST);
 
-	web_custom_request("/api/task/?state=1&page=0&size=10", 
-		"URL=http://{uri}:{port}/api/task/?state=1&page=0&size=10", 
+	web_custom_request("/api/task/", 
+		"URL=http://{host}:{port}/api/task/?state=1&page=0&size=10", 
 		"Method=GET", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t10.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8",  
@@ -38,32 +38,32 @@ Action()
 
 	lr_start_transaction("UC03_TR03_selectTask");
 
-	web_url("/api/task/{TaskID}", 
-		"URL=http://{uri}:{port}/api/task/{TaskID}", 
+	web_url("/api/task/id", 
+		"URL=http://{host}:{port}/api/task/{TaskID}", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t12.inf", 
 		"Mode=HTML", 
 		LAST);
 
 	web_url("/api/checkLogin", 
-		"URL=http://{uri}:{port}/api/checkLogin", 
+		"URL=http://{host}:{port}/api/checkLogin", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t13.inf", 
 		"Mode=HTML", 
 		LAST);
 
-	web_url("/api/ticket/{TaskID}/comment/", 
-		"URL=http://{uri}:{port}/api/ticket/{TaskID}/comment/", 
+	web_url("/api/ticket/id/comment/", 
+		"URL=http://{host}:{port}/api/ticket/{TaskID}/comment/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t14.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -72,39 +72,15 @@ Action()
 
 	lr_think_time(10);
 
-	/*lr_start_transaction("UC03_TR04_commentFile");
-	
-	web_reg_save_param_json(
-		"ParamName=FileID",
-		"QueryString=$..id",           
-	    LAST);
-
-	web_submit_data("/api/ticket/file/", 
-		"Action=http://{uri}:{port}/api/ticket/file/", 
-		"Method=POST", 
-		"EncType=multipart/form-data", 
-		"TargetFrame=", 
-		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
-		"Snapshot=t15.inf", 
-		"Mode=HTML", 
-		ITEMDATA, 
-		"Name=files", "Value={file_folder}{file}", "File=Yes", ENDITEM, 
-		LAST);
-
-	lr_end_transaction("UC03_TR04_commentFile",LR_AUTO);*/
-
-	lr_think_time(10);
-
 	lr_start_transaction("UC03_TR05_commentFinish");
 
-	web_custom_request("/api/ticket/{TaskID}/comment/", 
-		"URL=http://{uri}:{port}/api/ticket/{TaskID}/comment/", 
+	web_custom_request("/api/ticket/id/comment/", 
+		"URL=http://{host}:{port}/api/ticket/{TaskID}/comment/", 
 		"Method=POST", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t16.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 
@@ -112,12 +88,12 @@ Action()
 		"Body={\"text\":\"{comment}\"}",
 		LAST);
 
-	web_url("/api/ticket/{TaskID}/comment/", 
-		"URL=http://{uri}:{port}/api/ticket/{TaskID}/comment/", 
+	web_url("/api/ticket/id/comment/", 
+		"URL=http://{host}:{port}/api/ticket/{TaskID}/comment/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t17.inf", 
 		"Mode=HTML", 
 		LAST);

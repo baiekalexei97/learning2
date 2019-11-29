@@ -31,6 +31,7 @@
     <FileEntry Name="ScriptUploadMetadata.xml" Filter="1" />
     <FileEntry Name="shunra.shunra" Filter="1" />
     <FileEntry Name="TransactionsData.db" Filter="1" />
+    <FileEntry Name="UC04_close_task.prm.bak" Filter="1" />
     <FileEntry Name="UC04_close_task.sdf" Filter="1" />
     <FileEntry Name="UC04_task_close.prm.bak" Filter="1" />
     <FileEntry Name="UserTasks.xml" Filter="1" />

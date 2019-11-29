@@ -1,20 +1,20 @@
-Virtual User Script started at: 28.11.2019 17:28:03
+Virtual User Script started at: 29.11.2019 12:19:23
 Starting action vuser_init.
-JDBC Connection Successful
 Ending action vuser_init.
 Running Vuser...
 Starting iteration 1.
 Starting action Actions.
+JDBC Connection Successful
 Selecting Ticket
 Updating Ticket Status
 Adding Ticket to Tasks
 Commit
 Closing ResultSet
 Closing Statement
+Closing Connection
 Ending action Actions.
 Ending iteration 1.
 Ending Vuser...
 Starting action vuser_end.
-Closing Connection
 Ending action vuser_end.
 Vuser Terminated.

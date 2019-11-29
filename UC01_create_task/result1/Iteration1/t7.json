@@ -1,1 +1,1 @@
-[{"stateId":1,"stateName":"Выполняется","count":420},{"stateId":2,"stateName":"Решен","count":48},{"stateId":4,"stateName":"Отменен","count":2}]
+[{"stateId":1,"stateName":"Выполняется","count":355},{"stateId":-1,"stateName":"Новый","count":8},{"stateId":2,"stateName":"Решен","count":162},{"stateId":4,"stateName":"Отменен","count":3}]

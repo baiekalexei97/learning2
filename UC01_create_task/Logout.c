@@ -3,20 +3,20 @@ Logout()
 	lr_start_transaction("UC01_TR11_logout1");
 
 	web_url("/api/logout", 
-		"URL=http://{uri}:{port}/api/logout", 
+		"URL=http://{host}:{port}/api/logout", 
 		"TargetFrame=", 
 		"Resource=0", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t61.inf", 
 		"Mode=HTML", 
 		LAST);
 
 	web_url("/login", 
-		"URL=http://{uri}:{port}/login", 
+		"URL=http://{host}:{port}/login", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=text/html", 
-		"Referer=http://{uri}:{port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t62.inf", 
 		"Mode=HTML", 
 		LAST);

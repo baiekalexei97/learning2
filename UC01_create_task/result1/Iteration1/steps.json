@@ -3,168 +3,168 @@
         "stepId": "STEP1",
         "stepName": "Url: /login",
         "infFile": "t1.inf",
-        "time": 1574946470155
+        "time": 1575019992046
     },
     {
         "stepId": "STEP2",
-        "stepName": "Url: /home",
+        "stepName": "Url: /",
         "infFile": "t3.inf",
-        "time": 1574946470667
+        "time": 1575019992566
     },
     {
         "stepId": "STEP3",
         "stepName": "Url: /api/checkLogin",
         "infFile": "t4.inf",
-        "time": 1574946470740
+        "time": 1575019992644
     },
     {
         "stepId": "STEP4",
         "stepName": "Url: /api/user/info",
         "infFile": "t5.inf",
-        "time": 1574946470816
+        "time": 1575019992727
     },
     {
         "stepId": "STEP5",
         "stepName": "Url: /api/ticket/countByState/4",
         "infFile": "t6.inf",
-        "time": 1574946470896
+        "time": 1575019992810
     },
     {
         "stepId": "STEP6",
         "stepName": "Url: /api/ticket/countByState/",
         "infFile": "t7.inf",
-        "time": 1574946470945
+        "time": 1575019992897
     },
     {
         "stepId": "STEP7",
-        "stepName": "Custom Request: /api/ticket/?state=-1,0,1,5&page=0&size=10",
+        "stepName": "Custom Request: /api/ticket/",
         "infFile": "t8.inf",
-        "time": 1574946472107
+        "time": 1575019993912
     },
     {
         "stepId": "STEP8",
         "stepName": "Url: /api/user/catalog/node/0/children/",
         "infFile": "t9.inf",
-        "time": 1574946472377
+        "time": 1575019994242
     },
     {
         "stepId": "STEP9",
-        "stepName": "Url: /api/shops?q=&page=0",
+        "stepName": "Url: /api/shops",
         "infFile": "t11.inf",
-        "time": 1574946472598
+        "time": 1575019994657
     },
     {
         "stepId": "STEP10",
         "stepName": "Url: /api/user/catalog/node/0/children/",
         "infFile": "t12.inf",
-        "time": 1574946472678
+        "time": 1575019994740
     },
     {
         "stepId": "STEP11",
-        "stepName": "Url: /api/user/catalog/treeview?shopid={ShopID}",
+        "stepName": "Url: /api/user/catalog/treeview",
         "infFile": "t16.inf",
-        "time": 1574946472997
+        "time": 1575019995141
     },
     {
         "stepId": "STEP12",
-        "stepName": "Url: /api/user/catalog/node/{Parent}/children/",
+        "stepName": "Url: /api/user/catalog/node/parentId/children/",
         "infFile": "t17.inf",
-        "time": 1574946473195
+        "time": 1575019995330
     },
     {
         "stepId": "STEP13",
-        "stepName": "Url: /api/user/catalog/node/{Parent}/service/",
+        "stepName": "Url: /api/user/catalog/node/parentId/service/",
         "infFile": "t18.inf",
-        "time": 1574946473277
+        "time": 1575019995378
     },
     {
         "stepId": "STEP14",
-        "stepName": "Url: /api/user/catalog/breadcrumbs/{Parent}",
+        "stepName": "Url: /api/user/catalog/breadcrumbs/parentId",
         "infFile": "t20.inf",
-        "time": 1574946473362
+        "time": 1575019995465
     },
     {
         "stepId": "STEP15",
-        "stepName": "Url: /api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}",
+        "stepName": "Url: /api/inventoryNumbers",
         "infFile": "t22.inf",
-        "time": 1574946473479
+        "time": 1575019995593
     },
     {
         "stepId": "STEP16",
-        "stepName": "Url: /api/inventoryNumbers?serviceId={ServiceID}&shopId={ShopID}",
+        "stepName": "Url: /api/inventoryNumbers",
         "infFile": "t23.inf",
-        "time": 1574946473664
+        "time": 1575019995770
     },
     {
         "stepId": "STEP17",
-        "stepName": "Url: /api/inventoryNumbers?shopId={ShopID}&serviceId={ServiceID}&serviceId={ServiceID}&q=&page=0",
+        "stepName": "Url: /api/inventoryNumbers",
         "infFile": "t24.inf",
-        "time": 1574946473867
+        "time": 1575019996001
     },
     {
         "stepId": "STEP18",
         "stepName": "Custom Request: /api/ticket/",
         "infFile": "t25.inf",
-        "time": 1574946474177
+        "time": 1575019997384
     },
     {
         "stepId": "STEP19",
-        "stepName": "Url: /home",
+        "stepName": "Url: /",
         "infFile": "t26.inf",
-        "time": 1574946474304
+        "time": 1575019997528
     },
     {
         "stepId": "STEP20",
         "stepName": "Url: /api/checkLogin",
         "infFile": "t27.inf",
-        "time": 1574946474381
+        "time": 1575019997604
     },
     {
         "stepId": "STEP21",
         "stepName": "Url: /api/user/info",
         "infFile": "t28.inf",
-        "time": 1574946474463
+        "time": 1575019997685
     },
     {
         "stepId": "STEP22",
         "stepName": "Url: /api/ticket/countByState/4",
         "infFile": "t29.inf",
-        "time": 1574946474545
+        "time": 1575019997769
     },
     {
         "stepId": "STEP23",
         "stepName": "Url: /api/ticket/countByState/",
         "infFile": "t30.inf",
-        "time": 1574946474630
+        "time": 1575019997860
     },
     {
         "stepId": "STEP24",
         "stepName": "Url: /api/ticket/countByState/",
         "infFile": "t31.inf",
-        "time": 1574946474718
+        "time": 1575019997946
     },
     {
         "stepId": "STEP25",
-        "stepName": "Custom Request: /api/ticket/?state=-1,0,1,5&page=0&size=10",
+        "stepName": "Custom Request: /api/ticket/",
         "infFile": "t32.inf",
-        "time": 1574946475951
+        "time": 1575019999182
     },
     {
         "stepId": "STEP26",
-        "stepName": "Custom Request: /api/ticket/?state=-1,0,1,5&page=0&size=10",
+        "stepName": "Custom Request: /api/ticket/",
         "infFile": "t33.inf",
-        "time": 1574946477060
+        "time": 1575020000088
     },
     {
         "stepId": "STEP27",
         "stepName": "Url: /api/logout",
         "infFile": "t34.inf",
-        "time": 1574946477342
+        "time": 1575020000669
     },
     {
         "stepId": "STEP28",
         "stepName": "Url: /login",
         "infFile": "t35.inf",
-        "time": 1574946477390
+        "time": 1575020000720
     }
 ]
