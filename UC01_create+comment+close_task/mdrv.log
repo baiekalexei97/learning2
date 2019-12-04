@@ -1,0 +1,670 @@
+Warning: Failed to get NV emulation handle.
+Virtual User Script started at: 04.12.2019 14:53:54
+Starting action vuser_init.
+Web Turbo Replay of LoadRunner 12.55.0 for Windows 10; build 911 (июл 24 2017 19:46:00)  	[MsgId: MMSG-26983]
+Run mode: HTML  	[MsgId: MMSG-26993]
+Replay user agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)  	[MsgId: MMSG-26988]
+Run-Time Settings file: "C:\Users\student\Documents\Байков\XDesk LR\learning2\UC01_create+comment+close_task\\default.cfg"  	[MsgId: MMSG-27141]
+Warning: Failed to get NV emulation handle.
+Ending action vuser_init.
+Running Vuser...
+Starting iteration 1.
+Maximum number of concurrent connections per server: 6  	[MsgId: MMSG-26989]
+Starting action Login.
+Warning: Failed to get NV emulation handle.
+Login.c(3): web_url("/login") started  	[MsgId: MMSG-26355]
+Login.c(3): Found resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+Login.c(3): Found resource "http://learning2.pflb.ru:56902/css/core/materialize.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+Login.c(3): Found resource "http://learning2.pflb.ru:56902/css/style.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+Login.c(3): Found resource "http://learning2.pflb.ru:56902/js/core/legacy.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+Login.c(3): Found resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+Login.c(3): Found resource "http://learning2.pflb.ru:56902/js/core/dust.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+Login.c(3): Found resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+Login.c(3): Found resource "http://learning2.pflb.ru:56902/js/core/materialize.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+Login.c(3): Found resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+Login.c(3): web_url("/login") was successful, 1012641 body bytes, 2125 header bytes  	[MsgId: MMSG-26386]
+Login.c(13): Notify: Transaction "UC01_TR01_login" started.
+Login.c(13): Warning: Failed to get NV emulation handle.
+Login.c(15): web_submit_data("/api/login") started  	[MsgId: MMSG-26355]
+Login.c(15): web_submit_data("/api/login") was successful, 146 body bytes, 339 header bytes  	[MsgId: MMSG-26386]
+Login.c(28): web_url("/") started  	[MsgId: MMSG-26355]
+Login.c(28): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/css/core/materialize.min.css" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/css/core/uploadfile.css" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/css/core/quill.snow.css" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/css/core/select2.min.css" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/css/core/ee-file-upload.css" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/css/company_2.css" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Login.c(28): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/clamp.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/jquery.uploadfile.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/jquery.maskedinput.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/jquery.ee.router.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/select2.full.min.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/readmore.min.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/dust-helpers.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/custom-helpers.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/materialize.min.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/materialize-select.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/materialize-pagination.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/polyphills.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/helpers.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/index.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): Found resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" in HTML "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26659]
+Login.c(28): web_url("/") was successful, 559905 body bytes, 4251 header bytes  	[MsgId: MMSG-26386]
+Login.c(38): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
+Login.c(38): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Login.c(48): web_url("/api/user/info") started  	[MsgId: MMSG-26355]
+Login.c(48): web_url("/api/user/info") was successful, 277 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Login.c(58): web_url("/api/ticket/countByState/4") started  	[MsgId: MMSG-26355]
+Login.c(58): web_url("/api/ticket/countByState/4") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Login.c(68): web_url("/api/ticket/countByState/") started  	[MsgId: MMSG-26355]
+Login.c(68): web_url("/api/ticket/countByState/") was successful, 220 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Login.c(78): web_custom_request("/api/ticket/") started  	[MsgId: MMSG-26355]
+Login.c(78): web_custom_request("/api/ticket/") was successful, 11717 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+Login.c(91): Notify: Transaction "UC01_TR01_login" ended with a "Pass" status (Duration: 2.3389 Wasted Time: 0.1545).
+Ending action Login.
+Starting action CreateOrder.
+Warning: Failed to get NV emulation handle.
+CreateOrder.c(4): Notify: Transaction "UC01_TR02_NewOrder" started.
+CreateOrder.c(4): Warning: Failed to get NV emulation handle.
+CreateOrder.c(6): web_url("/api/user/catalog/node/0/children/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(6): web_url("/api/user/catalog/node/0/children/") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(16): web_set_sockets_option started  	[MsgId: MMSG-26355]
+CreateOrder.c(16): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(18): Notify: Transaction "UC01_TR02_NewOrder" ended with a "Pass" status (Duration: 0.0869 Wasted Time: 0.0195).
+CreateOrder.c(20): Notify: Transaction "UC01_TR03_Location1" started.
+CreateOrder.c(20): Warning: Failed to get NV emulation handle.
+CreateOrder.c(24): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(24): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(29): web_url("/api/shops") started  	[MsgId: MMSG-26355]
+CreateOrder.c(29): web_url("/api/shops") was successful, 1015 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(41): web_url("/api/user/catalog/node/0/children/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(41): web_url("/api/user/catalog/node/0/children/") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(51): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(51): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(55): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(55): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(59): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(59): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(64): web_url("/api/user/catalog/treeview") started  	[MsgId: MMSG-26355]
+CreateOrder.c(64): web_url("/api/user/catalog/treeview") was successful, 75659 body bytes, 316 header bytes, 84 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(80): Notify: Transaction "UC01_TR03_Location1" ended with a "Pass" status (Duration: 0.4469 Wasted Time: 0.0786).
+CreateOrder.c(83): Notify: Transaction "UC01_TR04_theme1" started.
+CreateOrder.c(83): Warning: Failed to get NV emulation handle.
+CreateOrder.c(85): web_url("/api/user/catalog/node/parentId/children/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(85): web_url("/api/user/catalog/node/parentId/children/") was successful, 2 body bytes, 316 header bytes, 10 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(95): web_url("/api/user/catalog/node/parentId/service/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(95): web_url("/api/user/catalog/node/parentId/service/") was successful, 571 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(105): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(105): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(110): web_url("/api/user/catalog/breadcrumbs/parentId") started  	[MsgId: MMSG-26355]
+CreateOrder.c(110): web_url("/api/user/catalog/breadcrumbs/parentId") was successful, 170 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(122): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(122): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(126): web_url("/api/inventoryNumbers") started  	[MsgId: MMSG-26355]
+CreateOrder.c(126): web_url("/api/inventoryNumbers") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(137): Notify: Transaction "UC01_TR04_theme1" ended with a "Pass" status (Duration: 0.3567 Wasted Time: 0.0733).
+CreateOrder.c(141): Notify: Transaction "UC01_TR05_Description" started.
+CreateOrder.c(141): Warning: Failed to get NV emulation handle.
+CreateOrder.c(150): web_url("/api/inventoryNumbers") started  	[MsgId: MMSG-26355]
+CreateOrder.c(150): web_url("/api/inventoryNumbers") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(166): Notify: Transaction "UC01_TR05_Description" ended with a "Pass" status (Duration: 0.0909 Wasted Time: 0.0173).
+CreateOrder.c(170): Notify: Transaction "UC01_TR06_inventoryNum" started.
+CreateOrder.c(170): Warning: Failed to get NV emulation handle.
+CreateOrder.c(172): web_url("/api/inventoryNumbers") started  	[MsgId: MMSG-26355]
+CreateOrder.c(172): web_url("/api/inventoryNumbers") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(184): Notify: Transaction "UC01_TR06_inventoryNum" ended with a "Pass" status (Duration: 0.0539 Wasted Time: 0.0187).
+CreateOrder.c(188): Notify: Transaction "UC01_TR07_descFinish" started.
+CreateOrder.c(188): Warning: Failed to get NV emulation handle.
+CreateOrder.c(205): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(205): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(207): web_custom_request("/api/ticket/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(207): Continuing after Error -26612: HTTP Status-Code=500 (Internal Server Error) for "http://learning2.pflb.ru:56902/api/ticket/"  	[MsgId: MERR-26612]
+CreateOrder.c(207): web_custom_request("/api/ticket/") highest severity level was "continue on error", 200 body bytes, 335 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26387]
+CreateOrder.c(207): Continuing after error in Vuser script.
+CreateOrder.c(220): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(220): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(223): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(223): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(227): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(227): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(227): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(227): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(227): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(227): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(247): web_custom_request("DB Request") started  	[MsgId: MMSG-26355]
+CreateOrder.c(247): web_custom_request("DB Request") was successful, 0 body bytes, 248 header bytes  	[MsgId: MMSG-26386]
+CreateOrder.c(254): Notify: Transaction "UC01_TR07_descFinish" ended with a "Fail" status (Duration: 0.2136 Wasted Time: 0.0356).
+CreateOrder.c(254): Notify: Transaction "UC01_TR07_descFinish" has 1 error message(s).
+CreateOrder.c(254): Notify: The 1st error message associated with transaction "UC01_TR07_descFinish" is "Error -26612: HTTP Status-Code=500 (Internal Server Error) for "http://learning2.pflb.ru:56902/api/ticket/""
+CreateOrder.c(256): Notify: Transaction "UC01_TR08_descFinishOK" started.
+CreateOrder.c(256): Warning: Failed to get NV emulation handle.
+CreateOrder.c(260): web_url("/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(260): Retrieving data from cache for "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26558]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/materialize.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/uploadfile.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/quill.snow.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/select2.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/ee-file-upload.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/company_2.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/clamp.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/jquery.uploadfile.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/jquery.maskedinput.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/jquery.ee.router.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/select2.full.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/readmore.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/dust-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/custom-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/materialize.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/materialize-select.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/materialize-pagination.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/polyphills.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/index.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): web_url("/") was successful, 0 body bytes, 0 header bytes  	[MsgId: MMSG-26386]
+CreateOrder.c(269): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
+CreateOrder.c(269): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(279): web_url("/api/user/info") started  	[MsgId: MMSG-26355]
+CreateOrder.c(279): web_url("/api/user/info") was successful, 277 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(289): web_url("/api/ticket/countByState/4") started  	[MsgId: MMSG-26355]
+CreateOrder.c(289): web_url("/api/ticket/countByState/4") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(299): web_url("/api/ticket/countByState/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(299): web_url("/api/ticket/countByState/") was successful, 220 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(309): web_url("/api/ticket/countByState/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(309): web_url("/api/ticket/countByState/") was successful, 220 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(319): web_custom_request("/api/ticket/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(319): web_custom_request("/api/ticket/") was successful, 11238 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(332): web_custom_request("/api/ticket/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(332): web_custom_request("/api/ticket/") was successful, 11238 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(345): Notify: Transaction "UC01_TR08_descFinishOK" ended with a "Pass" status (Duration: 3.8114 Wasted Time: 0.1426).
+Ending action CreateOrder.
+Starting action CreateOrder.
+Warning: Failed to get NV emulation handle.
+CreateOrder.c(4): Notify: Transaction "UC01_TR02_NewOrder" started.
+CreateOrder.c(4): Warning: Failed to get NV emulation handle.
+CreateOrder.c(6): web_url("/api/user/catalog/node/0/children/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(6): web_url("/api/user/catalog/node/0/children/") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(16): web_set_sockets_option started  	[MsgId: MMSG-26355]
+CreateOrder.c(16): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(18): Notify: Transaction "UC01_TR02_NewOrder" ended with a "Pass" status (Duration: 0.0856 Wasted Time: 0.0182).
+CreateOrder.c(20): Notify: Transaction "UC01_TR03_Location1" started.
+CreateOrder.c(20): Warning: Failed to get NV emulation handle.
+CreateOrder.c(24): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(24): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(29): web_url("/api/shops") started  	[MsgId: MMSG-26355]
+CreateOrder.c(29): web_url("/api/shops") was successful, 1015 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(41): web_url("/api/user/catalog/node/0/children/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(41): web_url("/api/user/catalog/node/0/children/") was successful, 907 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(51): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(51): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(55): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(55): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(59): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(59): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(64): web_url("/api/user/catalog/treeview") started  	[MsgId: MMSG-26355]
+CreateOrder.c(64): web_url("/api/user/catalog/treeview") was successful, 75659 body bytes, 316 header bytes, 84 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(80): Notify: Transaction "UC01_TR03_Location1" ended with a "Pass" status (Duration: 0.4785 Wasted Time: 0.0775).
+CreateOrder.c(83): Notify: Transaction "UC01_TR04_theme1" started.
+CreateOrder.c(83): Warning: Failed to get NV emulation handle.
+CreateOrder.c(85): web_url("/api/user/catalog/node/parentId/children/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(85): web_url("/api/user/catalog/node/parentId/children/") was successful, 2 body bytes, 316 header bytes, 10 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(95): web_url("/api/user/catalog/node/parentId/service/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(95): web_url("/api/user/catalog/node/parentId/service/") was successful, 1727 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(105): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(105): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(110): web_url("/api/user/catalog/breadcrumbs/parentId") started  	[MsgId: MMSG-26355]
+CreateOrder.c(110): web_url("/api/user/catalog/breadcrumbs/parentId") was successful, 235 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(122): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(122): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(126): web_url("/api/inventoryNumbers") started  	[MsgId: MMSG-26355]
+CreateOrder.c(126): web_url("/api/inventoryNumbers") was successful, 236 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(137): Notify: Transaction "UC01_TR04_theme1" ended with a "Pass" status (Duration: 0.3259 Wasted Time: 0.0779).
+CreateOrder.c(141): Notify: Transaction "UC01_TR05_Description" started.
+CreateOrder.c(141): Warning: Failed to get NV emulation handle.
+CreateOrder.c(144): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+CreateOrder.c(144): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+CreateOrder.c(150): web_url("/api/inventoryNumbers") started  	[MsgId: MMSG-26355]
+CreateOrder.c(150): web_url("/api/inventoryNumbers") was successful, 236 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(166): Notify: Transaction "UC01_TR05_Description" ended with a "Pass" status (Duration: 0.0905 Wasted Time: 0.0195).
+CreateOrder.c(170): Notify: Transaction "UC01_TR06_inventoryNum" started.
+CreateOrder.c(170): Warning: Failed to get NV emulation handle.
+CreateOrder.c(172): web_url("/api/inventoryNumbers") started  	[MsgId: MMSG-26355]
+CreateOrder.c(172): web_url("/api/inventoryNumbers") was successful, 236 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(184): Notify: Transaction "UC01_TR06_inventoryNum" ended with a "Pass" status (Duration: 0.0858 Wasted Time: 0.0210).
+CreateOrder.c(188): Notify: Transaction "UC01_TR07_descFinish" started.
+CreateOrder.c(188): Warning: Failed to get NV emulation handle.
+CreateOrder.c(205): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(205): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(207): web_custom_request("/api/ticket/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(207): web_custom_request("/api/ticket/") was successful, 1039 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(220): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(220): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(223): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(223): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(227): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(227): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(227): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(227): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(227): web_get_int_property started  	[MsgId: MMSG-26355]
+CreateOrder.c(227): web_get_int_property was successful  	[MsgId: MMSG-26392]
+CreateOrder.c(247): web_custom_request("DB Request") started  	[MsgId: MMSG-26355]
+CreateOrder.c(247): web_custom_request("DB Request") was successful, 0 body bytes, 248 header bytes  	[MsgId: MMSG-26386]
+CreateOrder.c(254): Notify: Transaction "UC01_TR07_descFinish" ended with a "Pass" status (Duration: 0.5814 Wasted Time: 0.0379).
+CreateOrder.c(256): Notify: Transaction "UC01_TR08_descFinishOK" started.
+CreateOrder.c(256): Warning: Failed to get NV emulation handle.
+CreateOrder.c(260): web_url("/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(260): Retrieving data from cache for "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26558]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/materialize.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/uploadfile.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/quill.snow.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/select2.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/core/ee-file-upload.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/css/company_2.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/clamp.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/jquery.uploadfile.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/jquery.maskedinput.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/jquery.ee.router.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/select2.full.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/readmore.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/dust-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/custom-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/materialize.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/materialize-select.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/materialize-pagination.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/polyphills.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/index.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): Resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+CreateOrder.c(260): web_url("/") was successful, 0 body bytes, 0 header bytes  	[MsgId: MMSG-26386]
+CreateOrder.c(269): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
+CreateOrder.c(269): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(279): web_url("/api/user/info") started  	[MsgId: MMSG-26355]
+CreateOrder.c(279): web_url("/api/user/info") was successful, 277 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(289): web_url("/api/ticket/countByState/4") started  	[MsgId: MMSG-26355]
+CreateOrder.c(289): web_url("/api/ticket/countByState/4") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(299): web_url("/api/ticket/countByState/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(299): web_url("/api/ticket/countByState/") was successful, 220 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(309): web_url("/api/ticket/countByState/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(309): web_url("/api/ticket/countByState/") was successful, 220 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(319): web_custom_request("/api/ticket/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(319): web_custom_request("/api/ticket/") was successful, 11113 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(332): web_custom_request("/api/ticket/") started  	[MsgId: MMSG-26355]
+CreateOrder.c(332): web_custom_request("/api/ticket/") was successful, 11113 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+CreateOrder.c(345): Notify: Transaction "UC01_TR08_descFinishOK" ended with a "Pass" status (Duration: 3.8171 Wasted Time: 0.1323).
+Ending action CreateOrder.
+Starting action Comment.
+Warning: Failed to get NV emulation handle.
+Comment.c(4): Notify: Transaction "UC03_TR09_tasks" started.
+Comment.c(4): Warning: Failed to get NV emulation handle.
+Comment.c(6): web_url("/api/task/countByState/") started  	[MsgId: MMSG-26355]
+Comment.c(6): web_url("/api/task/countByState/") was successful, 172 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(15): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Comment.c(15): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Comment.c(21): web_custom_request("/api/task/") started  	[MsgId: MMSG-26355]
+Comment.c(21): web_custom_request("/api/task/") was successful, 14852 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(35): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Comment.c(35): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Comment.c(37): Notify: Transaction "UC03_TR09_tasks" ended with a "Pass" status (Duration: 1.0047 Wasted Time: 0.0405).
+Comment.c(39): Notify: Transaction "UC03_TR10_selectTask" started.
+Comment.c(39): Warning: Failed to get NV emulation handle.
+Comment.c(41): web_url("/api/task/id") started  	[MsgId: MMSG-26355]
+Comment.c(41): web_url("/api/task/id") was successful, 1382 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(51): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
+Comment.c(51): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(61): web_url("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Comment.c(61): web_url("/api/ticket/id/comment/") was successful, 556 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(71): Notify: Transaction "UC03_TR10_selectTask" ended with a "Pass" status (Duration: 0.9444 Wasted Time: 0.0553).
+Comment.c(75): Notify: Transaction "UC03_TR11_commentFinish" started.
+Comment.c(75): Warning: Failed to get NV emulation handle.
+Comment.c(77): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(77): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(79): web_custom_request("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Comment.c(79): web_custom_request("/api/ticket/id/comment/") was successful, 124 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(93): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(93): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(96): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(96): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(100): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(100): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(100): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(100): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(100): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(100): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(120): web_custom_request("DB Request") started  	[MsgId: MMSG-26355]
+Comment.c(120): web_custom_request("DB Request") was successful, 0 body bytes, 248 header bytes  	[MsgId: MMSG-26386]
+Comment.c(126): web_url("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Comment.c(126): web_url("/api/ticket/id/comment/") was successful, 728 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(136): Notify: Transaction "UC03_TR11_commentFinish" ended with a "Pass" status (Duration: 1.2069 Wasted Time: 0.0549).
+Ending action Comment.
+Starting action Comment.
+Warning: Failed to get NV emulation handle.
+Comment.c(4): Notify: Transaction "UC03_TR09_tasks" started.
+Comment.c(4): Warning: Failed to get NV emulation handle.
+Comment.c(6): web_url("/api/task/countByState/") started  	[MsgId: MMSG-26355]
+Comment.c(6): web_url("/api/task/countByState/") was successful, 172 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(15): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Comment.c(15): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Comment.c(21): web_custom_request("/api/task/") started  	[MsgId: MMSG-26355]
+Comment.c(21): web_custom_request("/api/task/") was successful, 14852 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(35): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Comment.c(35): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Comment.c(37): Notify: Transaction "UC03_TR09_tasks" ended with a "Pass" status (Duration: 0.8329 Wasted Time: 0.0436).
+Comment.c(39): Notify: Transaction "UC03_TR10_selectTask" started.
+Comment.c(39): Warning: Failed to get NV emulation handle.
+Comment.c(41): web_url("/api/task/id") started  	[MsgId: MMSG-26355]
+Comment.c(41): web_url("/api/task/id") was successful, 1361 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(51): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
+Comment.c(51): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(61): web_url("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Comment.c(61): web_url("/api/ticket/id/comment/") was successful, 186 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(71): Notify: Transaction "UC03_TR10_selectTask" ended with a "Pass" status (Duration: 1.0228 Wasted Time: 0.0584).
+Comment.c(75): Notify: Transaction "UC03_TR11_commentFinish" started.
+Comment.c(75): Warning: Failed to get NV emulation handle.
+Comment.c(77): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(77): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(79): web_custom_request("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Comment.c(79): web_custom_request("/api/ticket/id/comment/") was successful, 124 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(93): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(93): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(96): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(96): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(100): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(100): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(100): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(100): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(100): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(100): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(120): web_custom_request("DB Request") started  	[MsgId: MMSG-26355]
+Comment.c(120): web_custom_request("DB Request") was successful, 0 body bytes, 248 header bytes  	[MsgId: MMSG-26386]
+Comment.c(126): web_url("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Comment.c(126): web_url("/api/ticket/id/comment/") was successful, 358 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(136): Notify: Transaction "UC03_TR11_commentFinish" ended with a "Pass" status (Duration: 0.8171 Wasted Time: 0.0530).
+Ending action Comment.
+Starting action Comment.
+Warning: Failed to get NV emulation handle.
+Comment.c(4): Notify: Transaction "UC03_TR09_tasks" started.
+Comment.c(4): Warning: Failed to get NV emulation handle.
+Comment.c(6): web_url("/api/task/countByState/") started  	[MsgId: MMSG-26355]
+Comment.c(6): web_url("/api/task/countByState/") was successful, 172 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(15): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Comment.c(15): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Comment.c(21): web_custom_request("/api/task/") started  	[MsgId: MMSG-26355]
+Comment.c(21): web_custom_request("/api/task/") was successful, 14852 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(35): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Comment.c(35): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Comment.c(37): Notify: Transaction "UC03_TR09_tasks" ended with a "Pass" status (Duration: 0.8123 Wasted Time: 0.0396).
+Comment.c(39): Notify: Transaction "UC03_TR10_selectTask" started.
+Comment.c(39): Warning: Failed to get NV emulation handle.
+Comment.c(41): web_url("/api/task/id") started  	[MsgId: MMSG-26355]
+Comment.c(41): web_url("/api/task/id") was successful, 1382 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(51): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
+Comment.c(51): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(61): web_url("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Comment.c(61): web_url("/api/ticket/id/comment/") was successful, 742 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(71): Notify: Transaction "UC03_TR10_selectTask" ended with a "Pass" status (Duration: 0.7972 Wasted Time: 0.0518).
+Comment.c(75): Notify: Transaction "UC03_TR11_commentFinish" started.
+Comment.c(75): Warning: Failed to get NV emulation handle.
+Comment.c(77): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(77): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(79): web_custom_request("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Comment.c(79): web_custom_request("/api/ticket/id/comment/") was successful, 124 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(93): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(93): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(96): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(96): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(100): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(100): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(100): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(100): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(100): web_get_int_property started  	[MsgId: MMSG-26355]
+Comment.c(100): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Comment.c(120): web_custom_request("DB Request") started  	[MsgId: MMSG-26355]
+Comment.c(120): web_custom_request("DB Request") was successful, 0 body bytes, 248 header bytes  	[MsgId: MMSG-26386]
+Comment.c(126): web_url("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Comment.c(126): web_url("/api/ticket/id/comment/") was successful, 914 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Comment.c(136): Notify: Transaction "UC03_TR11_commentFinish" ended with a "Pass" status (Duration: 2.2636 Wasted Time: 0.0523).
+Ending action Comment.
+Starting action Close.
+Warning: Failed to get NV emulation handle.
+Close.c(5): Notify: Transaction "UC04_TR12_tasks" started.
+Close.c(5): Warning: Failed to get NV emulation handle.
+Close.c(7): web_url("/api/task/countByState/") started  	[MsgId: MMSG-26355]
+Close.c(7): web_url("/api/task/countByState/") was successful, 172 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(17): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Close.c(17): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Close.c(23): web_custom_request("/api/task/") started  	[MsgId: MMSG-26355]
+Close.c(23): web_custom_request("/api/task/") was successful, 14852 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(37): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Close.c(37): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Close.c(39): Notify: Transaction "UC04_TR12_tasks" ended with a "Pass" status (Duration: 0,7943 Wasted Time: 0,0401).
+Close.c(41): Notify: Transaction "UC04_TR13_selectTask" started.
+Close.c(41): Warning: Failed to get NV emulation handle.
+Close.c(43): web_url("/api/task/id") started  	[MsgId: MMSG-26355]
+Close.c(43): web_url("/api/task/id") was successful, 1361 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(53): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
+Close.c(53): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(63): web_url("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Close.c(63): web_url("/api/ticket/id/comment/") was successful, 186 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(73): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Close.c(73): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Close.c(75): Notify: Transaction "UC04_TR13_selectTask" ended with a "Pass" status (Duration: 1.1852 Wasted Time: 0.0530).
+Close.c(77): Notify: Transaction "UC04_TR14_ToOrder" started.
+Close.c(77): Warning: Failed to get NV emulation handle.
+Close.c(79): web_custom_request("/api/ticket/id") started  	[MsgId: MMSG-26355]
+Close.c(79): web_custom_request("/api/ticket/id") was successful, 1375 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(90): web_url("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Close.c(90): web_url("/api/ticket/id/comment/") was successful, 186 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(100): Notify: Transaction "UC04_TR14_ToOrder" ended with a "Pass" status (Duration: 0,6230 Wasted Time: 0,0338).
+Close.c(104): Notify: Transaction "UC04_TR15_closeOrder" started.
+Close.c(104): Warning: Failed to get NV emulation handle.
+Close.c(106): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(106): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(108): web_custom_request("/api/ticket/id/solve/") started  	[MsgId: MMSG-26355]
+Close.c(108): web_custom_request("/api/ticket/id/solve/") was successful, 1224 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(120): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(120): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(123): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(123): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(127): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(127): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(127): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(127): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(127): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(127): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(146): web_custom_request("DB Request") started  	[MsgId: MMSG-26355]
+Close.c(146): web_custom_request("DB Request") was successful, 0 body bytes, 248 header bytes  	[MsgId: MMSG-26386]
+Close.c(152): web_url("/home") started  	[MsgId: MMSG-26355]
+Close.c(152): Retrieving data from cache for "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26558]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/materialize.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/uploadfile.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/quill.snow.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/select2.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/ee-file-upload.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/company_2.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/clamp.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/jquery.uploadfile.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/jquery.maskedinput.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/jquery.ee.router.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/select2.full.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/readmore.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/dust-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/custom-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/materialize.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/materialize-select.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/materialize-pagination.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/polyphills.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/index.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): web_url("/home") was successful, 0 body bytes, 0 header bytes  	[MsgId: MMSG-26386]
+Close.c(161): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
+Close.c(161): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(171): web_url("/api/user/info") started  	[MsgId: MMSG-26355]
+Close.c(171): web_url("/api/user/info") was successful, 277 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(181): web_url("/api/ticket/countByState/4") started  	[MsgId: MMSG-26355]
+Close.c(181): web_url("/api/ticket/countByState/4") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(191): web_url("/api/ticket/countByState/") started  	[MsgId: MMSG-26355]
+Close.c(191): web_url("/api/ticket/countByState/") was successful, 220 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(201): web_url("/api/task/countByState/") started  	[MsgId: MMSG-26355]
+Close.c(201): web_url("/api/task/countByState/") was successful, 172 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(211): web_custom_request("/api/task/") started  	[MsgId: MMSG-26355]
+Close.c(211): web_custom_request("/api/task/") was successful, 14879 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(223): web_custom_request("/api/ticket/") started  	[MsgId: MMSG-26355]
+Close.c(223): web_custom_request("/api/ticket/") was successful, 10657 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(236): Notify: Transaction "UC04_TR15_closeOrder" ended with a "Pass" status (Duration: 3.0113 Wasted Time: 0.1684).
+Ending action Close.
+Starting action Close.
+Warning: Failed to get NV emulation handle.
+Close.c(5): Notify: Transaction "UC04_TR12_tasks" started.
+Close.c(5): Warning: Failed to get NV emulation handle.
+Close.c(7): web_url("/api/task/countByState/") started  	[MsgId: MMSG-26355]
+Close.c(7): web_url("/api/task/countByState/") was successful, 172 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(17): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Close.c(17): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Close.c(23): web_custom_request("/api/task/") started  	[MsgId: MMSG-26355]
+Close.c(23): web_custom_request("/api/task/") was successful, 14879 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(37): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Close.c(37): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Close.c(39): Notify: Transaction "UC04_TR12_tasks" ended with a "Pass" status (Duration: 0.9393 Wasted Time: 0.0393).
+Close.c(41): Notify: Transaction "UC04_TR13_selectTask" started.
+Close.c(41): Warning: Failed to get NV emulation handle.
+Close.c(43): web_url("/api/task/id") started  	[MsgId: MMSG-26355]
+Close.c(43): web_url("/api/task/id") was successful, 1709 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(53): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
+Close.c(53): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(63): web_url("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Close.c(63): web_url("/api/ticket/id/comment/") was successful, 2 body bytes, 316 header bytes, 10 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(73): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Close.c(73): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Close.c(75): Notify: Transaction "UC04_TR13_selectTask" ended with a "Pass" status (Duration: 1.0984 Wasted Time: 0.0480).
+Close.c(77): Notify: Transaction "UC04_TR14_ToOrder" started.
+Close.c(77): Warning: Failed to get NV emulation handle.
+Close.c(79): web_custom_request("/api/ticket/id") started  	[MsgId: MMSG-26355]
+Close.c(79): web_custom_request("/api/ticket/id") was successful, 1723 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(90): web_url("/api/ticket/id/comment/") started  	[MsgId: MMSG-26355]
+Close.c(90): web_url("/api/ticket/id/comment/") was successful, 2 body bytes, 316 header bytes, 10 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(100): Notify: Transaction "UC04_TR14_ToOrder" ended with a "Pass" status (Duration: 1.2154 Wasted Time: 0.0320).
+Close.c(104): Notify: Transaction "UC04_TR15_closeOrder" started.
+Close.c(104): Warning: Failed to get NV emulation handle.
+Close.c(106): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(106): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(108): web_custom_request("/api/ticket/id/solve/") started  	[MsgId: MMSG-26355]
+Close.c(108): web_custom_request("/api/ticket/id/solve/") was successful, 1572 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(120): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(120): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(123): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(123): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(127): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(127): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(127): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(127): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(127): web_get_int_property started  	[MsgId: MMSG-26355]
+Close.c(127): web_get_int_property was successful  	[MsgId: MMSG-26392]
+Close.c(146): web_custom_request("DB Request") started  	[MsgId: MMSG-26355]
+Close.c(146): web_custom_request("DB Request") was successful, 0 body bytes, 248 header bytes  	[MsgId: MMSG-26386]
+Close.c(152): web_url("/home") started  	[MsgId: MMSG-26355]
+Close.c(152): Retrieving data from cache for "http://learning2.pflb.ru:56902/"  	[MsgId: MMSG-26558]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/materialize.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/uploadfile.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/quill.snow.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/select2.min.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/core/ee-file-upload.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/css/company_2.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/clamp.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/jquery.uploadfile.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/jquery.maskedinput.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/jquery.ee.router.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/select2.full.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/readmore.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/dust-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/custom-helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/materialize.min.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/materialize-select.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/materialize-pagination.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/polyphills.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/helpers.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/index.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): Resource "http://learning2.pflb.ru:56902/js/core/materialTable.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Close.c(152): web_url("/home") was successful, 0 body bytes, 0 header bytes  	[MsgId: MMSG-26386]
+Close.c(161): web_url("/api/checkLogin") started  	[MsgId: MMSG-26355]
+Close.c(161): web_url("/api/checkLogin") was successful, 92 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(171): web_url("/api/user/info") started  	[MsgId: MMSG-26355]
+Close.c(171): web_url("/api/user/info") was successful, 277 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(181): web_url("/api/ticket/countByState/4") started  	[MsgId: MMSG-26355]
+Close.c(181): web_url("/api/ticket/countByState/4") was successful, 52 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(191): web_url("/api/ticket/countByState/") started  	[MsgId: MMSG-26355]
+Close.c(191): web_url("/api/ticket/countByState/") was successful, 220 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(201): web_url("/api/task/countByState/") started  	[MsgId: MMSG-26355]
+Close.c(201): web_url("/api/task/countByState/") was successful, 172 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(211): web_custom_request("/api/task/") started  	[MsgId: MMSG-26355]
+Close.c(211): web_custom_request("/api/task/") was successful, 14639 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(223): web_custom_request("/api/ticket/") started  	[MsgId: MMSG-26355]
+Close.c(223): web_custom_request("/api/ticket/") was successful, 10657 body bytes, 316 header bytes, 20 chunking overhead bytes  	[MsgId: MMSG-26385]
+Close.c(236): Notify: Transaction "UC04_TR15_closeOrder" ended with a "Pass" status (Duration: 3.7110 Wasted Time: 0.1649).
+Ending action Close.
+Starting action Logout.
+Warning: Failed to get NV emulation handle.
+Logout.c(3): Notify: Transaction "UC01_TR16_logout1" started.
+Logout.c(3): Warning: Failed to get NV emulation handle.
+Logout.c(5): web_url("/api/logout") started  	[MsgId: MMSG-26355]
+Logout.c(5): Redirecting "http://learning2.pflb.ru:56902/api/logout" (redirection depth is 0)  	[MsgId: MMSG-26694]
+Logout.c(5): To location "http://learning2.pflb.ru:56902/login.html"  	[MsgId: MMSG-26693]
+Logout.c(5): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(5): Resource "http://learning2.pflb.ru:56902/css/core/materialize.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(5): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(5): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(5): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(5): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(5): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(5): Resource "http://learning2.pflb.ru:56902/js/core/materialize.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(5): Resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(5): web_url("/api/logout") was successful, 873 body bytes, 675 header bytes  	[MsgId: MMSG-26386]
+Logout.c(14): web_url("/login") started  	[MsgId: MMSG-26355]
+Logout.c(14): Resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(14): Resource "http://learning2.pflb.ru:56902/css/core/materialize.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(14): Resource "http://learning2.pflb.ru:56902/css/style.css" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(14): Resource "http://learning2.pflb.ru:56902/js/core/legacy.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(14): Resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(14): Resource "http://learning2.pflb.ru:56902/js/core/dust.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(14): Resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(14): Resource "http://learning2.pflb.ru:56902/js/core/materialize.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(14): Resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Logout.c(14): web_url("/login") was successful, 873 body bytes, 395 header bytes  	[MsgId: MMSG-26386]
+Logout.c(24): Notify: Transaction "UC01_TR16_logout1" ended with a "Pass" status (Duration: 0,3801 Wasted Time: 0,0416).
+Ending action Logout.
+Ending iteration 1.
+Ending Vuser...
+Starting action vuser_end.
+Warning: Failed to get NV emulation handle.
+Ending action vuser_end.
+Vuser Terminated.

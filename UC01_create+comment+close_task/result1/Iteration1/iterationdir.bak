@@ -1,0 +1,12 @@
+[Close]
+SnapshotIndex=I1_Close
+[vuser_init]
+SnapshotIndex=I1_vuser_init
+[Logout]
+SnapshotIndex=I1_Logout
+[CreateOrder]
+SnapshotIndex=I1_CreateOrder
+[Login]
+SnapshotIndex=I1_Login
+[Comment]
+SnapshotIndex=I1_Comment

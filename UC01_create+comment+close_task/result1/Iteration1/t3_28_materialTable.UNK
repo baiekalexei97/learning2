@@ -1,0 +1,573 @@
+;var materialTable = function (containerId, properties) {
+    var config = {
+        defaultStartPage: 1,
+        defaultSize: 10,
+        defaultPagePar: "page",
+        defaultSizePar: "size",
+        searchValue: "",
+        sortValue:"",
+        sortMethod:"",
+        defaultSearch: false,
+        defaultSearchParam: "q",
+        container: containerId,
+        url: "",
+        properties: properties
+    };
+
+    if ($.cookie("table.sort") !== undefined) {
+        var sortedColumn = JSON.parse($.cookie("table.sort"));
+
+        config.properties.columns.forEach(function (column) {
+            if (column.data === sortedColumn.value) {
+                config.sortValue = sortedColumn.value;
+                config.sortMethod = sortedColumn.method;
+            }
+        });
+    }
+
+
+
+    checkRequiredProperties();
+
+    config.url = properties.ajax.url;
+    config.pagePar = properties.ajax.pagePar || config.defaultPagePar;
+    config.sizePar = properties.ajax.sizePar || config.defaultSizePar;
+
+    if ($.cookie("table.page.size") !== undefined && properties.hidePageSelector !== true) {
+        config.pageSize = $.cookie("table.page.size");
+    } else {
+        config.pageSize = properties.ajax.size || config.defaultSize;
+    }
+
+    config.button = properties.button || undefined;
+    config.search = properties.search || config.defaultSearch;
+    config.searchParam = (properties.search && properties.search.param) || config.defaultSearchParam;
+    config.extraParam = properties.ajax.extraParam;
+    config.progressId = containerId+'-progress';
+    config.progressTpl = "<div style='position: relative;' id='"+config.progressId+"'>" +
+        "<div class='progress ' style='position: absolute; z-index: 2;'>"+
+        "<div class='indeterminate'></div>" +
+        "</div>"+
+        "</div>";
+    config.table = containerId + "-Table";
+    config.tableClasses = (properties.tableClasses && Array.isArray(properties.tableClasses)) ? properties.tableClasses.join(" ") : "";
+
+    config.tableTpl = "" +
+        (config.search ?
+            "<div class='row'>" +
+            "<div class='col l12 m12 s12'>" +
+            "<div class='search-wrapper'><input class='material-table-search' placeholder='" + (config.search.placeholder ? config.search.placeholder : "Поиск...") + "' id='"+config.table+"_search' accept-charset='utf-8'>" +
+            "<i class='material-icons'>search</i></div>" +
+            "</div></div>" :
+            "")
+        +
+        "<div class='row mobile-table-view'><div class='col l12 m12 s12'><table class='" + config.tableClasses + "' id = '"+config.table+"'>"+
+        "<thead><tr class='tread-first'></tr></thead>"+
+        "<tbody></tbody>"+
+        "</table></div></div>";
+    config.footer = containerId + "-Footer";
+    config.footerTpl = "" +
+        "<div class='row' style='margin-bottom: 0'>" +
+        "<div id='"+config.footer+"' class='col l12 m12 s12'>" +
+        "<div class='row' style='margin-bottom: 0'></div>" +
+        "</div>" +
+        "</div>" + "";
+    if(config.button && config.button.icon && (config.button.href || (config.button.handler && typeof config.button.handler === "function"))){
+        config.buttonId = config.container+"-addButton";
+        config.footerTpl += "<div class='fixed-action-btn'>" +
+            "<a id = '" + config.buttonId + "' href='"+ (config.button.href !== undefined ? config.button.href : '#') +"' class='btn-floating btn-large waves-effect waves-light table-add-ticket'>" +
+            "<i class='material-icons'>"+config.button.icon+"</i>" +
+            "</a>" +
+            "</div>";
+    }
+
+    config.info =  containerId + "-Info";
+    config.infoTpl =   "<div class='col l8 m8 s12'><div class='valign-wrapper' id='"+config.info+"'></div>" + (properties.hidePageSelector ? "" : "<div class='page-select'><select class='change-page'><option " + (config.pageSize === "10" ? "selected" : "") + " value='10'>10</option><option " + (config.pageSize === "20" ? "selected" : "") + " value='20'>20</option><option " + (config.pageSize === "50" ? 'selected' : '') + " value='50'>50</option><option " + (config.pageSize === "100" ? "selected" : "") + " value='100'>100</option></select></div>") + "<a id = 'refresh' class='waves-effect waves-light btn table-refresh'>Обновить</a></div>";
+    config.pagination = containerId + "-Pagination";
+    config.paginationTpl =   "<div class='col l4 m4 s12 mobile-pagination' id='"+config.pagination+"'></div>";
+    config.columns = properties.columns;
+    config.afterLoad = properties.afterLoad;
+    config.afterRowRender = properties.afterRowRender;
+    init();
+    //responsive-table
+
+    function init(){
+
+        renderHeader();
+        renderFooter();
+        loadPage(properties.ajax.page || config.defaultStartPage);
+    }
+
+    function renderHeader() {
+        //Инициализируем переменные
+        var $tableContainer = $("#"+config.container),
+            groupArray = [];
+
+        //Чистим контейнер таблиц
+        $tableContainer.empty();
+        $tableContainer.append(config.tableTpl);
+        var $searchField = $("#" + config.table + "_search");
+        //Вызов поиска по таблице
+        config.searchValue = $searchField.val();
+        var timeout;
+        $searchField.keyup(function () {
+            var searchText = encodeURIComponent($(this).val());
+            if(searchText !== config.searchValue) {
+                config.searchValue = searchText;
+                if(timeout) {
+                    clearTimeout(timeout);
+                }
+                timeout = setTimeout(function () {
+                    loadPage(config.defaultStartPage);
+                }, 600)
+            }
+        });
+
+        //Проверяем, есть ли у нас сгруппированные колонки, если есть — начинается рок-н-ролл
+        properties.columns.forEach(function (column, i) {
+            if (column.group){
+                if (groupArray.length === 0){
+                    groupArray.push({name: column.group, size: 1});
+                } else {
+                    groupArray.forEach(function (groups, j){
+                        if (groups.name === column.group){
+                            groups.size += 1;
+                        }
+                    });
+                }
+            }
+        });
+
+        if (window.outerWidth > 400) {
+            //Рисуем хидер, если нет сгруппированных колонок, то все просто, но если они есть...
+
+            if (groupArray.length === 0){
+                properties.columns.forEach(function (column, i) {
+                    //debugger;
+                    var headItem = "";
+
+                    if (column.data === config.sortValue) {
+                        headItem = "<th class='ee-data-table sorted-column'" + (column.width ? " width='"+column.width+"'" : "")+" data-field='" + column.data + "'title='" + column.name + "'><i class='material-icons sort-icon'>" + (config.sortMethod === "asc" ? "vertical_align_bottom" : "vertical_align_top") + "</i>" + column.name + "</th>"
+                    } else {
+                        headItem = "<th class='ee-data-table'" + (column.width ? " width='"+column.width+"'" : "")+" data-field='" + column.data + "' title='" + column.name + "'>" + (column.sort !== undefined && column.sort === 'false'? "":"<i class='material-icons sort-icon'>swap_vert</i>") + column.name + "</th>";
+                    }
+
+                    $("#" + config.container + " thead tr.tread-first").append(headItem);
+                });
+            } else {
+                //Сгруппированные колонки есть...
+                //Добавляем дополнительную строку в тред
+                $("#" + config.container + " thead").append("<tr class='tread-second'></tr>");
+
+                var currentWhiteTreadId = 0;
+                var currentGroup = "";
+                //И начинаем последовательно их набивать
+                properties.columns.forEach(function (column, i) {
+                    var headItem = "";
+                    if (!column.group) {
+
+                        if (column.data === config.sortValue) {
+                            headItem = "<th rowspan='2' class='ee-data-table sorted-column'" + (column.width ? " width='"+column.width+"'" : "") + " data-field='" + column.data + "'><i class='material-icons sort-icon' title='" + column.name + "'>" + (config.sortMethod === "asc" ? "vertical_align_bottom" : "vertical_align_top") + "</i>" + column.name + "</th>";
+                        } else {
+                            headItem = "<th rowspan='2' class='ee-data-table'" + (column.width ? " width='"+column.width+"'" : "")+" data-field='" + column.data + "' title='" + column.name + "'>" + (column.sort !== undefined && column.sort === 'false'? "":"<i class='material-icons sort-icon'>swap_vert</i>") + column.name + "</th>";
+                        }
+
+                        $("#" + config.container + " thead tr.tread-first").append(headItem);
+
+                    } else {
+
+                        if (column.data === config.sortValue) {
+                            headItem = "<th class='ee-data-table'" + (column.width ? " width='"+column.width+"'" : "")+" data-field='" + column.data + "'><i class='material-icons sort-icon' title='" + column.name + "'>" + (config.sortMethod === "asc" ? "vertical_align_bottom" : "vertical_align_top") + "</i>" + column.name + "</th>";
+                        } else {
+                            headItem = "<th class='ee-data-table'" + (column.width ? " width='"+column.width+"'" : "")+" data-field='" + column.data + "' title='" + column.name + "'>" + (column.sort !== undefined && column.sort === 'false'? "":"<i class='material-icons sort-icon'>swap_vert</i>") + column.name + "</th>";
+                        }
+
+                        $("#" + config.container + " thead tr.tread-second").append(headItem);
+
+                        if (currentGroup !== column.group) {
+                            currentGroup = column.group;
+                            if($("#" + config.container + " thead tr.tread-first th.white-tread-" + currentWhiteTreadId + "").length === 0){
+                                $("#" + config.container + " thead tr.tread-first").append(
+                                    "<th class='ignore-for-sort white-tread-" + currentWhiteTreadId + "' colspan='" + groupArray[currentWhiteTreadId].size + "' style='text-align: center;' title='" + groupArray[currentWhiteTreadId].name + "'>" + groupArray[currentWhiteTreadId].name + "</th>"
+                                );
+                                currentWhiteTreadId += 1;
+                            }
+                        }
+                    }
+                });
+            }
+            //Рисуем хидер на маляпуськах
+        } else {
+            properties.columns.forEach(function (column, i) {
+                if(column.mobileView){
+                    $("#" + config.container + " thead tr.tread-first").append(
+                        "<th class='ee-data-table'"+(column.width ? " width='"+column.width+"'" : "")+" data-field='" + column.data + "' title='" + column.name + "'>" + (column.sort !== undefined && column.sort === 'false'? "":"<i class='material-icons sort-icon'>swap_vert</i>") + column.name + "</th>"
+                    );
+                }
+            });
+        }
+
+        //Вызов сортировки таблицы
+        $('th.ee-data-table').click(function () {
+            sortTable($(this));
+        });
+    }
+
+    function sortTable(column) {
+        var col = config.columns.find(function (col) {
+            return col.name === column.text() || col.name === column.html();
+        });
+
+        if (col === undefined || col.sort === undefined || col.sort !== 'false') {
+            var status = column[0].childNodes[0].textContent;
+            var table = $('th.ee-data-table');
+            table.removeClass('sorted-column');
+            if(!column.hasClass('sorted-column')) column.addClass('sorted-column');
+            if (status === 'swap_vert') {
+                for (i = 0; i < table.length; i++){
+                    if (config.columns[i] === undefined || config.columns[i].sort === undefined || config.columns[i].sort !== 'false') {
+                        if(!table[i].hasAttribute('colspan')){
+                            table[i].childNodes[0].textContent = 'swap_vert';
+                        }
+                    }
+                }
+                column[0].childNodes[0].textContent = 'vertical_align_bottom';
+                config.sortValue = column.data('field');
+                config.sortMethod = 'asc';
+
+                saveSort();
+
+                loadPage(config.defaultStartPage);
+
+            } else if (status === 'vertical_align_bottom') {
+                for (i = 0; i < table.length; i++) {
+                    if(config.columns[i] === undefined || config.columns[i].sort === undefined || config.columns[i].sort !== 'false') {
+                        if(!table[i].hasAttribute('colspan')) {
+                            table[i].childNodes[0].textContent = 'swap_vert';
+                        }
+                    }
+                }
+                column[0].childNodes[0].textContent = 'vertical_align_top';
+                config.sortValue = column.data('field');
+                config.sortMethod = 'desc';
+
+                saveSort();
+
+                loadPage(config.defaultStartPage);
+
+            } else if (status === 'vertical_align_top') {
+                for (i = 0; i < table.length; i++){
+                    if(config.columns[i] === undefined || config.columns[i].sort === undefined || config.columns[i].sort !== 'false') {
+                        if(!table[i].hasAttribute('colspan')) {
+                            table[i].childNodes[0].textContent = 'swap_vert';
+                        }
+                    }
+                }
+                column[0].childNodes[0].textContent = 'swap_vert';
+                if(column.hasClass('sorted-column')) column.removeClass('sorted-column');
+                config.sortValue = "";
+                config.sortMethod = "";
+
+                saveSort();
+
+                loadPage(config.defaultStartPage);
+            }
+        }
+
+        function saveSort() {
+            var sortData = {
+                value : config.sortValue,
+                method : config.sortMethod
+            };
+
+            if (sortData.value !== "" && sortData.method !== "") {
+                $.cookie("table.sort", JSON.stringify(sortData), 666);
+            } else {
+                $.removeCookie("table.sort");
+            }
+        }
+    }
+
+    function renderFooter() {
+        $("#" + config.container).append(config.footerTpl);
+        $("#" + config.footer+" .row").append(config.infoTpl);
+        if (config.button && config.button.handler && typeof config.button.handler === "function") {
+            $("#" + config.buttonId).click(function (e) {
+                e.preventDefault();
+                config.button.handler();
+            })
+        }
+
+        var $pageSelector = $("select.change-page");
+        //$pageSelector.material_select();
+
+        //Нажимаем кнопку "Обновить"
+        $('#refresh').click(function (e) {
+            e.preventDefault();
+            loadPage(config.currentPage);
+        });
+        //Выбираем количество страничек
+        $pageSelector.on("change", function () {
+            config.pageSize = $(this).val();
+            savePageSize($(this).val());
+            loadPage(config.currentPage);
+        });
+
+        function savePageSize(value) {
+            $.cookie("table.page.size", value, 666);
+        }
+    }
+
+    function renderData(data) {
+        $("#" + config.container + " tbody").empty();
+        var content = data.content || [];
+        var viewClass = "";
+        checkDataFormat(data);
+
+        //Рисуем таблицу DESKTOP
+        if (window.outerWidth > 400) {
+            content.forEach(function (row) {
+                //обрезаем секунды у дат
+                removeSeconds.call(row);
+                if (row.expired) {
+                    viewClass = "ee-expired";
+                } else {
+                    row.viewed ? viewClass="ee-viewed" : viewClass="ee-new";
+                }
+
+                var $tbody = $("#" + config.container + " tbody");
+                $tbody.append("<tr data-parentId='" + (row.parentId !== undefined ? row.parentId : "") + "'" + " data-id='" + (row.id !== undefined ? row.id : "") + "' class='" + viewClass + "'></tr>");
+                properties.columns.forEach(function (column) {
+                    var data = row[column.data] === undefined ? "" : row[column.data];
+                    var dataTrasformed = (column.render && typeof column.render === "function") ? column.render(data, row) : data;
+                    var rowElement = $("<td>");
+
+                    $("#" + config.container + " tbody tr").last().append(
+                        rowElement.html("<div class='tbody-clamped'>" + dataTrasformed + "</div>")
+                    );
+                    if (column.afterRender && typeof column.afterRender === "function") {
+                        column.afterRender(rowElement, data, row);
+                    }
+                });
+                if (config.afterRowRender && typeof config.afterRowRender === "function") {
+                    config.afterRowRender($("#" + config.container + " tbody tr").last(), row);
+                }
+            });
+
+            if (config.afterLoad && typeof config.afterLoad === "function") {
+                config.afterLoad();
+            }
+            if (data.content) {
+                delete data.content
+            }
+            updatePagination(data);
+            if (properties.afterRender && typeof properties.afterRender === "function") {
+                properties.afterRender($("#" + config.container + " tbody"));
+            }
+            //Рисуем таблицу MOBILE
+        } else {
+            content.forEach(function (row) {
+                row.viewed ? viewClass="ee-viewed" : viewClass="ee-new";
+                var $tbody = $("#" + config.container + " tbody");
+                $tbody.append("<tr data-parentId='" + (row.parentId !== undefined ? row.parentId : "") + "'" + " data-id='" + (row.id !== undefined ? row.id : "") + "' class='" + viewClass + "'></tr>");
+
+                //console.log(row)
+                properties.columns.forEach(function (column) {
+                    if (column.mobileView) {
+                        var data = row[column.data] === undefined ? "" : row[column.data];
+                        var dataTransformed = (column.render && typeof column.render === "function") ? column.render(data, row) : data;
+
+                        var rowElement = $("<td>");
+
+                        $("#" + config.container + " tbody tr").last().append(
+                            rowElement.html("<div class='tbody-clamped'>" + dataTransformed + "</div>")
+                        );
+
+                        if(column.afterRender && typeof column.afterRender === "function") {
+                            column.afterRender(rowElement, data, row);
+                        }
+                    }
+                });
+                if (config.afterRowRender && typeof config.afterRowRender === "function") {
+                    config.afterRowRender($("#" + config.container + " tbody tr").last(), row);
+                }
+            });
+
+            if (config.afterLoad && typeof config.afterLoad === "function") {
+                config.afterLoad();
+            }
+            if (data.content) {
+                delete data.content
+            }
+            updatePagination(data);
+            if (properties.afterRender && typeof properties.afterRender === "function") {
+                properties.afterRender($("#" + config.container + " tbody"));
+            }
+        }
+    }
+
+    function updatePagination(data) {
+        if((config.totalPages === undefined && data.totalPages) || (config.totalPages !== undefined && data.totalPages !== undefined && config.totalPages !== data.totalPages)) {
+            //if(config.totalPages && config.totalPages !== data.totalPages) {
+            $("#" + config.pagination).remove();
+            //}
+            config.totalPages = data.totalPages;
+            $("#" + config.footer+" .row").append(config.paginationTpl);
+            $("#" + config.pagination).materializePagination({
+                useUrlParameter: false,
+                align: 'right',
+                lastPage: config.totalPages,
+                currentPage: data.number + 1 || 1,
+                onClickCallback: function (page) {
+                    var hash = window.location.hash;
+                    if(hash.indexOf("?") !== -1) {
+                        if(hash.indexOf("page") !== -1) {
+                            var params = hash.substr(hash.indexOf("?") + 1, hash.length);
+                            paramsArray = params.split("&");
+                            paramsArray.forEach(function (param, i) {
+                                if(param.indexOf("page") !== -1) {
+                                    paramsArray[i] = "page=" + page;
+                                }
+                            });
+                            hash = hash.substr(0, hash.indexOf("?")+1) + paramsArray.join("&");
+                        } else {
+                            hash += "&page=" + page;
+                        }
+                    } else {
+                        hash += "?page=" + page;
+                    }
+                    window.history.pushState("", "", window.location.pathname + hash);
+                    loadPage(page);
+                }
+            })
+        } else {
+            if (data.totalPages !== undefined && data.totalPages === 0) {
+                $("#" + config.pagination).remove();
+            }
+        }
+        if (data.number !== undefined && data.numberOfElements !== undefined && data.totalElements !== undefined) {
+            $("#" + config.info).empty().append("Записи с " + ((data.number*config.pageSize + data.numberOfElements) === 0 ? 0:data.number*config.pageSize + 1) + " по " + (data.number*config.pageSize + data.numberOfElements) +" из " + data.totalElements);
+        }
+    }
+
+    function loadPage(number) {
+
+        config.currentPage = number;
+        if (number < 1) {
+            throw "Bad page number " + number;
+        }
+
+        number--;
+        showProgress();
+
+        if (config.extraParam) {
+            for (key in config.extraParam) {
+                if (config.extraParam.hasOwnProperty(key)) {
+                    if (Array.isArray(config.extraParam[key])) {
+                        config.extraParam[key] = config.extraParam[key].join(",");
+                    }
+                }
+            }
+        }
+        $.ajax({
+            type: "GET",
+            url: config.url,
+            contentType: "application/json; charset=utf-8",
+            data: config.pagePar+"="+number+"&"+config.sizePar+"="+config.pageSize+(config.searchValue ? "&" + config.searchParam + "=" + config.searchValue : "")+(config.sortValue ? "&sort=" + config.sortValue + "," + config.sortMethod : "") + (config.extraParam ? "&" + $.param(config.extraParam): ""),
+            success: function (data) {
+                renderData(data);
+            },
+            complete:function () {
+                hideProgress();
+            }
+        });
+    }
+
+    function showProgress() {
+        $("#" + config.table).after(config.progressTpl);
+    }
+
+    function hideProgress() {
+        $("#" + config.progressId).remove()
+    }
+
+    function checkRequiredProperties() {
+        if($("#"+config.container).length === 0) {
+            throw "Container " + config.container + " not found";
+        }
+        if(!properties || !properties.columns) {
+            throw "Properties not exist. Property 'columns' is required";
+        }
+        if(!Array.isArray(properties.columns) || properties.columns.length === 0){
+            throw "Property 'columns' can be array with one or more element";
+        }
+        properties.columns.filter(hasName);
+        properties.columns.filter(hasDate);
+
+        if(!properties.ajax) {
+            throw "Property 'properties.ajax'  not exist. This property is required";
+        }
+        if(!properties.ajax.url) {
+            throw "Property 'properties.ajax.url' not exist. This property is required";
+        }
+
+        if(properties.button){
+            if(!properties.button.icon) {
+                throw "Property 'button.icon' not exist. This property is required";
+            }
+            if(!properties.button.href && (!properties.button.handler || typeof properties.button.handler !== "function")){
+                throw "Button must have 'button.href' link property or 'button.handler' function property";
+            }
+        }
+        function hasName(column) {
+            if (!column.name) throw "Property 'column.name' not exist";
+            return true;
+        }
+
+        function hasDate(column) {
+            if (!column.data) throw "Property 'column.date' not exist";
+            return true;
+        }
+    }
+
+    function checkDataFormat(data) {
+        if (!data.content){
+            throw "Content not found"
+        }
+        if (data.totalPages === undefined) {
+            throw "TotalPages not found"
+        }
+    }
+    return {
+        reload: function () {
+            loadPage(config.currentPage);
+        },
+        loadPage: function (pageNamber) {
+            if(pageNamber > 0 && pageNamber <= config.totalPages){
+                loadPage(pageNamber);
+            }
+        },
+        changeColumns: function (columns) {
+            properties.columns = columns;
+            config.columns = properties.columns;
+            config.totalPages = undefined;
+            checkRequiredProperties();
+            init();
+        },
+        changeUrl: function (url) {
+            if(url) {
+                config.url = url;
+            } else {
+                throw "Not supported url: " + url;
+            }
+
+        },
+        changeExtraParam : function (params) {
+            if(typeof params === "object") {
+                config.extraParam = params;
+            } else {
+                throw "Not supported params: " + params;
+            }
+        }
+    };
+};

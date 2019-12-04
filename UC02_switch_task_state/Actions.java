@@ -1,8 +1,3 @@
-/*
- * LoadRunner Java script.
- * Description: Oracle Database Testing via JDBC
- */
-
 import lrapi.lr;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,7 +25,8 @@ public class Actions
 	    	lr.abort();
     	}
     	try {
-    		lr.save_string(lr.eval_string("{host}:{port}:{sid}"), "url");
+    		lr.save_string(lr.eval_string("jdbc:oracle:thin:@" +
+    		                              "{host}:{port}:{sid}"), "url");
     		connection = DriverManager.getConnection(lr.eval_string("{url}"),
     		                                         lr.eval_string("{login}"),
     		                                         lr.eval_string("{password}"));
@@ -49,8 +45,9 @@ public class Actions
 	    		}
 			   
 	    		lr.log_message("Updating Ticket Status");		   
-	    		stmt.executeQuery("update ticket set state_id = 1 " +
+	    		stmt.executeQuery("update ticket set state_id = 1, external_system = 'ASKO', guid = 'IDC2D620524153zdzPWAoX9OFgW4UB' " +
 	    		                  "where id="+id);
+	    		
 			  
 	    		lr.log_message("Adding Ticket to Tasks");		   
 	    		stmt.executeQuery("insert into task(id," +

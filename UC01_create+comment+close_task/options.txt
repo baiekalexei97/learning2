@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IC:\Users\student\Documents\Байков\XDesk LR\learning2\UC01_create+comment+close_task
+-IC:\Program Files (x86)\HPE\LoadRunner\include
+-ec:\users\student\documents\байков\xdesk lr\learning2\uc01_create+comment+close_task\\logfile.log
+c:\users\student\documents\байков\xdesk lr\learning2\uc01_create+comment+close_task\\combined_UC01_create+comment+close_task.c
+c:\users\student\documents\байков\xdesk lr\learning2\uc01_create+comment+close_task\\pre_cci.c

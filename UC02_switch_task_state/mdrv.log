@@ -1,5 +1,5 @@
 Notify: JDK found at C:/Program Files/Java/jdk1.8.0_211
-Virtual User Script started at: 29.11.2019 12:33:51
+Virtual User Script started at: 04.12.2019 15:01:11
 Starting action vuser_init.
 Ending action vuser_init.
 Running Vuser...
@@ -19,4 +19,4 @@ Ending Vuser...
 Starting action vuser_end.
 Ending action vuser_end.
 Vuser Terminated.
-Vuser 0 (thread 4572), ended OK."
+Vuser 0 (thread 11068), ended OK."
