@@ -1,7 +1,11 @@
 HTTP/1.1 200 
-Last-Modified: Tue, 27 Nov 2018 14:03:43 GMT
-Accept-Ranges: bytes
-Content-Type: text/html;charset=UTF-8
-Content-Length: 873
-Date: Wed, 04 Dec 2019 11:54:31 GMT
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: SAMEORIGIN
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 04 Dec 2019 13:23:52 GMT
 

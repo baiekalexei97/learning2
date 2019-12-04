@@ -1,0 +1,2 @@
+"{"text":"comment 1 (alex)","header":"Лифт не поднимает / не опускает""
+","ticketStateId":0,"serviceId":"2913","shopId":"5"}"

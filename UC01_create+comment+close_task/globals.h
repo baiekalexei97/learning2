@@ -6,11 +6,11 @@
 #include "lrun.h"
 #include "web_api.h"
 #include "lrw_custom_body.h"
+#include "influx.c"
 
 //--------------------------------------------------------------------
 // Global Variables
 
 int bytesBefore;
-char * success;
 
 #endif // _GLOBALS_H

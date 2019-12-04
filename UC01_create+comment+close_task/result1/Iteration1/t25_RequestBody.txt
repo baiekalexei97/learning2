@@ -1,2 +1,0 @@
-"{"text":"comment 3 (alex)","header":"Курица готовится долго","ticketStateI"
-"d":0,"serviceId":"2897","shopId":"-1"}"

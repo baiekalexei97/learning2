@@ -3,642 +3,648 @@
         "stepId": "STEP1",
         "stepName": "Url: /login",
         "infFile": "t1.inf",
-        "time": 1575460434709
+        "time": 1575465782032
     },
     {
         "stepId": "STEP2",
         "stepName": "Url: /",
-        "infFile": "t3.inf",
-        "time": 1575460435182
+        "infFile": "t4.inf",
+        "time": 1575465782630
     },
     {
         "stepId": "STEP3",
         "stepName": "Url: /api/checkLogin",
-        "infFile": "t4.inf",
-        "time": 1575460435259
+        "infFile": "t5.inf",
+        "time": 1575465782707
     },
     {
         "stepId": "STEP4",
         "stepName": "Url: /api/user/info",
-        "infFile": "t5.inf",
-        "time": 1575460435338
+        "infFile": "t6.inf",
+        "time": 1575465782787
     },
     {
         "stepId": "STEP5",
         "stepName": "Url: /api/ticket/countByState/4",
-        "infFile": "t6.inf",
-        "time": 1575460435421
+        "infFile": "t7.inf",
+        "time": 1575465782872
     },
     {
         "stepId": "STEP6",
         "stepName": "Url: /api/ticket/countByState/",
-        "infFile": "t7.inf",
-        "time": 1575460435550
+        "infFile": "t8.inf",
+        "time": 1575465782961
     },
     {
         "stepId": "STEP7",
         "stepName": "Custom Request: /api/ticket/",
-        "infFile": "t8.inf",
-        "time": 1575460437049
+        "infFile": "t9.inf",
+        "time": 1575465785196
     },
     {
         "stepId": "STEP8",
         "stepName": "Url: /api/user/catalog/node/0/children/",
-        "infFile": "t9.inf",
-        "time": 1575460437136
+        "infFile": "t10.inf",
+        "time": 1575465785291
     },
     {
         "stepId": "STEP9",
         "stepName": "Url: /api/shops",
-        "infFile": "t11.inf",
-        "time": 1575460437236
+        "infFile": "t12.inf",
+        "time": 1575465785388
     },
     {
         "stepId": "STEP10",
         "stepName": "Url: /api/user/catalog/node/0/children/",
-        "infFile": "t12.inf",
-        "time": 1575460437321
+        "infFile": "t13.inf",
+        "time": 1575465785473
     },
     {
         "stepId": "STEP11",
         "stepName": "Url: /api/user/catalog/treeview",
-        "infFile": "t16.inf",
-        "time": 1575460437584
+        "infFile": "t17.inf",
+        "time": 1575465785825
     },
     {
         "stepId": "STEP12",
         "stepName": "Url: /api/user/catalog/node/parentId/children/",
-        "infFile": "t17.inf",
-        "time": 1575460437693
+        "infFile": "t18.inf",
+        "time": 1575465785919
     },
     {
         "stepId": "STEP13",
         "stepName": "Url: /api/user/catalog/node/parentId/service/",
-        "infFile": "t18.inf",
-        "time": 1575460437779
+        "infFile": "t19.inf",
+        "time": 1575465785968
     },
     {
         "stepId": "STEP14",
         "stepName": "Url: /api/user/catalog/breadcrumbs/parentId",
-        "infFile": "t20.inf",
-        "time": 1575460437864
+        "infFile": "t21.inf",
+        "time": 1575465786055
     },
     {
         "stepId": "STEP15",
         "stepName": "Url: /api/inventoryNumbers",
-        "infFile": "t22.inf",
-        "time": 1575460437951
+        "infFile": "t23.inf",
+        "time": 1575465786177
     },
     {
         "stepId": "STEP16",
         "stepName": "Url: /api/inventoryNumbers",
-        "infFile": "t23.inf",
-        "time": 1575460438044
+        "infFile": "t25.inf",
+        "time": 1575465786271
     },
     {
         "stepId": "STEP17",
         "stepName": "Url: /api/inventoryNumbers",
-        "infFile": "t24.inf",
-        "time": 1575460438105
+        "infFile": "t26.inf",
+        "time": 1575465786360
     },
     {
         "stepId": "STEP18",
         "stepName": "Custom Request: /api/ticket/",
-        "infFile": "t25.inf",
-        "time": 1575460438259
+        "infFile": "t27.inf",
+        "time": 1575465787274
     },
     {
         "stepId": "STEP19",
         "stepName": "Custom Request: DB Request",
-        "infFile": "t26.inf",
-        "time": 1575460438322
+        "infFile": "t28.inf",
+        "time": 1575465787326
     },
     {
         "stepId": "STEP20",
         "stepName": "Url: /",
-        "infFile": "t27.inf",
-        "time": 1575460438352
+        "infFile": "t29.inf",
+        "time": 1575465787358
     },
     {
         "stepId": "STEP21",
         "stepName": "Url: /api/checkLogin",
-        "infFile": "t28.inf",
-        "time": 1575460438432
+        "infFile": "t30.inf",
+        "time": 1575465787433
     },
     {
         "stepId": "STEP22",
         "stepName": "Url: /api/user/info",
-        "infFile": "t29.inf",
-        "time": 1575460438514
+        "infFile": "t31.inf",
+        "time": 1575465787512
     },
     {
         "stepId": "STEP23",
         "stepName": "Url: /api/ticket/countByState/4",
-        "infFile": "t30.inf",
-        "time": 1575460438607
+        "infFile": "t32.inf",
+        "time": 1575465787593
     },
     {
         "stepId": "STEP24",
         "stepName": "Url: /api/ticket/countByState/",
-        "infFile": "t31.inf",
-        "time": 1575460438694
+        "infFile": "t33.inf",
+        "time": 1575465787685
     },
     {
         "stepId": "STEP25",
         "stepName": "Url: /api/ticket/countByState/",
-        "infFile": "t32.inf",
-        "time": 1575460438780
+        "infFile": "t34.inf",
+        "time": 1575465787770
     },
     {
         "stepId": "STEP26",
         "stepName": "Custom Request: /api/ticket/",
-        "infFile": "t33.inf",
-        "time": 1575460440462
+        "infFile": "t35.inf",
+        "time": 1575465790450
     },
     {
         "stepId": "STEP27",
         "stepName": "Custom Request: /api/ticket/",
-        "infFile": "t34.inf",
-        "time": 1575460442136
+        "infFile": "t36.inf",
+        "time": 1575465792745
     },
     {
         "stepId": "STEP28",
         "stepName": "Url: /api/user/catalog/node/0/children/",
-        "infFile": "t35.inf",
-        "time": 1575460442228
+        "infFile": "t37.inf",
+        "time": 1575465792838
     },
     {
         "stepId": "STEP29",
         "stepName": "Url: /api/shops",
-        "infFile": "t37.inf",
-        "time": 1575460442339
+        "infFile": "t39.inf",
+        "time": 1575465792932
     },
     {
         "stepId": "STEP30",
         "stepName": "Url: /api/user/catalog/node/0/children/",
-        "infFile": "t38.inf",
-        "time": 1575460442421
+        "infFile": "t40.inf",
+        "time": 1575465793014
     },
     {
         "stepId": "STEP31",
         "stepName": "Url: /api/user/catalog/treeview",
-        "infFile": "t42.inf",
-        "time": 1575460442702
+        "infFile": "t44.inf",
+        "time": 1575465793315
     },
     {
         "stepId": "STEP32",
         "stepName": "Url: /api/user/catalog/node/parentId/children/",
-        "infFile": "t43.inf",
-        "time": 1575460442810
+        "infFile": "t45.inf",
+        "time": 1575465793415
     },
     {
         "stepId": "STEP33",
         "stepName": "Url: /api/user/catalog/node/parentId/service/",
-        "infFile": "t44.inf",
-        "time": 1575460442857
+        "infFile": "t46.inf",
+        "time": 1575465793502
     },
     {
         "stepId": "STEP34",
         "stepName": "Url: /api/user/catalog/breadcrumbs/parentId",
-        "infFile": "t46.inf",
-        "time": 1575460442940
+        "infFile": "t48.inf",
+        "time": 1575465793588
     },
     {
         "stepId": "STEP35",
         "stepName": "Url: /api/inventoryNumbers",
-        "infFile": "t48.inf",
-        "time": 1575460443039
+        "infFile": "t50.inf",
+        "time": 1575465793685
     },
     {
         "stepId": "STEP36",
         "stepName": "Url: /api/inventoryNumbers",
-        "infFile": "t50.inf",
-        "time": 1575460443131
+        "infFile": "t52.inf",
+        "time": 1575465793780
     },
     {
         "stepId": "STEP37",
         "stepName": "Url: /api/inventoryNumbers",
-        "infFile": "t51.inf",
-        "time": 1575460443223
+        "infFile": "t53.inf",
+        "time": 1575465793874
     },
     {
         "stepId": "STEP38",
         "stepName": "Custom Request: /api/ticket/",
-        "infFile": "t52.inf",
-        "time": 1575460443740
+        "infFile": "t54.inf",
+        "time": 1575465794724
     },
     {
         "stepId": "STEP39",
         "stepName": "Custom Request: DB Request",
-        "infFile": "t53.inf",
-        "time": 1575460443808
+        "infFile": "t55.inf",
+        "time": 1575465794779
     },
     {
         "stepId": "STEP40",
         "stepName": "Url: /",
-        "infFile": "t54.inf",
-        "time": 1575460443837
+        "infFile": "t56.inf",
+        "time": 1575465794810
     },
     {
         "stepId": "STEP41",
         "stepName": "Url: /api/checkLogin",
-        "infFile": "t55.inf",
-        "time": 1575460443913
+        "infFile": "t57.inf",
+        "time": 1575465794889
     },
     {
         "stepId": "STEP42",
         "stepName": "Url: /api/user/info",
-        "infFile": "t56.inf",
-        "time": 1575460443993
+        "infFile": "t58.inf",
+        "time": 1575465794967
     },
     {
         "stepId": "STEP43",
         "stepName": "Url: /api/ticket/countByState/4",
-        "infFile": "t57.inf",
-        "time": 1575460444074
+        "infFile": "t59.inf",
+        "time": 1575465795050
     },
     {
         "stepId": "STEP44",
         "stepName": "Url: /api/ticket/countByState/",
-        "infFile": "t58.inf",
-        "time": 1575460444161
+        "infFile": "t60.inf",
+        "time": 1575465795137
     },
     {
         "stepId": "STEP45",
         "stepName": "Url: /api/ticket/countByState/",
-        "infFile": "t59.inf",
-        "time": 1575460444246
+        "infFile": "t61.inf",
+        "time": 1575465795222
     },
     {
         "stepId": "STEP46",
         "stepName": "Custom Request: /api/ticket/",
-        "infFile": "t60.inf",
-        "time": 1575460445853
+        "infFile": "t62.inf",
+        "time": 1575465797576
     },
     {
         "stepId": "STEP47",
         "stepName": "Custom Request: /api/ticket/",
-        "infFile": "t61.inf",
-        "time": 1575460447628
+        "infFile": "t63.inf",
+        "time": 1575465800039
     },
     {
         "stepId": "STEP48",
         "stepName": "Url: /api/task/countByState/",
-        "infFile": "t62.inf",
-        "time": 1575460447727
+        "infFile": "t64.inf",
+        "time": 1575465800141
     },
     {
         "stepId": "STEP49",
         "stepName": "Custom Request: /api/task/",
-        "infFile": "t64.inf",
-        "time": 1575460448635
+        "infFile": "t66.inf",
+        "time": 1575465801291
     },
     {
         "stepId": "STEP50",
         "stepName": "Url: /api/task/id",
-        "infFile": "t65.inf",
-        "time": 1575460448933
+        "infFile": "t67.inf",
+        "time": 1575465801416
     },
     {
         "stepId": "STEP51",
         "stepName": "Url: /api/checkLogin",
-        "infFile": "t66.inf",
-        "time": 1575460449010
+        "infFile": "t68.inf",
+        "time": 1575465801494
     },
     {
         "stepId": "STEP52",
         "stepName": "Url: /api/ticket/id/comment/",
-        "infFile": "t67.inf",
-        "time": 1575460449586
+        "infFile": "t69.inf",
+        "time": 1575465802469
     },
     {
         "stepId": "STEP53",
         "stepName": "Custom Request: /api/ticket/id/comment/",
-        "infFile": "t68.inf",
-        "time": 1575460449862
+        "infFile": "t70.inf",
+        "time": 1575465802704
     },
     {
         "stepId": "STEP54",
         "stepName": "Custom Request: DB Request",
-        "infFile": "t69.inf",
-        "time": 1575460449921
+        "infFile": "t71.inf",
+        "time": 1575465802753
     },
     {
         "stepId": "STEP55",
         "stepName": "Url: /api/ticket/id/comment/",
-        "infFile": "t70.inf",
-        "time": 1575460450797
+        "infFile": "t72.inf",
+        "time": 1575465803789
     },
     {
         "stepId": "STEP56",
         "stepName": "Url: /api/task/countByState/",
-        "infFile": "t71.inf",
-        "time": 1575460450895
+        "infFile": "t73.inf",
+        "time": 1575465803850
     },
     {
         "stepId": "STEP57",
         "stepName": "Custom Request: /api/task/",
-        "infFile": "t73.inf",
-        "time": 1575460451635
+        "infFile": "t75.inf",
+        "time": 1575465804934
     },
     {
         "stepId": "STEP58",
         "stepName": "Url: /api/task/id",
-        "infFile": "t74.inf",
-        "time": 1575460451758
+        "infFile": "t76.inf",
+        "time": 1575465805725
     },
     {
         "stepId": "STEP59",
         "stepName": "Url: /api/checkLogin",
-        "infFile": "t75.inf",
-        "time": 1575460451840
+        "infFile": "t77.inf",
+        "time": 1575465805808
     },
     {
         "stepId": "STEP60",
         "stepName": "Url: /api/ticket/id/comment/",
-        "infFile": "t76.inf",
-        "time": 1575460452665
+        "infFile": "t78.inf",
+        "time": 1575465806865
     },
     {
         "stepId": "STEP61",
         "stepName": "Custom Request: /api/ticket/id/comment/",
-        "infFile": "t77.inf",
-        "time": 1575460452856
+        "infFile": "t79.inf",
+        "time": 1575465807092
     },
     {
         "stepId": "STEP62",
         "stepName": "Custom Request: DB Request",
-        "infFile": "t78.inf",
-        "time": 1575460452911
+        "infFile": "t80.inf",
+        "time": 1575465807142
     },
     {
         "stepId": "STEP63",
         "stepName": "Url: /api/ticket/id/comment/",
-        "infFile": "t79.inf",
-        "time": 1575460453487
+        "infFile": "t81.inf",
+        "time": 1575465808107
     },
     {
         "stepId": "STEP64",
         "stepName": "Url: /api/task/countByState/",
-        "infFile": "t80.inf",
-        "time": 1575460453588
+        "infFile": "t82.inf",
+        "time": 1575465808219
     },
     {
         "stepId": "STEP65",
         "stepName": "Custom Request: /api/task/",
-        "infFile": "t82.inf",
-        "time": 1575460454304
+        "infFile": "t84.inf",
+        "time": 1575465809222
     },
     {
         "stepId": "STEP66",
         "stepName": "Url: /api/task/id",
-        "infFile": "t83.inf",
-        "time": 1575460454392
+        "infFile": "t85.inf",
+        "time": 1575465810002
     },
     {
         "stepId": "STEP67",
         "stepName": "Url: /api/checkLogin",
-        "infFile": "t84.inf",
-        "time": 1575460454466
+        "infFile": "t86.inf",
+        "time": 1575465810079
     },
     {
         "stepId": "STEP68",
         "stepName": "Url: /api/ticket/id/comment/",
-        "infFile": "t85.inf",
-        "time": 1575460455108
+        "infFile": "t87.inf",
+        "time": 1575465810998
     },
     {
         "stepId": "STEP69",
         "stepName": "Custom Request: /api/ticket/id/comment/",
-        "infFile": "t86.inf",
-        "time": 1575460455309
+        "infFile": "t88.inf",
+        "time": 1575465811194
     },
     {
         "stepId": "STEP70",
         "stepName": "Custom Request: DB Request",
-        "infFile": "t87.inf",
-        "time": 1575460455368
+        "infFile": "t89.inf",
+        "time": 1575465811243
     },
     {
         "stepId": "STEP71",
         "stepName": "Url: /api/ticket/id/comment/",
-        "infFile": "t88.inf",
-        "time": 1575460457376
+        "infFile": "t90.inf",
+        "time": 1575465812140
     },
     {
         "stepId": "STEP72",
         "stepName": "Url: /api/task/countByState/",
-        "infFile": "t89.inf",
-        "time": 1575460457475
+        "infFile": "t91.inf",
+        "time": 1575465812243
     },
     {
         "stepId": "STEP73",
         "stepName": "Custom Request: /api/task/",
-        "infFile": "t91.inf",
-        "time": 1575460458175
+        "infFile": "t93.inf",
+        "time": 1575465813256
     },
     {
         "stepId": "STEP74",
         "stepName": "Url: /api/task/id",
-        "infFile": "t92.inf",
-        "time": 1575460458297
+        "infFile": "t94.inf",
+        "time": 1575465813966
     },
     {
         "stepId": "STEP75",
         "stepName": "Url: /api/checkLogin",
-        "infFile": "t93.inf",
-        "time": 1575460458373
+        "infFile": "t95.inf",
+        "time": 1575465814043
     },
     {
         "stepId": "STEP76",
         "stepName": "Url: /api/ticket/id/comment/",
-        "infFile": "t94.inf",
-        "time": 1575460459364
+        "infFile": "t96.inf",
+        "time": 1575465814979
     },
     {
         "stepId": "STEP77",
         "stepName": "Custom Request: /api/ticket/id",
-        "infFile": "t95.inf",
-        "time": 1575460459484
+        "infFile": "t97.inf",
+        "time": 1575465816025
     },
     {
         "stepId": "STEP78",
         "stepName": "Url: /api/ticket/id/comment/",
-        "infFile": "t96.inf",
-        "time": 1575460459992
+        "infFile": "t98.inf",
+        "time": 1575465816935
     },
     {
         "stepId": "STEP79",
         "stepName": "Custom Request: /api/ticket/id/solve/",
-        "infFile": "t97.inf",
-        "time": 1575460460296
+        "infFile": "t99.inf",
+        "time": 1575465817806
     },
     {
         "stepId": "STEP80",
         "stepName": "Custom Request: DB Request",
-        "infFile": "t98.inf",
-        "time": 1575460460356
+        "infFile": "t100.inf",
+        "time": 1575465817866
     },
     {
         "stepId": "STEP81",
         "stepName": "Url: /home",
-        "infFile": "t99.inf",
-        "time": 1575460460383
+        "infFile": "t101.inf",
+        "time": 1575465817892
     },
     {
         "stepId": "STEP82",
         "stepName": "Url: /api/checkLogin",
-        "infFile": "t100.inf",
-        "time": 1575460460463
+        "infFile": "t102.inf",
+        "time": 1575465817969
     },
     {
         "stepId": "STEP83",
         "stepName": "Url: /api/user/info",
-        "infFile": "t101.inf",
-        "time": 1575460460546
+        "infFile": "t103.inf",
+        "time": 1575465818053
     },
     {
         "stepId": "STEP84",
         "stepName": "Url: /api/ticket/countByState/4",
-        "infFile": "t102.inf",
-        "time": 1575460460628
+        "infFile": "t104.inf",
+        "time": 1575465818100
     },
     {
         "stepId": "STEP85",
         "stepName": "Url: /api/ticket/countByState/",
-        "infFile": "t103.inf",
-        "time": 1575460460718
+        "infFile": "t105.inf",
+        "time": 1575465818192
     },
     {
         "stepId": "STEP86",
         "stepName": "Url: /api/task/countByState/",
-        "infFile": "t104.inf",
-        "time": 1575460460809
+        "infFile": "t106.inf",
+        "time": 1575465818285
     },
     {
         "stepId": "STEP87",
         "stepName": "Custom Request: /api/task/",
-        "infFile": "t105.inf",
-        "time": 1575460461584
+        "infFile": "t107.inf",
+        "time": 1575465819361
     },
     {
         "stepId": "STEP88",
         "stepName": "Custom Request: /api/ticket/",
-        "infFile": "t106.inf",
-        "time": 1575460463006
+        "infFile": "t108.inf",
+        "time": 1575465821438
     },
     {
         "stepId": "STEP89",
         "stepName": "Url: /api/task/countByState/",
-        "infFile": "t107.inf",
-        "time": 1575460463100
+        "infFile": "t109.inf",
+        "time": 1575465821543
     },
     {
         "stepId": "STEP90",
         "stepName": "Custom Request: /api/task/",
-        "infFile": "t109.inf",
-        "time": 1575460463949
+        "infFile": "t111.inf",
+        "time": 1575465822650
     },
     {
         "stepId": "STEP91",
         "stepName": "Url: /api/task/id",
-        "infFile": "t110.inf",
-        "time": 1575460464430
+        "infFile": "t112.inf",
+        "time": 1575465823379
     },
     {
         "stepId": "STEP92",
         "stepName": "Url: /api/checkLogin",
-        "infFile": "t111.inf",
-        "time": 1575460464508
+        "infFile": "t113.inf",
+        "time": 1575465823458
     },
     {
         "stepId": "STEP93",
         "stepName": "Url: /api/ticket/id/comment/",
-        "infFile": "t112.inf",
-        "time": 1575460465051
+        "infFile": "t114.inf",
+        "time": 1575465824491
     },
     {
         "stepId": "STEP94",
         "stepName": "Custom Request: /api/ticket/id",
-        "infFile": "t113.inf",
-        "time": 1575460465690
+        "infFile": "t115.inf",
+        "time": 1575465825445
     },
     {
         "stepId": "STEP95",
         "stepName": "Url: /api/ticket/id/comment/",
-        "infFile": "t114.inf",
-        "time": 1575460466272
+        "infFile": "t116.inf",
+        "time": 1575465827271
     },
     {
         "stepId": "STEP96",
         "stepName": "Custom Request: /api/ticket/id/solve/",
-        "infFile": "t115.inf",
-        "time": 1575460466862
+        "infFile": "t117.inf",
+        "time": 1575465828353
     },
     {
         "stepId": "STEP97",
         "stepName": "Custom Request: DB Request",
-        "infFile": "t116.inf",
-        "time": 1575460466920
+        "infFile": "t118.inf",
+        "time": 1575465828404
     },
     {
         "stepId": "STEP98",
         "stepName": "Url: /home",
-        "infFile": "t117.inf",
-        "time": 1575460466948
+        "infFile": "t119.inf",
+        "time": 1575465828433
     },
     {
         "stepId": "STEP99",
         "stepName": "Url: /api/checkLogin",
-        "infFile": "t118.inf",
-        "time": 1575460467024
+        "infFile": "t120.inf",
+        "time": 1575465828509
     },
     {
         "stepId": "STEP100",
         "stepName": "Url: /api/user/info",
-        "infFile": "t119.inf",
-        "time": 1575460467101
+        "infFile": "t121.inf",
+        "time": 1575465828595
     },
     {
         "stepId": "STEP101",
         "stepName": "Url: /api/ticket/countByState/4",
-        "infFile": "t120.inf",
-        "time": 1575460467190
+        "infFile": "t122.inf",
+        "time": 1575465828686
     },
     {
         "stepId": "STEP102",
         "stepName": "Url: /api/ticket/countByState/",
-        "infFile": "t121.inf",
-        "time": 1575460467279
+        "infFile": "t123.inf",
+        "time": 1575465828778
     },
     {
         "stepId": "STEP103",
         "stepName": "Url: /api/task/countByState/",
-        "infFile": "t122.inf",
-        "time": 1575460467367
+        "infFile": "t124.inf",
+        "time": 1575465828874
     },
     {
         "stepId": "STEP104",
         "stepName": "Custom Request: /api/task/",
-        "infFile": "t123.inf",
-        "time": 1575460468467
+        "infFile": "t125.inf",
+        "time": 1575465830864
     },
     {
         "stepId": "STEP105",
         "stepName": "Custom Request: /api/ticket/",
-        "infFile": "t124.inf",
-        "time": 1575460469987
+        "infFile": "t126.inf",
+        "time": 1575465833469
     },
     {
         "stepId": "STEP106",
         "stepName": "Url: /api/logout",
-        "infFile": "t125.inf",
-        "time": 1575460470329
+        "infFile": "t127.inf",
+        "time": 1575465833581
     },
     {
         "stepId": "STEP107",
+        "stepName": "Custom Request: DB Request",
+        "infFile": "t128.inf",
+        "time": 1575465833645
+    },
+    {
+        "stepId": "STEP108",
         "stepName": "Url: /login",
-        "infFile": "t126.inf",
-        "time": 1575460470376
+        "infFile": "t129.inf",
+        "time": 1575465833693
     }
 ]

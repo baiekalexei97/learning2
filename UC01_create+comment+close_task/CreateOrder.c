@@ -217,38 +217,10 @@ CreateOrder()
 		"BodyBinary={{Body}}",
 		LAST);
 	
-	if (web_get_int_property(HTTP_INFO_RETURN_CODE) >= 400){
-		success="false";
-	}else{success="true";};
-	lr_save_int(web_get_int_property(HTTP_INFO_TOTAL_REQUEST_STAT)-bytesBefore,"sentBytes");
-	lr_save_timestamp("currtime",
-	                  "DIGITS=16", 
-	                  LAST);
-	lr_param_sprintf("Result",
-	                 "loadrunner,"
-	                 "label=%s,"
-	                 "responseCode=%d,"
-	                 "success=%s " 
-	                 "responseTime=%d000,"
-	                 "bytes=%d," 
-	                 "sentBytes=%s,"
-	                 "URL=\"%s\" " 
-	                 "%s000\n",
-	                 ///////////////////////
-	                 "/api/ticket",
-	                 web_get_int_property(HTTP_INFO_RETURN_CODE),
-	                 success,
-	                 web_get_int_property(HTTP_INFO_DOWNLOAD_TIME),
-	                 web_get_int_property(HTTP_INFO_DOWNLOAD_SIZE),
-	                 lr_eval_string("{sentBytes}"),
-	                 lr_eval_string("http://{UC01_create_task_host}:{UC01_create_task_port}/api/ticket/"),
-	                 lr_eval_string("{currtime}"));
+	influx(lr_eval_string
+	       ("http://{UC01_create_task_host}:{UC01_create_task_port}/api/ticket/"),
+	       "/api/ticket", bytesBefore);
 	
-	web_custom_request("DB Request",
-	                   "Method=POST",
-	                   "URL=http://localhost:8086/write?db=loadrunner",
-	                   "Body={Result}",
-	                   LAST);
 
 
 	lr_end_transaction("UC01_TR07_descFinish",LR_AUTO);

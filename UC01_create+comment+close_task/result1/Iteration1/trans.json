@@ -1,167 +1,167 @@
 [
     {
         "transactionName": "UC01_TR01_login",
-        "rawStartTime": 1575460434712,
-        "rawEndTime": 1575460437050
+        "rawStartTime": 1575465782034,
+        "rawEndTime": 1575465785198
     },
     {
         "transactionName": "UC01_TR02_NewOrder",
-        "rawStartTime": 1575460437059,
-        "rawEndTime": 1575460437145
+        "rawStartTime": 1575465785206,
+        "rawEndTime": 1575465785296
     },
     {
         "transactionName": "UC01_TR03_Location1",
-        "rawStartTime": 1575460437148,
-        "rawEndTime": 1575460437595
+        "rawStartTime": 1575465785299,
+        "rawEndTime": 1575465785835
     },
     {
         "transactionName": "UC01_TR04_theme1",
-        "rawStartTime": 1575460437597,
-        "rawEndTime": 1575460437953
+        "rawStartTime": 1575465785838,
+        "rawEndTime": 1575465786179
     },
     {
         "transactionName": "UC01_TR05_Description",
-        "rawStartTime": 1575460437957,
-        "rawEndTime": 1575460438048
+        "rawStartTime": 1575465786183,
+        "rawEndTime": 1575465786275
     },
     {
         "transactionName": "UC01_TR06_inventoryNum",
-        "rawStartTime": 1575460438052,
-        "rawEndTime": 1575460438106
+        "rawStartTime": 1575465786279,
+        "rawEndTime": 1575465786362
     },
     {
         "transactionName": "UC01_TR07_descFinish",
-        "rawStartTime": 1575460438110,
-        "rawEndTime": 1575460438324
+        "rawStartTime": 1575465786366,
+        "rawEndTime": 1575465787329
     },
     {
         "transactionName": "UC01_TR08_descFinishOK",
-        "rawStartTime": 1575460438326,
-        "rawEndTime": 1575460442138
+        "rawStartTime": 1575465787331,
+        "rawEndTime": 1575465792747
     },
     {
         "transactionName": "UC01_TR02_NewOrder",
-        "rawStartTime": 1575460442146,
-        "rawEndTime": 1575460442232
+        "rawStartTime": 1575465792758,
+        "rawEndTime": 1575465792843
     },
     {
         "transactionName": "UC01_TR03_Location1",
-        "rawStartTime": 1575460442234,
-        "rawEndTime": 1575460442712
+        "rawStartTime": 1575465792845,
+        "rawEndTime": 1575465793325
     },
     {
         "transactionName": "UC01_TR04_theme1",
-        "rawStartTime": 1575460442714,
-        "rawEndTime": 1575460443040
+        "rawStartTime": 1575465793327,
+        "rawEndTime": 1575465793688
     },
     {
         "transactionName": "UC01_TR05_Description",
-        "rawStartTime": 1575460443044,
-        "rawEndTime": 1575460443135
+        "rawStartTime": 1575465793692,
+        "rawEndTime": 1575465793784
     },
     {
         "transactionName": "UC01_TR06_inventoryNum",
-        "rawStartTime": 1575460443139,
-        "rawEndTime": 1575460443225
+        "rawStartTime": 1575465793788,
+        "rawEndTime": 1575465793876
     },
     {
         "transactionName": "UC01_TR07_descFinish",
-        "rawStartTime": 1575460443229,
-        "rawEndTime": 1575460443810
+        "rawStartTime": 1575465793880,
+        "rawEndTime": 1575465794782
     },
     {
         "transactionName": "UC01_TR08_descFinishOK",
-        "rawStartTime": 1575460443812,
-        "rawEndTime": 1575460447629
+        "rawStartTime": 1575465794784,
+        "rawEndTime": 1575465800041
     },
     {
         "transactionName": "UC03_TR09_tasks",
-        "rawStartTime": 1575460447637,
-        "rawEndTime": 1575460448642
+        "rawStartTime": 1575465800052,
+        "rawEndTime": 1575465801299
     },
     {
         "transactionName": "UC03_TR10_selectTask",
-        "rawStartTime": 1575460448644,
-        "rawEndTime": 1575460449588
+        "rawStartTime": 1575465801301,
+        "rawEndTime": 1575465802471
     },
     {
         "transactionName": "UC03_TR11_commentFinish",
-        "rawStartTime": 1575460449593,
-        "rawEndTime": 1575460450799
+        "rawStartTime": 1575465802475,
+        "rawEndTime": 1575465803791
     },
     {
         "transactionName": "UC03_TR09_tasks",
-        "rawStartTime": 1575460450809,
-        "rawEndTime": 1575460451642
+        "rawStartTime": 1575465803801,
+        "rawEndTime": 1575465804940
     },
     {
         "transactionName": "UC03_TR10_selectTask",
-        "rawStartTime": 1575460451644,
-        "rawEndTime": 1575460452667
+        "rawStartTime": 1575465804942,
+        "rawEndTime": 1575465806867
     },
     {
         "transactionName": "UC03_TR11_commentFinish",
-        "rawStartTime": 1575460452671,
-        "rawEndTime": 1575460453488
+        "rawStartTime": 1575465806870,
+        "rawEndTime": 1575465808109
     },
     {
         "transactionName": "UC03_TR09_tasks",
-        "rawStartTime": 1575460453499,
-        "rawEndTime": 1575460454311
+        "rawStartTime": 1575465808119,
+        "rawEndTime": 1575465809229
     },
     {
         "transactionName": "UC03_TR10_selectTask",
-        "rawStartTime": 1575460454313,
-        "rawEndTime": 1575460455110
+        "rawStartTime": 1575465809231,
+        "rawEndTime": 1575465811000
     },
     {
         "transactionName": "UC03_TR11_commentFinish",
-        "rawStartTime": 1575460455114,
-        "rawEndTime": 1575460457378
+        "rawStartTime": 1575465811004,
+        "rawEndTime": 1575465812142
     },
     {
         "transactionName": "UC04_TR12_tasks",
-        "rawStartTime": 1575460457387,
-        "rawEndTime": 1575460458181
+        "rawStartTime": 1575465812151,
+        "rawEndTime": 1575465813262
     },
     {
         "transactionName": "UC04_TR13_selectTask",
-        "rawStartTime": 1575460458184,
-        "rawEndTime": 1575460459369
+        "rawStartTime": 1575465813264,
+        "rawEndTime": 1575465814984
     },
     {
         "transactionName": "UC04_TR14_ToOrder",
-        "rawStartTime": 1575460459371,
-        "rawEndTime": 1575460459994
+        "rawStartTime": 1575465814986,
+        "rawEndTime": 1575465816936
     },
     {
         "transactionName": "UC04_TR15_closeOrder",
-        "rawStartTime": 1575460459997,
-        "rawEndTime": 1575460463008
+        "rawStartTime": 1575465816941,
+        "rawEndTime": 1575465821440
     },
     {
         "transactionName": "UC04_TR12_tasks",
-        "rawStartTime": 1575460463017,
-        "rawEndTime": 1575460463956
+        "rawStartTime": 1575465821450,
+        "rawEndTime": 1575465822657
     },
     {
         "transactionName": "UC04_TR13_selectTask",
-        "rawStartTime": 1575460463958,
-        "rawEndTime": 1575460465056
+        "rawStartTime": 1575465822659,
+        "rawEndTime": 1575465824496
     },
     {
         "transactionName": "UC04_TR14_ToOrder",
-        "rawStartTime": 1575460465058,
-        "rawEndTime": 1575460466274
+        "rawStartTime": 1575465824498,
+        "rawEndTime": 1575465827273
     },
     {
         "transactionName": "UC04_TR15_closeOrder",
-        "rawStartTime": 1575460466278,
-        "rawEndTime": 1575460469989
+        "rawStartTime": 1575465827277,
+        "rawEndTime": 1575465833471
     },
     {
         "transactionName": "UC01_TR16_logout1",
-        "rawStartTime": 1575460469997,
-        "rawEndTime": 1575460470377
+        "rawStartTime": 1575465833479,
+        "rawEndTime": 1575465833695
     }
 ]

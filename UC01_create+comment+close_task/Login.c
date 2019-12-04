@@ -11,6 +11,8 @@ Login()
 		LAST);
 
 	lr_start_transaction("UC01_TR01_login");
+	
+	bytesBefore = web_get_int_property(HTTP_INFO_TOTAL_REQUEST_STAT);
 
 	web_submit_data("/api/login", 
 		"Action=http://{UC01_create_task_host}:{UC01_create_task_port}/api/login", 
@@ -24,6 +26,10 @@ Login()
 		"Name=password", "Value={UC01_create_task_password}", ENDITEM, 
 		"Name=rememberMe", "Value=false", ENDITEM, 
 		LAST);
+	
+	influx(lr_eval_string
+	       ("http://{UC01_create_task_host}:{UC01_create_task_port}/api/login"),
+	       "/api/login", bytesBefore);
 
 	web_url("/", 
 		"URL=http://{UC01_create_task_host}:{UC01_create_task_port}/", 

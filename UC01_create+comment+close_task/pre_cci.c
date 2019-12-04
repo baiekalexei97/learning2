@@ -2578,12 +2578,50 @@ void
 
 # 8 "globals.h" 2
 
+# 1 "influx.c" 1
+int influx(char * URL, char * Label, int bytesBefore){
+	char * success;
+	if (web_get_int_property(1) >= 400){
+		success="false";
+	}else{success="true";};
+	lr_save_int(web_get_int_property(4)-bytesBefore,"sentBytes");
+	lr_save_timestamp("currtime",
+	                  "DIGITS=16", 
+	                  "LAST");
+	lr_param_sprintf("Result",
+	                 "loadrunner,"
+	                 "label=%s,"
+	                 "responseCode=%d,"
+	                 "success=%s " 
+	                 "responseTime=%d000,"
+	                 "bytes=%d," 
+	                 "sentBytes=%s,"
+	                 "URL=\"%s\" " 
+	                 "%s000\n",
+	                  
+	                 Label,
+	                 web_get_int_property(1),
+	                 success,
+	                 web_get_int_property(3),
+	                 web_get_int_property(2),
+	                 lr_eval_string("{sentBytes}"),
+	                 URL,
+	                 lr_eval_string("{currtime}"));
+	
+	web_custom_request("DB Request",
+	                   "Method=POST",
+	                   "URL=http://localhost:8086/write?db=loadrunner",
+	                   "Body={Result}",
+	                   "LAST");
+	return 0;
+}
+# 9 "globals.h" 2
+
 
  
  
 
 int bytesBefore;
-char * success;
 
 
 # 3 "c:\\users\\student\\documents\\\341\340\351\352\356\342\\xdesk lr\\learning2\\uc01_create+comment+close_task\\\\combined_UC01_create+comment+close_task.c" 2
@@ -2609,6 +2647,8 @@ Login()
 		"LAST");
 
 	lr_start_transaction("UC01_TR01_login");
+	
+	bytesBefore = web_get_int_property(4);
 
 	web_submit_data("/api/login", 
 		"Action=http://{UC01_create_task_host}:{UC01_create_task_port}/api/login", 
@@ -2622,6 +2662,10 @@ Login()
 		"Name=password", "Value={UC01_create_task_password}", "ENDITEM", 
 		"Name=rememberMe", "Value=false", "ENDITEM", 
 		"LAST");
+	
+	influx(lr_eval_string
+	       ("http://{UC01_create_task_host}:{UC01_create_task_port}/api/login"),
+	       "/api/login", bytesBefore);
 
 	web_url("/", 
 		"URL=http://{UC01_create_task_host}:{UC01_create_task_port}/", 
@@ -2911,38 +2955,10 @@ CreateOrder()
 		"BodyBinary={{Body}}",
 		"LAST");
 	
-	if (web_get_int_property(1) >= 400){
-		success="false";
-	}else{success="true";};
-	lr_save_int(web_get_int_property(4)-bytesBefore,"sentBytes");
-	lr_save_timestamp("currtime",
-	                  "DIGITS=16", 
-	                  "LAST");
-	lr_param_sprintf("Result",
-	                 "loadrunner,"
-	                 "label=%s,"
-	                 "responseCode=%d,"
-	                 "success=%s " 
-	                 "responseTime=%d000,"
-	                 "bytes=%d," 
-	                 "sentBytes=%s,"
-	                 "URL=\"%s\" " 
-	                 "%s000\n",
-	                  
-	                 "/api/ticket",
-	                 web_get_int_property(1),
-	                 success,
-	                 web_get_int_property(3),
-	                 web_get_int_property(2),
-	                 lr_eval_string("{sentBytes}"),
-	                 lr_eval_string("http://{UC01_create_task_host}:{UC01_create_task_port}/api/ticket/"),
-	                 lr_eval_string("{currtime}"));
+	influx(lr_eval_string
+	       ("http://{UC01_create_task_host}:{UC01_create_task_port}/api/ticket/"),
+	       "/api/ticket", bytesBefore);
 	
-	web_custom_request("DB Request",
-	                   "Method=POST",
-	                   "URL=http://localhost:8086/write?db=loadrunner",
-	                   "Body={Result}",
-	                   "LAST");
 
 
 	lr_end_transaction("UC01_TR07_descFinish",2);
@@ -3135,39 +3151,10 @@ Comment()
 		"Body={\"text\":\"{UC03_comment_task_comment}\"}",
 		"LAST");
 	
-	if (web_get_int_property(1) >= 400){
-		success="false";
-	}else{success="true";};
-	lr_save_int(web_get_int_property(4)-bytesBefore,"sentBytes");
-	lr_save_timestamp("currtime",
-	                  "DIGITS=16", 
-	                  "LAST");
-	lr_param_sprintf("Result",
-	                 "loadrunner,"
-	                 "label=%s,"
-	                 "responseCode=%d,"
-	                 "success=%s " 
-	                 "responseTime=%d000,"
-	                 "bytes=%d," 
-	                 "sentBytes=%s,"
-	                 "URL=\"%s\" " 
-	                 "%s000\n",
-	                  
-	                 "/api/ticket/id/comment",
-	                 web_get_int_property(1),
-	                 success,
-	                 web_get_int_property(3),
-	                 web_get_int_property(2),
-	                 lr_eval_string("{sentBytes}"),
-	                 lr_eval_string("http://{UC03_comment_task_host}:{UC03_comment_task_port}/api/ticket/{TaskID}/comment/"),
-	                 lr_eval_string("{currtime}"));
+	influx(lr_eval_string
+	       ("http://{UC03_comment_task_host}:{UC03_comment_task_port}/api/ticket/{TaskID}/comment/"),
+	       "/api/ticket/id/comment", bytesBefore);
 	
-	web_custom_request("DB Request",
-	                   "Method=POST",
-	                   "URL=http://localhost:8086/write?db=loadrunner",
-	                   "Body={Result}",
-	                   "LAST");
-
 	web_url("/api/ticket/id/comment/", 
 		"URL=http://{UC03_comment_task_host}:{UC03_comment_task_port}/api/ticket/{TaskID}/comment/", 
 		"TargetFrame=", 
@@ -3305,38 +3292,9 @@ Close()
 		"Mode=HTML", 
 		"EncType=", 
 		"LAST");
-	
-	if (web_get_int_property(1) >= 400){
-		success="false";
-	}else{success="true";};
-	lr_save_int(web_get_int_property(4)-bytesBefore,"sentBytes");
-	lr_save_timestamp("currtime",
-	                  "DIGITS=16", 
-	                  "LAST");
-	lr_param_sprintf("Result",
-	                 "loadrunner,"
-	                 "label=%s,"
-	                 "responseCode=%d,"
-	                 "success=%s " 
-	                 "responseTime=%d000,"
-	                 "bytes=%d," 
-	                 "sentBytes=%s,"
-	                 "URL=\"%s\" " 
-	                 "%s000\n",
-	                  
-	                 "/api/ticket/id/solve",
-	                 web_get_int_property(1),
-	                 success,
-	                 web_get_int_property(3),
-	                 web_get_int_property(2),
-	                 lr_eval_string("{sentBytes}"),
-	                 lr_eval_string("http://{UC04_close_task_host}:{UC04_close_task_port}/api/ticket/{TaskID}/solve/"),
-	                 lr_eval_string("{currtime}"));
-	web_custom_request("DB Request",
-	                   "Method=POST",
-	                   "URL=http://localhost:8086/write?db=loadrunner",
-	                   "Body={Result}",
-	                   "LAST");
+	influx(lr_eval_string
+	       ("http://{UC04_close_task_host}:{UC04_close_task_port}/api/ticket/{TaskID}/solve/"),
+	       "/api/ticket/id/solve", bytesBefore);
 	
 	web_url("/home", 
 		"URL=http://{UC04_close_task_host}:{UC04_close_task_port}/", 
@@ -3433,6 +3391,8 @@ Logout()
 {
 	lr_start_transaction("UC01_TR16_logout1");
 
+	bytesBefore = web_get_int_property(4);
+	
 	web_url("/api/logout", 
 		"URL=http://{UC01_create_task_host}:{UC01_create_task_port}/api/logout", 
 		"TargetFrame=", 
@@ -3441,6 +3401,10 @@ Logout()
 		"Snapshot=t61.inf", 
 		"Mode=HTML", 
 		"LAST");
+	
+	influx(lr_eval_string
+	       ("http://{UC01_create_task_host}:{UC01_create_task_port}/api/logout"),
+	       "/api/logout", bytesBefore);
 
 	web_url("/login", 
 		"URL=http://{UC01_create_task_host}:{UC01_create_task_port}/login", 

@@ -23,6 +23,7 @@
     <FileEntry Name="port.dat" Filter="2" />
     <FileEntry Name="comments.dat" Filter="2" />
     <FileEntry Name="login.dat" Filter="2" />
+    <FileEntry Name="influx.c" Filter="2" />
     <FileEntry Name="pwd.dat" Filter="2" />
     <FileEntry Name="combined_UC01_create+comment+close_task.c" Filter="2" />
     <FileEntry Name="pre_cci.c" Filter="2" />

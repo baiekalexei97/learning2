@@ -1,4 +1,4 @@
-HTTP/1.1 500 
+HTTP/1.1 200 
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -7,6 +7,5 @@ Expires: 0
 X-Frame-Options: SAMEORIGIN
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Wed, 04 Dec 2019 11:54:00 GMT
-Connection: close
+Date: Wed, 04 Dec 2019 13:23:07 GMT
 

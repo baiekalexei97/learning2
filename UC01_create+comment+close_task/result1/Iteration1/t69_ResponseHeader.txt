@@ -1,8 +1,11 @@
-HTTP/1.1 204 No Content
-Content-Type: application/json
-Request-Id: c83b82e5-168c-11ea-827d-0242ac120002
-X-Influxdb-Build: OSS
-X-Influxdb-Version: 1.7.9
-X-Request-Id: c83b82e5-168c-11ea-827d-0242ac120002
-Date: Wed, 04 Dec 2019 11:54:09 GMT
+HTTP/1.1 200 
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: SAMEORIGIN
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 04 Dec 2019 13:23:24 GMT
 

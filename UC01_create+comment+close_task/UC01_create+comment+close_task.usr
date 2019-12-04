@@ -40,7 +40,7 @@ Default Profile=default.cfg
 globals.h=
 [Modified Actions]
 vuser_init=1
-Login=0
+Login=1
 CreateOrder=1
 Comment=1
 Close=1
@@ -71,9 +71,9 @@ Close=cci
 Logout=cci
 vuser_end=cci
 [TransactionsOrder]
-Order="UC01_TR01_login__*delimiter*__UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR08_descFinish__*delimiter*__UC01_TR09_descFinishOK__*delimiter*__UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR07_descFinish__*delimiter*__UC01_TR08_descFinishOK__*delimiter*__UC03_TR02_tasks__*delimiter*__UC03_TR03_selectTask__*delimiter*__UC03_TR05_commentFinish__*delimiter*__UC03_TR02_tasks__*delimiter*__UC03_TR03_selectTask__*delimiter*__UC03_TR05_commentFinish__*delimiter*__UC03_TR09_tasks__*delimiter*__UC03_TR10_selectTask__*delimiter*__UC03_TR11_commentFinish__*delimiter*__UC04_TR02_tasks__*delimiter*__UC04_TR03_selectTask__*delimiter*__UC04_TR04_ToOrder__*delimiter*__UC04_TR05_closeOrder__*delimiter*__UC04_TR02_tasks__*delimiter*__UC04_TR03_selectTask__*delimiter*__UC04_TR04_ToOrder__*delimiter*__UC04_TR05_closeOrder__*delimiter*__UC04_TR12_tasks__*delimiter*__UC04_TR13_selectTask__*delimiter*__UC04_TR14_ToOrder__*delimiter*__UC04_TR15_closeOrder__*delimiter*__UC01_TR11_logout1__*delimiter*__UC01_TR16_logout1"
+Order="UC01_TR01_login__*delimiter*__UC01_TR02_NewOrder__*delimiter*__UC01_TR03_Location1__*delimiter*__UC01_TR04_theme1__*delimiter*__UC01_TR05_Description__*delimiter*__UC01_TR06_inventoryNum__*delimiter*__UC01_TR07_descFinish__*delimiter*__UC01_TR08_descFinishOK__*delimiter*__UC03_TR09_tasks__*delimiter*__UC03_TR10_selectTask__*delimiter*__UC03_TR11_commentFinish__*delimiter*__UC04_TR12_tasks__*delimiter*__UC04_TR13_selectTask__*delimiter*__UC04_TR14_ToOrder__*delimiter*__UC04_TR15_closeOrder__*delimiter*__UC01_TR16_logout1"
 [StateManagement]
-LastReplayStatus=2
+LastReplayStatus=1
 [ActiveReplay]
 LastReplayedRunName=result1
 ActiveRunName=result1
@@ -90,23 +90,15 @@ UC01_TR03_Location1=
 UC01_TR04_theme1=
 UC01_TR05_Description=
 UC01_TR06_inventoryNum=
-UC01_TR08_descFinish=
-UC01_TR09_descFinishOK=
 UC01_TR07_descFinish=
 UC01_TR08_descFinishOK=
-UC03_TR02_tasks=
-UC03_TR03_selectTask=
-UC03_TR05_commentFinish=
 UC03_TR09_tasks=
 UC03_TR10_selectTask=
 UC03_TR11_commentFinish=
-UC04_TR02_tasks=
-UC04_TR03_selectTask=
-UC04_TR04_ToOrder=
-UC04_TR05_closeOrder=
 UC04_TR12_tasks=
 UC04_TR13_selectTask=
 UC04_TR14_ToOrder=
 UC04_TR15_closeOrder=
-UC01_TR11_logout1=
 UC01_TR16_logout1=
+[ManuallyExtraFiles]
+influx.c=

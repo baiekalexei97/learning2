@@ -1,8 +1,8 @@
-HTTP/1.1 200 
-Last-Modified: Tue, 27 Nov 2018 14:03:43 GMT
-Accept-Ranges: bytes
-Content-Type: text/html;charset=UTF-8
-Content-Language: en-US
-Content-Length: 1909
-Date: Wed, 04 Dec 2019 11:53:56 GMT
+HTTP/1.1 204 No Content
+Content-Type: application/json
+Request-Id: 32942f37-1699-11ea-82d2-0242ac120002
+X-Influxdb-Build: OSS
+X-Influxdb-Version: 1.7.9
+X-Request-Id: 32942f37-1699-11ea-82d2-0242ac120002
+Date: Wed, 04 Dec 2019 13:23:02 GMT
 

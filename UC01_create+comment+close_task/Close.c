@@ -116,38 +116,9 @@ Close()
 		"Mode=HTML", 
 		"EncType=", 
 		LAST);
-	
-	if (web_get_int_property(HTTP_INFO_RETURN_CODE) >= 400){
-		success="false";
-	}else{success="true";};
-	lr_save_int(web_get_int_property(HTTP_INFO_TOTAL_REQUEST_STAT)-bytesBefore,"sentBytes");
-	lr_save_timestamp("currtime",
-	                  "DIGITS=16", 
-	                  LAST);
-	lr_param_sprintf("Result",
-	                 "loadrunner,"
-	                 "label=%s,"
-	                 "responseCode=%d,"
-	                 "success=%s " 
-	                 "responseTime=%d000,"
-	                 "bytes=%d," 
-	                 "sentBytes=%s,"
-	                 "URL=\"%s\" " 
-	                 "%s000\n",
-	                 ///////////////////////
-	                 "/api/ticket/id/solve",
-	                 web_get_int_property(HTTP_INFO_RETURN_CODE),
-	                 success,
-	                 web_get_int_property(HTTP_INFO_DOWNLOAD_TIME),
-	                 web_get_int_property(HTTP_INFO_DOWNLOAD_SIZE),
-	                 lr_eval_string("{sentBytes}"),
-	                 lr_eval_string("http://{UC04_close_task_host}:{UC04_close_task_port}/api/ticket/{TaskID}/solve/"),
-	                 lr_eval_string("{currtime}"));
-	web_custom_request("DB Request",
-	                   "Method=POST",
-	                   "URL=http://localhost:8086/write?db=loadrunner",
-	                   "Body={Result}",
-	                   LAST);
+	influx(lr_eval_string
+	       ("http://{UC04_close_task_host}:{UC04_close_task_port}/api/ticket/{TaskID}/solve/"),
+	       "/api/ticket/id/solve", bytesBefore);
 	
 	web_url("/home", 
 		"URL=http://{UC04_close_task_host}:{UC04_close_task_port}/", 
