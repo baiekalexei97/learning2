@@ -4,11 +4,11 @@ Comment()
 	lr_start_transaction("UC03_TR09_tasks");
 
 	web_url("/api/task/countByState/", 
-		"URL=http://{UC03_comment_task_host}:{UC03_comment_task_port}/api/task/countByState/", 
+		"URL=http://{host}:{port}/api/task/countByState/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{UC03_comment_task_host}:{UC03_comment_task_port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t9.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -19,51 +19,49 @@ Comment()
 	    LAST);
 
 	web_custom_request("/api/task/", 
-		"URL=http://{UC03_comment_task_host}:{UC03_comment_task_port}/api/task/?state=1&page=0&size=10", 
+		"URL=http://{host}:{port}/api/task/?state=1&page=0&size=10", 
 		"Method=GET", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{UC03_comment_task_host}:{UC03_comment_task_port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t10.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8",  
 		LAST);
 	
 	lr_save_string(lr_paramarr_random("TaskIDs"),"TaskID");
-
-	web_set_sockets_option("SSL_VERSION", "2&3");
-
+	
 	lr_end_transaction("UC03_TR09_tasks",LR_AUTO);
 
 	lr_start_transaction("UC03_TR10_selectTask");
 
 	web_url("/api/task/id", 
-		"URL=http://{UC03_comment_task_host}:{UC03_comment_task_port}/api/task/{TaskID}", 
+		"URL=http://{host}:{port}/api/task/{TaskID}", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{UC03_comment_task_host}:{UC03_comment_task_port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t12.inf", 
 		"Mode=HTML", 
 		LAST);
 
 	web_url("/api/checkLogin", 
-		"URL=http://{UC03_comment_task_host}:{UC03_comment_task_port}/api/checkLogin", 
+		"URL=http://{host}:{port}/api/checkLogin", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{UC03_comment_task_host}:{UC03_comment_task_port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t13.inf", 
 		"Mode=HTML", 
 		LAST);
 
 	web_url("/api/ticket/id/comment/", 
-		"URL=http://{UC03_comment_task_host}:{UC03_comment_task_port}/api/ticket/{TaskID}/comment/", 
+		"URL=http://{host}:{port}/api/ticket/{TaskID}/comment/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{UC03_comment_task_host}:{UC03_comment_task_port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t14.inf", 
 		"Mode=HTML", 
 		LAST);
@@ -77,29 +75,29 @@ Comment()
 	bytesBefore = web_get_int_property(HTTP_INFO_TOTAL_REQUEST_STAT);
 
 	web_custom_request("/api/ticket/id/comment/", 
-		"URL=http://{UC03_comment_task_host}:{UC03_comment_task_port}/api/ticket/{TaskID}/comment/", 
+		"URL=http://{host}:{port}/api/ticket/{TaskID}/comment/", 
 		"Method=POST", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{UC03_comment_task_host}:{UC03_comment_task_port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t16.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 
-		//"Body={\"text\":\"{UC03_comment_task_comment}\",\"files\":[{FileID}]}", 
-		"Body={\"text\":\"{UC03_comment_task_comment}\"}",
+		//"Body={\"text\":\"{comments}\",\"files\":[{FileID}]}", 
+		"Body={\"text\":\"{comments}\"}",
 		LAST);
 	
 	influx(lr_eval_string
-	       ("http://{UC03_comment_task_host}:{UC03_comment_task_port}/api/ticket/{TaskID}/comment/"),
+	       ("http://{host}:{port}/api/ticket/{TaskID}/comment/"),
 	       "/api/ticket/id/comment", bytesBefore);
 	
 	web_url("/api/ticket/id/comment/", 
-		"URL=http://{UC03_comment_task_host}:{UC03_comment_task_port}/api/ticket/{TaskID}/comment/", 
+		"URL=http://{host}:{port}/api/ticket/{TaskID}/comment/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
-		"Referer=http://{UC03_comment_task_host}:{UC03_comment_task_port}/", 
+		"Referer=http://{host}:{port}/", 
 		"Snapshot=t17.inf", 
 		"Mode=HTML", 
 		LAST);

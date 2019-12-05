@@ -3,20 +3,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Actions
 {
-    private Connection connection;
-
     public int init() throws Throwable {
     	
     	return 0;
     }
     
     public int action() throws ClassNotFoundException, SQLException {
-    	Statement stmt = null;
-    	ResultSet rset = null;
-    	String id = null;
+    	ArrayList<String> id = new ArrayList<String>();
     	
     	try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -24,32 +21,38 @@ public class Actions
 	    	lr.log_message("Database Driver not found");
 	    	lr.abort();
     	}
-    	try () {
-    		lr.save_string(lr.eval_string("jdbc:oracle:thin:@" +
+    	
+    	lr.save_string(lr.eval_string("jdbc:oracle:thin:@" +
     		                              "{host}:{port}:{sid}"), "url");
-    		connection = DriverManager.getConnection(lr.eval_string("{url}"),
+    	
+    	try (Connection connection = DriverManager.getConnection(lr.eval_string("{url}"),
     		                                         lr.eval_string("{login}"),
-    		                                         lr.eval_string("{password}"));
+    		                                         lr.eval_string("{password}"))) {
     		lr.log_message("JDBC Connection Successful");
-    		try {
-    			connection.setAutoCommit(false);
-	    		stmt = connection.createStatement();
+    		connection.setAutoCommit(false);
+    		try(Statement stmt = connection.createStatement()) {
 			   
-	    		lr.log_message("Selecting Ticket");		   
-	    		rset = stmt.executeQuery("select id from ticket " +
-	    		                         "where state_id = -1 " +
-	    		                         "and text like '%(alex)'");
-	    		/*while (rset.next()) {
-	    			id = rset.getString("id");
-	    		}*/
+    			try(ResultSet rset = stmt.executeQuery("select id from ticket " +
+    			                                       "where state_id = -1" +
+    			                                       "and text like '%(alex)'")){
+    				lr.log_message("Selecting Ticket");
+    				
+    				while (rset.next()){
+    					id.add(rset.getString("id"));
+    				}
+    				
+    			}catch (SQLException e_rset) {
+    				e_rset.printStackTrace();
+    				lr.log_message("Couldn't select ticket, " +
+    				               "Exception - " + e_rset.getMessage());
+    				return 1;
+    			}
+    			
+	    		lr.log_message("Updating Ticket Status");
+	    		System.out.println(id.get(0));
 	    		
-	    		if (rset.first()){
-	    			id = rset.getString("id");
-	    		}
-			   
-	    		lr.log_message("Updating Ticket Status");		   
-	    		stmt.executeQuery("update ticket set state_id = 1, external_system = 'ASKO', guid = 'IDC2D620524153zdzPWAoX9OFgW4UB' " +
-	    		                  "where id="+id);
+	    		stmt.executeQuery("update ticket set state_id = 1, external_system = 'ASKO' " +
+	    		                  "where id="+id.get(0));
 	    		
 			  
 	    		lr.log_message("Adding Ticket to Tasks");		   
@@ -89,7 +92,7 @@ public class Actions
 	    		                  "'102'," +
 	    		                  "'TSK_1800000', " +
 	    		                  "external_system" +
-	    		                  " from ticket where id = "+id);
+	    		                  " from ticket where id = "+id.get(0));
 			 	
 	    		lr.log_message("Commit");
 	    		connection.commit();
@@ -103,19 +106,6 @@ public class Actions
 	    			e2.printStackTrace();
 	    		}
 		    	return 1;
-    		} finally {
-    			if (rset != null) {
-    				lr.log_message("Closing ResultSet");
-    				try {
-    					rset.close();
-    				} catch (SQLException e3) {e3.printStackTrace();}
-    			}
-    			if (stmt != null) {
-    				lr.log_message("Closing Statement");
-    				try {
-    					stmt.close();
-    				} catch (SQLException e3) {e3.printStackTrace();}
-    			}
     		}
     		    		
     	} catch (SQLException e) {
@@ -123,13 +113,6 @@ public class Actions
     		lr.log_message("Database Connection Failed, " +
     		               "Please check your connection string");
     		lr.abort();
-    	}finally{
-    		if (connection != null) {
-    			lr.log_message("Closing Connection");
-    			try {
-    				connection.close();
-    			} catch (SQLException e3) {e3.printStackTrace();}
-    		}
     	}
     	return 0;
     }

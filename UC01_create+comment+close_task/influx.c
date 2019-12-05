@@ -2,7 +2,9 @@ int influx(char * URL, char * Label, int bytesBefore){
 	char * success;
 	if (web_get_int_property(HTTP_INFO_RETURN_CODE) >= 400){
 		success="false";
-	}else{success="true";};
+	}else{
+		success="true";
+	}
 	lr_save_int(web_get_int_property(HTTP_INFO_TOTAL_REQUEST_STAT)-bytesBefore,"sentBytes");
 	lr_save_timestamp("currtime",
 	                  "DIGITS=16", 

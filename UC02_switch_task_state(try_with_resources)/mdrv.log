@@ -1,5 +1,5 @@
 Notify: JDK found at C:/Program Files/Java/jdk1.8.0_211
-Virtual User Script started at: 04.12.2019 17:34:03
+Virtual User Script started at: 05.12.2019 14:35:43
 Starting action vuser_init.
 Ending action vuser_init.
 Running Vuser...
@@ -8,27 +8,12 @@ Starting action Actions.
 JDBC Connection Successful
 Selecting Ticket
 Updating Ticket Status
+System.out: 150138                                                                                                                                                      Notify:
 Adding Ticket to Tasks
 Commit
-Closing ResultSet
-Closing Statement
-Closing Connection
 Ending action Actions.
 Ending iteration 1.
-Starting iteration 2.
-Starting action Actions.
-JDBC Connection Successful
-Selecting Ticket
-Updating Ticket Status
-Adding Ticket to Tasks
-Commit
-Closing ResultSet
-Closing Statement
-Closing Connection
-Ending action Actions.
-Ending iteration 2.
 Ending Vuser...
 Starting action vuser_end.
 Ending action vuser_end.
 Vuser Terminated.
-Vuser 0 (thread 2716), ended OK."
