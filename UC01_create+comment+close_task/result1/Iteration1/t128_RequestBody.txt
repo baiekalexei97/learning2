@@ -1,2 +1,2 @@
-"loadrunner,label=/api/logout,responseCode=200,success=true responseTime=50000,bytes=1548,sentB"
-"ytes=550,URL="http://learning2.pflb.ru:56902/api/logout" 1575465833584844000\n"
+"loadrunner,label=/api/logout,responseCode=200,success=true responseTime=26000,bytes=1548,sentB"
+"ytes=550,URL="http://learning2.pflb.ru:56902/api/logout" 1575557330419775000\n"

@@ -1,2 +1,2 @@
-"loadrunner,label=/api/ticket,responseCode=200,success=true responseTime=867000,bytes=1416,sent"
-"Bytes=610,URL="http://learning2.pflb.ru:56902/api/ticket/" 1575465787279198000\n"
+"loadrunner,label=/api/ticket,responseCode=200,success=true responseTime=487000,bytes=1228,sent"
+"Bytes=520,URL="http://learning2.pflb.ru:56902/api/ticket/" 1575557278148048000\n"

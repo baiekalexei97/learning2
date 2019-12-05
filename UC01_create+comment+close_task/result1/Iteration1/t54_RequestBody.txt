@@ -1,2 +1,2 @@
-"{"text":"comment 1 (alex)","header":"Лифт не поднимает / не опускает""
-","ticketStateId":0,"serviceId":"2913","shopId":"5"}"
+"{"text":"comment 1 (alex)","header":"Сломано запирающее устро�\xB9ств"
+"о","ticketStateId":0,"serviceId":"2949","shopId":"4"}"

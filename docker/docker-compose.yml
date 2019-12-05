@@ -4,9 +4,11 @@ services:
         image: influxdb
         container_name: influxdb
         ports:
+          - 8083:8083
           - 8086:8086
         environment:
           INFLUXDB_DB: loadrunner
+          INFLUXDB_DB: telegraf
           INFLUXDB_USER: user
           INFLUXDB_ADMIN_USER: admin
           INFLUXDB_ADMIN_PASSWORD: admin
@@ -21,3 +23,14 @@ services:
           - 3000:3000
         volumes:
           - ./grafana:/var/lib/grafana  
+    
+    telegraf:
+        image: telegraf
+        container_name: telegraf
+        restart: always
+        links:
+          - influxdb
+        volumes:
+          - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+          - /var/run/docker.sock:/var/run/docker.sock:ro
+

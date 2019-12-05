@@ -198,7 +198,7 @@ CreateOrder()
 		                              "\"ticketStateId\":0," 
 		                              "\"serviceId\":\"{ServiceID}\"," 
 		                              "\"shopId\":\"{ShopID}\""),"Body");
-	    }
+	}
 	
 	bytesBefore = web_get_int_property(HTTP_INFO_TOTAL_REQUEST_STAT);
 

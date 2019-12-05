@@ -1,9 +1,9 @@
-GET /api/task/150295 HTTP/1.1
+GET /api/task/150843 HTTP/1.1
 Referer: http://learning2.pflb.ru:56902/
 User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)
 Accept-Encoding: gzip, deflate
 Accept: */*
 Connection: Keep-Alive
 Host: learning2.pflb.ru:56902
-Cookie: SESSION=809796f3-6e69-4ab9-905b-33d1eae5badb
+Cookie: SESSION=0ff7f500-f809-4a7c-bc51-2ff773b0f137
 
