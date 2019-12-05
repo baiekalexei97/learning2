@@ -76,40 +76,40 @@ public class Actions
     		                                       "change_id," +
     		                                       "ticket_id," +
     		                                       "guid," +
-					    		                   "header," +
-					    		                   "text," +
-					    		                   "priority_id," +
-					    		                   "state_id," +
-					    		                   "client_id," +
-					    		                   "solution_group_id," +
-					    		                   "create_date," +
-					    		                   "sync_mask," +
-					    		                   "last_edit_date," +
-					    		                   "last_edit_user_login," +
-					    		                   "engineer_id," +
-					    		                   "contractor_id," +
-					    		                   "external_id," +
-					    		                   "external_system) " +
-					    		                   "select id, " +
-					    		                   "'IDC2D620524153zdzPWAoX9OFgW4UB', " +
-					    		                   "id, " +
-					    		                   "'d830c5ee-9b77-4bd1-879a-0c4d2c282a67', " +
-					    		                   "header, " +
-					    		                   "text, " +
-					    		                   "'3', " +
-					    		                   "'1', " +
-					    		                   "applicant_id, " +
-					    		                   "'9', " +
-					    		                   "create_date," +
-					    		                   "'0', " +
-					    		                   "last_edit_date, " +
-					    		                   "last_edit_user_login," +
-					    		                   "'103'," +
-					    		                   "'102'," +
-					    		                   "'TSK_1800000', " +
-					    		                   "external_system " +
-					    		                   "from ticket " +
-					    		                   "where id = "+id.get(0))){
+    		                                       "header," +
+    		                                       "text," +
+    		                                       "priority_id," +
+    		                                       "state_id," +
+    		                                       "client_id," +
+    		                                       "solution_group_id," +
+    		                                       "create_date," +
+    		                                       "sync_mask," +
+    		                                       "last_edit_date," +
+    		                                       "last_edit_user_login," +
+    		                                       "engineer_id," +
+    		                                       "contractor_id," +
+    		                                       "external_id," +
+    		                                       "external_system) " +
+    		                                       "select id, " +
+    		                                       "'IDC2D620524153zdzPWAoX9OFgW4UB', " +
+    		                                       "id, " +
+    		                                       "'d830c5ee-9b77-4bd1-879a-0c4d2c282a67', " +
+    		                                       "header, " +
+    		                                       "text, " +
+    		                                       "'3', " +
+    		                                       "'1', " +
+    		                                       "applicant_id, " +
+    		                                       "'9', " +
+    		                                       "create_date," +
+    		                                       "'0', " +
+    		                                       "last_edit_date, " +
+    		                                       "last_edit_user_login," +
+    		                                       "'103'," +
+    		                                       "'102'," +
+    		                                       "'TSK_1800000', " +
+    		                                       "external_system " +
+    		                                       "from ticket " +
+    		                                       "where id = "+id.get(0))){
     		    	
     		    	lr.log_message("New Task Inserted");
     		
