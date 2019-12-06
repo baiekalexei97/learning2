@@ -36,6 +36,7 @@
     <FileEntry Name="ReplaySummaryReport.xml" Filter="1" />
     <FileEntry Name="ScriptUploadMetadata.xml" Filter="1" />
     <FileEntry Name="TransactionsData.db" Filter="1" />
+    <FileEntry Name="UC02_switch_task_state(try_with_resources).prm.bak" Filter="1" />
     <FileEntry Name="UC02_switch_task_state(try_with_resources).sdf" Filter="1" />
     <FileEntry Name="UserTasks.xml" Filter="1" />
     <FileEntry Name="vuser_end.c" Filter="1" />

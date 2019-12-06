@@ -1,0 +1,2 @@
+[Hosts]
+localhost=C:\Users\student\Documents\Байков\XDesk LR\learning2\res\localhost_1.eve

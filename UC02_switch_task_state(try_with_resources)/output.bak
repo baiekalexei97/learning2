@@ -1,4 +1,4 @@
-Virtual User Script started at: 05.12.2019 15:42:05
+Virtual User Script started at: 06.12.2019 12:05:57
 Starting action vuser_init.
 Ending action vuser_init.
 Running Vuser...
@@ -7,10 +7,154 @@ Starting action Actions.
 JDBC Connection Successful
 Selecting Ticket
 Updating Ticket Status
-System.out: 150160                                                                                                                                                      Notify:
+Selected Ticket #149994
 Status Updated
 Inserting New Task
-New Task Inserted
+Commit
+Updating Ticket Status
+Selected Ticket #150012
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150047
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150049
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150075
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150076
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150103
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150104
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150125
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150126
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150013
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150026
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150027
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150043
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150044
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150046
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150113
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150114
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150342
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150343
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150219
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150220
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150320
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150328
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150852
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150853
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150854
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150855
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150856
+Status Updated
+Inserting New Task
+Commit
+Updating Ticket Status
+Selected Ticket #150857
+Status Updated
+Inserting New Task
 Commit
 Ending action Actions.
 Ending iteration 1.

@@ -1,0 +1,42 @@
+[Scenario]
+Product=HPE LoadRunner Controller
+Version=12.55.0.0
+Path=Scenario1
+Subject=
+Result_file=C:\Users\student\Documents\Байков\XDesk LR\learning2\res\res.lrr
+Description=
+ResultName=res
+Time_Zone=-10800
+Start_time=1575623967
+Daylight_Bias=0
+Stop_time=1575627752
+
+[Configuration]
+Public_local=1
+Is_mix=1
+Is_runner_file=0
+Runner_file=
+
+[Running_mode]
+Start_reason=By command
+Stop_reason=By a user
+
+[Data Collection]
+FullData=1
+SummaryEnded=1
+
+[Scenario_summary]
+Scenario Type=Manual Scenario
+Goal Profile Name=Group schedule for: create_comment_close
+Mode=Group Scheduling
+Scenario Duration=Unknown duration
+Load Behavior=Defined per scenario group
+
+[Scripts]
+UC01_create+comment+close_task=C:\Users\student\Documents\Байков\XDesk LR\learning2\UC01_create+comment+close_task\UC01_create+comment+close_task.usr
+XDesk=C:\Users\student\Documents\Байков\XDesk LR\learning2\UC02_switch_task_state(try_with_resources)\UC02_switch_task_state(try_with_resources).usr
+
+[Scripts_types]
+UC01_create+comment+close_task=Multi+QTWeb
+XDesk=General-Java
+

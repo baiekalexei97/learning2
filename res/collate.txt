@@ -1,0 +1,5 @@
+[Diagnostics]
+Status=-1
+[Collate Recovery]
+Scenario=C:\Users\student\Documents\Байков\XDesk LR\Scenario1.lrs
+Completed=0
